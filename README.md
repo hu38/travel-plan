@@ -4,6 +4,7 @@
 ## Contributors (name, email, github username, role)
 ### Shirley Hu sherlockhu12@gmail.com, hu38, full-stack
 ### Peng Zhang pengzhang0104@gmail.com
+### Xinyi Zhao xinyizhao1214@gmail.com
 <br/>
 
 ## Contributing in Github
