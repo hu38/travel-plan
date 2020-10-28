@@ -1,10 +1,10 @@
 # travel-plan
 
-
 ## Contributors (name, email, github username, role)
-### Shirley Hu, sherlockhu12@gmail.com, hu38, full-stack
-### Peng Zhang, pengzhang0104@gmail.com
-### Xinyi Zhao, xinyizhao1214@gmail.com
+### Shirley Hu sherlockhu12@gmail.com, hu38, full-stack
+### Peng Zhang pengzhang0104@gmail.com
+### Xinyi Zhao xinyizhao1214@gmail.com
+### Xiaohua Wang wangxin.cyn@gmail.com, Flora-OvO, front-end
 ### Zhuojun Yu, johnnyyuzj@gmail.com, github.com/Johnny-YuZJ
 <br/>
 
