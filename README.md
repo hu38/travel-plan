@@ -6,6 +6,7 @@
 ### Peng Zhang pengzhang0104@gmail.com
 ### Xinyi Zhao xinyizhao1214@gmail.com
 ### Linda Li lindalee1661@gmail.com, kelpiepeter, full-stack
+### Xiaohua Wang wangxin.cyn@gmail.com, Flora-OvO, front-end
 <br/>
 
 ## Contributing in Github
