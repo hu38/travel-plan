@@ -1,0 +1,994 @@
+{
+    "html_attributions": [],
+    "next_page_token": "AcnaJv1IOZYa1r_tPiC4QIaAEZ-BHvNmEn9bd9qFC-mAJvNfdRdAfUHjZKkq8dzYL9C6hd6c0V2A7mzeCo3Tvu2lyBUKRM4Vgxnx4zgQKxWVEarBFc2RWy6pE9v_Px9NcBTXFotdWD0Xwlq-IsoXugOYFM1Ojsq4_J6mmyFwBgB6T8zy936Vxl1m2sxiZVMtFXYAgqFlv3uvj_GV68Y5JSXkDUmT2sjuzjnTIeGqL_GCENUnaYDlBckvpBWap8ZA1872yR_bXNdJQdExSGoIXb7289FV9i6K99CGYb68zIiGgiwv5yUWwOm6I-ZBpCfuAH1FxWYbDjMROdyQVsaGicX0EbLJr4GETb_U7MoXTtIPxSpGJzuTj-U1bTn7hrhsBq-uR_9XYxPL6V-MyEYVDX5hjwEUijT_dpRNX5b6pp9SnYFb8yEOYoQ3LUVwMGH_-5aHEizBvTXnrhhF2ZPwVRbuLBccvKQ8btwmKFl4LhTp3HQny5mJKF_lhNcYmDSOBGW300c8UNiysBJI59u2pfsmEc4T4Av5YscnnRe2i3ocufpyGRh3fuAjVbTwKH7cdJSiwFQ0J2LoyYrCM70c9zdoqwKAHo7-94W-YBQ8dW-WT-l4Z7aHvbPiZonfXX51TwYy_WuincvFW4cZXSo7fSUDi6o",
+    "results": [
+        {
+            "business_status": "CLOSED_TEMPORARILY",
+            "geometry": {
+                "location": {
+                    "lat": 34.0169567,
+                    "lng": -118.2887703
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 34.01893005,
+                        "lng": -118.2862909
+                    },
+                    "southwest": {
+                        "lat": 34.01571704999999,
+                        "lng": -118.2914181
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+            "name": "Natural History Museum of Los Angeles County (NHM)",
+            "permanently_closed": true,
+            "photos": [
+                {
+                    "height": 1228,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/117080666906479271956\">Natural History Museum of Los Angeles County (NHM)</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAP8XiD9zSQrdRjR2srtAoxjUtUTLGSg29Wy_YqnsgJJP525iLnQh4trnGbqd2KseolaONq8ZauHcKXZEDW5nLYM5QwXtYATsuPukkiH5NkjeR-LPrQ6PMMAQvCKuLBGZZEhClBlE5yTdanq9lUjDOtd2mGhQ5kqjumIqgzc86Kum8RF8XJzbILw",
+                    "width": 1840
+                }
+            ],
+            "place_id": "ChIJXzARBf3HwoARJyT7uZSV-G4",
+            "plus_code": {
+                "compound_code": "2P86+QF Los Angeles, CA, USA",
+                "global_code": "85632P86+QF"
+            },
+            "rating": 4.7,
+            "reference": "ChIJXzARBf3HwoARJyT7uZSV-G4",
+            "scope": "GOOGLE",
+            "types": [
+                "tourist_attraction",
+                "museum",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 7175,
+            "vicinity": "900 West Exposition Boulevard, Los Angeles"
+        },
+        {
+            "business_status": "CLOSED_TEMPORARILY",
+            "geometry": {
+                "location": {
+                    "lat": 34.073851,
+                    "lng": -118.2399583
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 34.08170964999999,
+                        "lng": -118.2305416
+                    },
+                    "southwest": {
+                        "lat": 34.06932425,
+                        "lng": -118.2518368
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/stadium-71.png",
+            "name": "Dodger Stadium",
+            "permanently_closed": true,
+            "photos": [
+                {
+                    "height": 3024,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/115068400753352790251\">Kimiko Ford</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAQq5TcZKFZgv_AvmZdKnoARVL3jDD8LyqRrw2Qddk_Gpst03FQltPmsZW3zLx5yAZiLnhGg8kFXIKAzeDNyJTrL1bt6HLURDx5yaGJo34NUFd3ilrIWJ4ILRq0MeKeZ85EhALSX4hAcGQ4j3EiXLLvoASGhR_EvF77jtJqqGtf1wBFFhiolRziA",
+                    "width": 4032
+                }
+            ],
+            "place_id": "ChIJdVYAVPnGwoAR3wmcg09VlJ4",
+            "plus_code": {
+                "compound_code": "3QF6+G2 Los Angeles, CA, USA",
+                "global_code": "85633QF6+G2"
+            },
+            "rating": 4.7,
+            "reference": "ChIJdVYAVPnGwoAR3wmcg09VlJ4",
+            "scope": "GOOGLE",
+            "types": [
+                "stadium",
+                "tourist_attraction",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 29411,
+            "vicinity": "1000 Vin Scully Ave, Los Angeles"
+        },
+        {
+            "business_status": "CLOSED_TEMPORARILY",
+            "geometry": {
+                "location": {
+                    "lat": 34.0458857,
+                    "lng": -118.5648608
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 34.0478413,
+                        "lng": -118.5636611
+                    },
+                    "southwest": {
+                        "lat": 34.04001889999999,
+                        "lng": -118.5684599
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+            "name": "The Getty Villa",
+            "permanently_closed": true,
+            "photos": [
+                {
+                    "height": 3024,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/106115161540031158364\">Christine Kim</a>"
+                    ],
+                    "photo_reference": "CmRaAAAA2suQLn-j177I4GWajvdYQCdk80SQ2AtY5QIMkN2JtpuHtLlYMekhqjvvHIYjJsbGjq8xry_h4H7qLebnEUqQbva-1JdK75POizgp2VfHX4ZiqGPTSpMUoFCyOUgPfNYeEhB5yYaNR1xHYY7FUHQuxjjzGhTMdAxhFDlf4j5_r44nLJRZAtDMWQ",
+                    "width": 4032
+                }
+            ],
+            "place_id": "ChIJBw1wGumjwoARsKRsr2WJ-eQ",
+            "plus_code": {
+                "compound_code": "2CWP+93 Los Angeles, CA, USA",
+                "global_code": "85632CWP+93"
+            },
+            "rating": 4.7,
+            "reference": "ChIJBw1wGumjwoARsKRsr2WJ-eQ",
+            "scope": "GOOGLE",
+            "types": [
+                "tourist_attraction",
+                "museum",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 6271,
+            "vicinity": "17985 Pacific Coast Highway, Pacific Palisades"
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "geometry": {
+                "location": {
+                    "lat": 34.1380461,
+                    "lng": -118.0448898
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 34.14488014999999,
+                        "lng": -118.03006545
+                    },
+                    "southwest": {
+                        "lat": 34.12754475000001,
+                        "lng": -118.06077125
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+            "name": "Santa Anita Park",
+            "photos": [
+                {
+                    "height": 3024,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/101632948100444630211\">Jeff Shipp</a>"
+                    ],
+                    "photo_reference": "CmRaAAAA_42HFRBkLQuRa-viIQDld5ZnUXn-SrO2or8b6t4y45yK-_6227cNax0aY4zzCC0Z6SaNcgwdFEHFexxR5OhWnGk13vwy7ptDCoVtvSd3bAcKbMAQHyABAE-wyAi40Fe2EhBgZ3gx1Qsz41xNCKdcwHVJGhQLIZ_tmopfz0y56Ckxfw0jk3qGzw",
+                    "width": 4032
+                }
+            ],
+            "place_id": "ChIJ2ZRdXpXbwoARsArHq5oQPAI",
+            "plus_code": {
+                "compound_code": "4XQ4+62 Arcadia, CA, USA",
+                "global_code": "85634XQ4+62"
+            },
+            "price_level": 1,
+            "rating": 4.6,
+            "reference": "ChIJ2ZRdXpXbwoARsArHq5oQPAI",
+            "scope": "GOOGLE",
+            "types": [
+                "tourist_attraction",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 3727,
+            "vicinity": "285 West Huntington Drive, Arcadia"
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "geometry": {
+                "location": {
+                    "lat": 34.10092499999999,
+                    "lng": -118.3398472
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 34.1025842302915,
+                        "lng": -118.3384920697085
+                    },
+                    "southwest": {
+                        "lat": 34.0998862697085,
+                        "lng": -118.3411900302915
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/movies-71.png",
+            "name": "El Capitan Theatre",
+            "photos": [
+                {
+                    "height": 460,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/113477480812179059559\">El Capitan Theatre</a>"
+                    ],
+                    "photo_reference": "CmRZAAAAXhjg4xpdT9OJ8n-AXJYD31OD47rlA2QItHX55XlKXLsRpQX4Y40pBAYEdMK9hV6MFBM5PfQTbOf2wnTccjKx0IyUV99IdOEmlf47jsUiZRYxh2Zf3oeUhA0v-i6IybvfEhCp5tf8Ryi_CHkbxHvT6Ry5GhR7mceeKIuCuO2DRyqUFi8qAU8-yQ",
+                    "width": 700
+                }
+            ],
+            "place_id": "ChIJ240w5yO_woAREXPWsg0GfGQ",
+            "plus_code": {
+                "compound_code": "4M26+93 Los Angeles, CA, USA",
+                "global_code": "85634M26+93"
+            },
+            "rating": 4.7,
+            "reference": "ChIJ240w5yO_woAREXPWsg0GfGQ",
+            "scope": "GOOGLE",
+            "types": [
+                "movie_theater",
+                "tourist_attraction",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 2599,
+            "vicinity": "6838 Hollywood Boulevard, Los Angeles"
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "geometry": {
+                "location": {
+                    "lat": 34.09513450000001,
+                    "lng": -118.3739278
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 34.0964074802915,
+                        "lng": -118.3725339197085
+                    },
+                    "southwest": {
+                        "lat": 34.0937095197085,
+                        "lng": -118.3752318802915
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+            "name": "The Comedy Store",
+            "opening_hours": {
+                "open_now": false
+            },
+            "photos": [
+                {
+                    "height": 532,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/111650401186303321603\">Eric Anderson</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAZHLwPoFnX0axpxFM4uHwp6Miu9Lc8OaSGcFDNHpnMZTjj_hJ3-r2nO-TKaedcLVTO9wGoAB4t-HKXqVGjQoFSUZw3IpdjHRSNMVJX5nMq0RRyR5rrpvHRvEwoZjxg3lJEhDHv2Kwk6hVgn-rVnh85jYhGhT_1-RXAmeZY6TwQK3AQ5JaUQi2lQ",
+                    "width": 800
+                }
+            ],
+            "place_id": "ChIJg7DLab6-woARHyVknPRuxJA",
+            "plus_code": {
+                "compound_code": "3JWG+3C Los Angeles, CA, USA",
+                "global_code": "85633JWG+3C"
+            },
+            "price_level": 1,
+            "rating": 4.6,
+            "reference": "ChIJg7DLab6-woARHyVknPRuxJA",
+            "scope": "GOOGLE",
+            "types": [
+                "tourist_attraction",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 3153,
+            "vicinity": "8433 Sunset Boulevard, Los Angeles"
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "geometry": {
+                "location": {
+                    "lat": 34.047703,
+                    "lng": -118.2496065
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 34.04901043029149,
+                        "lng": -118.2483253697085
+                    },
+                    "southwest": {
+                        "lat": 34.04631246970849,
+                        "lng": -118.2510233302915
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+            "name": "The Last Bookstore",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 665,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/101875998493251463525\">Catherine A. Montgomery</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAa0u-wdLIZbHJjj1_1qr2IaLvVRNeeioKmghJZNRpc9AIh1KPvmuOixFVKKlFSh0HmTWC0mp_f7wQ6IP3XYYqQnEQXAf4NbZKPIeFKG2Zg9_DKTvcA3yz6muLihRI5bJkEhDxLjEGEhRbYetRu1_Z1dl-GhSMkojn2Jc-V_q9uw1dZlsYGzKBCQ",
+                    "width": 499
+                }
+            ],
+            "place_id": "ChIJ7YJ_IkrGwoARNak4CDihkYU",
+            "plus_code": {
+                "compound_code": "2QX2+35 Los Angeles, CA, USA",
+                "global_code": "85632QX2+35"
+            },
+            "rating": 4.7,
+            "reference": "ChIJ7YJ_IkrGwoARNak4CDihkYU",
+            "scope": "GOOGLE",
+            "types": [
+                "tourist_attraction",
+                "book_store",
+                "electronics_store",
+                "home_goods_store",
+                "point_of_interest",
+                "store",
+                "establishment"
+            ],
+            "user_ratings_total": 9763,
+            "vicinity": "453 South Spring Street, Los Angeles"
+        },
+        {
+            "business_status": "CLOSED_TEMPORARILY",
+            "geometry": {
+                "location": {
+                    "lat": 33.85748880000001,
+                    "lng": -118.2888454
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 33.85907503029151,
+                        "lng": -118.28799635
+                    },
+                    "southwest": {
+                        "lat": 33.85637706970851,
+                        "lng": -118.29139255
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+            "name": "K1 Speed - Indoor Go Karts, Corporate Event Venue, Team Building Activities",
+            "permanently_closed": true,
+            "photos": [
+                {
+                    "height": 1152,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/107920471253683801501\">K1 Speed - Indoor Go Karts, Corporate Event Venue, Team Building Activities</a>"
+                    ],
+                    "photo_reference": "CmRZAAAAB_FC6SqNmRj3d0AtJK0IlWhW96hg7yFUpscTZN729uYPSqvHcv8HpUd5am8D5ySwvGAXOFi9qCUJSS9RwDR8CRJhvo7rwLxjBk2JHhjTbYNKujwQWSbYq9S3vgA66DksEhDUTz9c08b_Z9F-qZHEi2pAGhQ3H5PcfokenM66W0D79mF9Fngo4w",
+                    "width": 2048
+                }
+            ],
+            "place_id": "ChIJ31rSX67KwoARIj4TWHvU03M",
+            "plus_code": {
+                "compound_code": "VP46+XF Gardena, CA, USA",
+                "global_code": "8553VP46+XF"
+            },
+            "rating": 4.4,
+            "reference": "ChIJ31rSX67KwoARIj4TWHvU03M",
+            "scope": "GOOGLE",
+            "types": [
+                "tourist_attraction",
+                "restaurant",
+                "food",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 1071,
+            "vicinity": "19038 South Vermont Avenue, Gardena"
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "geometry": {
+                "location": {
+                    "lat": 34.1249893,
+                    "lng": -118.4791719
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 34.1262808302915,
+                        "lng": -118.4776122697085
+                    },
+                    "southwest": {
+                        "lat": 34.1235828697085,
+                        "lng": -118.4803102302915
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+            "name": "Skirball Cultural Center",
+            "photos": [
+                {
+                    "height": 2992,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/111735514052048929375\">Barry Goch</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAmZpEbF68jfshoOQeDEeGTUUknuN07nuXguPfAbQx7OwF4OiTAOxx8YNmlusDnbk067-kma6hWEtpoAei1coGTibr8yFJSg_kjOqnlUuiUCEd4dvYYOaOUQaDaNGDYQy5EhBcJinqjmchO-EqpwQ62rZxGhSgIgcZTeEnwmXXf0qy3cIti4RsAQ",
+                    "width": 4000
+                }
+            ],
+            "place_id": "ChIJ69uHElG9woARr3iQy_Hmd50",
+            "plus_code": {
+                "compound_code": "4GFC+X8 Los Angeles, CA, USA",
+                "global_code": "85634GFC+X8"
+            },
+            "rating": 4.7,
+            "reference": "ChIJ69uHElG9woARr3iQy_Hmd50",
+            "scope": "GOOGLE",
+            "types": [
+                "tourist_attraction",
+                "museum",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 1681,
+            "vicinity": "2701 North Sepulveda Boulevard, Los Angeles"
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "geometry": {
+                "location": {
+                    "lat": 34.06202399999999,
+                    "lng": -118.3613631
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 34.06344198029149,
+                        "lng": -118.3602394197085
+                    },
+                    "southwest": {
+                        "lat": 34.06074401970849,
+                        "lng": -118.3629373802915
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+            "name": "Petersen Automotive Museum",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 1365,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/115640835423652760261\">Petersen Automotive Museum</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAl8bAGLv8VQW0IFy1qhrIAKY_25S-bUsKKyiB8ECcnjEi_IpmbUfHAi8hKEj0HjAcpFSXJzNvlXnaWlDI2VKGnKAKZ7vOvmpK2KFbmGyaiGDOLZT7AuwKUAr_sYnmTZiREhBvbbcR19bTqrZp8WcWHK8-GhTS_2m7OiobmCO-hDChGJu_QimjMA",
+                    "width": 2048
+                }
+            ],
+            "place_id": "ChIJaRbaXjy5woARERNJSyktTog",
+            "plus_code": {
+                "compound_code": "3J6Q+RF Los Angeles, CA, USA",
+                "global_code": "85633J6Q+RF"
+            },
+            "rating": 4.7,
+            "reference": "ChIJaRbaXjy5woARERNJSyktTog",
+            "scope": "GOOGLE",
+            "types": [
+                "museum",
+                "tourist_attraction",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 6489,
+            "vicinity": "6060 Wilshire Boulevard, Los Angeles"
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "geometry": {
+                "location": {
+                    "lat": 34.2013081,
+                    "lng": -118.1713944
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 34.20295665,
+                        "lng": -118.16945595
+                    },
+                    "southwest": {
+                        "lat": 34.19636245,
+                        "lng": -118.17720975
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/school-71.png",
+            "name": "Jet Propulsion Laboratory",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 2976,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/113349195508751023262\">Christopher Go</a>"
+                    ],
+                    "photo_reference": "CmRZAAAAgyEo8RuMKzO54qmx2LR2ViuOVTRHp3XWcxRxlF94XQTzb-dcDatw9-sDj0ASxXJlfYTyAnb_ky0XARsczpJb0iUQW5wPxOShlExBorom5oOoSVDDZJjJrAIuJiR3U6GoEhCXZ5curnfUFaCXrlfWvMq1GhTJN69LphVXtAbF9MeXPSo7oNkgQg",
+                    "width": 3968
+                }
+            ],
+            "place_id": "ChIJm6bVH27CwoARlkQoGj43lCg",
+            "plus_code": {
+                "compound_code": "6R2H+GC Pasadena, CA, USA",
+                "global_code": "85636R2H+GC"
+            },
+            "rating": 4.7,
+            "reference": "ChIJm6bVH27CwoARlkQoGj43lCg",
+            "scope": "GOOGLE",
+            "types": [
+                "tourist_attraction",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 369,
+            "vicinity": "4800 Oak Grove Drive, Pasadena"
+        },
+        {
+            "business_status": "CLOSED_TEMPORARILY",
+            "geometry": {
+                "location": {
+                    "lat": 34.1463464,
+                    "lng": -118.1592625
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 34.1476331802915,
+                        "lng": -118.1575191197085
+                    },
+                    "southwest": {
+                        "lat": 34.14493521970851,
+                        "lng": -118.1602170802915
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+            "name": "Norton Simon Museum",
+            "permanently_closed": true,
+            "photos": [
+                {
+                    "height": 629,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/106485334763847533029\">Norton Simon Museum</a>"
+                    ],
+                    "photo_reference": "CmRaAAAA8b2nQcbmU3CNe0NwGD28bQiR0KbFjCvLzeTzrppNUmQFfHq2-0jzbtgVXGwLqCSFxbLwGPH0UeJ0rkigNFPWonW7eMK7jK_pboK4W_sQNzPKVHTa7eysnvY6z9EhifluEhB1TGKnzRpALRw55-tCzt2HGhQW7pimUqTD3rd3tcXaHyDiMEteQw",
+                    "width": 1000
+                }
+            ],
+            "place_id": "ChIJkZW6A57DwoARxn42TuWiIpI",
+            "plus_code": {
+                "compound_code": "4RWR+G7 Pasadena, CA, USA",
+                "global_code": "85634RWR+G7"
+            },
+            "price_level": 1,
+            "rating": 4.8,
+            "reference": "ChIJkZW6A57DwoARxn42TuWiIpI",
+            "scope": "GOOGLE",
+            "types": [
+                "tourist_attraction",
+                "museum",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 2061,
+            "vicinity": "411 West Colorado Boulevard, Pasadena"
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "geometry": {
+                "location": {
+                    "lat": 34.14594679999999,
+                    "lng": -118.150228
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 34.1472131302915,
+                        "lng": -118.1488787697085
+                    },
+                    "southwest": {
+                        "lat": 34.1445151697085,
+                        "lng": -118.1515767302915
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+            "name": "Old Pasadena",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 1836,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/113058072735358426729\">Arend Kok</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAM3GnZauas6DL2LWdojtZPIUc96QTAv4DNRy8XtO7pPYlb3TomTQ1vT-KZWR2bDzDQz14Wav3jeFR2ZKtOt1Kb3tU3nOwXS5q0tzFBsMQ0jL4lXvfDilmCTPFTBFRZEG_EhCDDe_zN6a6BxZKwSVBk1AiGhTi8Ouwzznl8qRFam1ZpeD7iKi4iQ",
+                    "width": 3264
+                }
+            ],
+            "place_id": "ChIJ672nCXHDwoARa0rApG0IIhw",
+            "plus_code": {
+                "compound_code": "4RWX+9W Pasadena, CA, USA",
+                "global_code": "85634RWX+9W"
+            },
+            "rating": 4.6,
+            "reference": "ChIJ672nCXHDwoARa0rApG0IIhw",
+            "scope": "GOOGLE",
+            "types": [
+                "tourist_attraction",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 854,
+            "vicinity": "1 East Colorado Boulevard, Pasadena"
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "geometry": {
+                "location": {
+                    "lat": 34.0838505,
+                    "lng": -118.3442797
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 34.08519778029149,
+                        "lng": -118.3428252697085
+                    },
+                    "southwest": {
+                        "lat": 34.0824998197085,
+                        "lng": -118.3455232302915
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+            "name": "Pink's Hot Dogs",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 683,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/115432941254218393918\">Scott Reilly</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAgoUI4Rjv2YFWxe5KKgyWWWQaMi0inSvWDU-amz0kjBa2sGrZDTKnRsO3fgBhNrJajnWtxz070W-Df_xhQGYDsGgC_A6GY0TE4P-ID6VKaMawB_IopKOY5a-IwLvo9QttEhBrumbp9mlcc8SJxFtbMEdmGhTzTl5N4txSojuAxqyIqUpc6Cj_LA",
+                    "width": 1024
+                }
+            ],
+            "place_id": "ChIJVwjfzCq_woAR4FjKokeruig",
+            "plus_code": {
+                "compound_code": "3MM4+G7 Los Angeles, CA, USA",
+                "global_code": "85633MM4+G7"
+            },
+            "price_level": 2,
+            "rating": 4.5,
+            "reference": "ChIJVwjfzCq_woAR4FjKokeruig",
+            "scope": "GOOGLE",
+            "types": [
+                "tourist_attraction",
+                "restaurant",
+                "food",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 8314,
+            "vicinity": "709 North La Brea Avenue, Los Angeles"
+        },
+        {
+            "business_status": "CLOSED_TEMPORARILY",
+            "geometry": {
+                "location": {
+                    "lat": 34.05368519999999,
+                    "lng": -118.4016597
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 34.05512068029149,
+                        "lng": -118.4005002197085
+                    },
+                    "southwest": {
+                        "lat": 34.0524227197085,
+                        "lng": -118.4031981802915
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+            "name": "Museum of Tolerance",
+            "permanently_closed": true,
+            "photos": [
+                {
+                    "height": 2041,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/105613970346260617547\">Museum of Tolerance</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAWlyN8IwxTwasbyKnTJFDO7zJyBEZ-koVWE3ZgG27V_u1D5xEohjPJtUCJwDFUu0AGNsJDC8NERd9Np2REae88qvyHYk2w0PRB49_3-CnS-v4AmlgvDB_f67VUWPAm319EhDKgroYmfO_Omc23Hwt52G2GhTNDyfigT--sEkUFTvx66vomwPP7Q",
+                    "width": 2048
+                }
+            ],
+            "place_id": "ChIJjSX32OW7woARNBeoBsEWDB4",
+            "plus_code": {
+                "compound_code": "3H3X+F8 Los Angeles, CA, USA",
+                "global_code": "85633H3X+F8"
+            },
+            "rating": 4.6,
+            "reference": "ChIJjSX32OW7woARNBeoBsEWDB4",
+            "scope": "GOOGLE",
+            "types": [
+                "tourist_attraction",
+                "museum",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 1663,
+            "vicinity": "9786 West Pico Boulevard, Los Angeles"
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "geometry": {
+                "location": {
+                    "lat": 33.83231130000001,
+                    "lng": -118.0801136
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 33.8332664802915,
+                        "lng": -118.07822035
+                    },
+                    "southwest": {
+                        "lat": 33.8305685197085,
+                        "lng": -118.08212055
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+            "name": "The Gardens Casino",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 1600,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/109389265139182934046\">Gabriel Ratliff</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAKa49YjjaL5tqqD4dHlL3CkguYxFY5que_NH8WJpFR6eYE5oaRAfi0qlmfQ8KzLX09nVCYcJ2xv6627Qz_aVRtKn-AVbXdOjepQA_RuGaHga5MRq3rO-LIzlpSXJ38-19EhBV448LQGPGSknsDabPyEzzGhQ8BHFPujHdzuHM10hwq8O5ZIr2Pg",
+                    "width": 2400
+                }
+            ],
+            "place_id": "ChIJhXTwOsUt3YAR-PA2oskCbLY",
+            "plus_code": {
+                "compound_code": "RWJ9+WX Hawaiian Gardens, CA, USA",
+                "global_code": "8553RWJ9+WX"
+            },
+            "rating": 4,
+            "reference": "ChIJhXTwOsUt3YAR-PA2oskCbLY",
+            "scope": "GOOGLE",
+            "types": [
+                "casino",
+                "tourist_attraction",
+                "bar",
+                "restaurant",
+                "food",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 2030,
+            "vicinity": "11871 East Carson Street, Hawaiian Gardens"
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "geometry": {
+                "location": {
+                    "lat": 34.0833232,
+                    "lng": -118.3606212
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 34.08471223029149,
+                        "lng": -118.3592725197085
+                    },
+                    "southwest": {
+                        "lat": 34.08201426970849,
+                        "lng": -118.3619704802915
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+            "name": "Melrose Trading Post",
+            "opening_hours": {
+                "open_now": false
+            },
+            "photos": [
+                {
+                    "height": 744,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/104026813189152453505\">Melrose Trading Post</a>"
+                    ],
+                    "photo_reference": "CmRaAAAA_au_4w794Ug_z8UDmfPDudQLiD6NPtlBgtSfMolfmdBjb1MjLYp2QSoeYm5__6q8pBw2DUIi-_HU1b-IcuT5WmjHj7oWJ44X2vvUsT3tA7PQZwjDILOVn0F5bffy_thPEhCtveGjQnNCsqwG1OoOA03UGhS3GfSKo42nkRRe51HoSYCjs86CSw",
+                    "width": 960
+                }
+            ],
+            "place_id": "ChIJ9WZU-sy-woARnhyvpzXXP18",
+            "plus_code": {
+                "compound_code": "3JMQ+8Q Los Angeles, CA, USA",
+                "global_code": "85633JMQ+8Q"
+            },
+            "rating": 4.4,
+            "reference": "ChIJ9WZU-sy-woARnhyvpzXXP18",
+            "scope": "GOOGLE",
+            "types": [
+                "tourist_attraction",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 1009,
+            "vicinity": "7850 Melrose Avenue, Los Angeles"
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "geometry": {
+                "location": {
+                    "lat": 33.8918617,
+                    "lng": -118.2929497
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 33.89319838029149,
+                        "lng": -118.2913272197085
+                    },
+                    "southwest": {
+                        "lat": 33.89050041970849,
+                        "lng": -118.2940251802915
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+            "name": "HUSTLER® Casino",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 2988,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/115789882758778138404\">서길성</a>"
+                    ],
+                    "photo_reference": "CmRaAAAACn8szqjLO-Tv4QukdEkye6WqHTHtl2oMYGjxzz38GcvhXLrYGgZhWmdA-8Rg4KOuJ19dzPLe_MfUsxoNkMmoCraaFgNmsJwpI3oGJg9GbBEcYqJFK_WAa9QvsHBbRloFEhD2CvRI54xS1rGvGUTNYK_kGhSt1AtHwFmieHiA-8CQbZVXVgj2Qg",
+                    "width": 5312
+                }
+            ],
+            "place_id": "ChIJj3vO8n3KwoARpZS220_Vyxg",
+            "plus_code": {
+                "compound_code": "VPR4+PR Gardena, CA, USA",
+                "global_code": "8553VPR4+PR"
+            },
+            "rating": 3.9,
+            "reference": "ChIJj3vO8n3KwoARpZS220_Vyxg",
+            "scope": "GOOGLE",
+            "types": [
+                "casino",
+                "tourist_attraction",
+                "bar",
+                "restaurant",
+                "food",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 1396,
+            "vicinity": "1000 West Redondo Beach Boulevard, Gardena"
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "geometry": {
+                "location": {
+                    "lat": 34.05558360000001,
+                    "lng": -118.2457138
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 34.05798524999999,
+                        "lng": -118.24359765
+                    },
+                    "southwest": {
+                        "lat": 34.05477025,
+                        "lng": -118.24964225
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+            "name": "Grand Park",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 1366,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/103578514541430890722\">Grand Park LA</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAPffR1U5M0nm2JMjIZl8I6Ni_Uwhyi1ZDR-n3yl8QtjMP0czHzd3t4x8gJnYdZsiEt-9acNsZDpXPEwoxTuHmrQvTJ1xp-66C4K7VAmeywswh2edWIKDUNLY9dfwUnpF6EhAIdh_leKy7-NKaSzf1bYZZGhQ4dpcES8w_z0KnhBhYMYjrnJPB_Q",
+                    "width": 2048
+                }
+            ],
+            "place_id": "ChIJ_STuCE7GwoAR3vCqfD2J9es",
+            "plus_code": {
+                "compound_code": "3Q43+6P Los Angeles, CA, USA",
+                "global_code": "85633Q43+6P"
+            },
+            "rating": 4.5,
+            "reference": "ChIJ_STuCE7GwoAR3vCqfD2J9es",
+            "scope": "GOOGLE",
+            "types": [
+                "park",
+                "tourist_attraction",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 7014,
+            "vicinity": "200 North Grand Avenue, Los Angeles"
+        },
+        {
+            "business_status": "CLOSED_TEMPORARILY",
+            "geometry": {
+                "location": {
+                    "lat": 34.0637249,
+                    "lng": -118.3555013
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 34.0653712302915,
+                        "lng": -118.3541552697085
+                    },
+                    "southwest": {
+                        "lat": 34.0626732697085,
+                        "lng": -118.3568532302915
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+            "name": "Page Museum",
+            "permanently_closed": true,
+            "photos": [
+                {
+                    "height": 3024,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/101235096367127890668\">Ivan Perehodov</a>"
+                    ],
+                    "photo_reference": "CmRaAAAA1MoPeGOFnT6eEUKXiU7Yl2fQVme0fPsS-2cWpNVb72et3dIJY5XcQxV8oIXxV8hBUk8SDL9Yz4z0G5MepyN2eN801kTxY-bgSXdQQYEbSzlwGNdHDdemj8uB4DBCxzbQEhAHJWw3YeDWt46kxcdF9onFGhQuOExIWIjao8eQMcfdvsCj7v6rgw",
+                    "width": 4032
+                }
+            ],
+            "place_id": "ChIJGfZqDyO5woARnWWDKmv9oGU",
+            "plus_code": {
+                "compound_code": "3J7V+FQ Los Angeles, CA, USA",
+                "global_code": "85633J7V+FQ"
+            },
+            "rating": 4.5,
+            "reference": "ChIJGfZqDyO5woARnWWDKmv9oGU",
+            "scope": "GOOGLE",
+            "types": [
+                "museum",
+                "tourist_attraction",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 106,
+            "vicinity": "5801 Wilshire Boulevard, Los Angeles"
+        }
+    ],
+    "status": "OK"
+}

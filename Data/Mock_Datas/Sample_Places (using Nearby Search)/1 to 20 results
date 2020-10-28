@@ -1,0 +1,980 @@
+{
+    "html_attributions": [],
+    "next_page_token": "AcnaJv1PpdA3phBhwE7X-YV1dV2Z0XitNwYE9oQrl9YU4cqTnZQtH2nBrrsdJllJ4nwmqm6X8NT7R_PTKTJJCGbU4MoIgOyQArRh64vNPhxYVhLIhsNmWQ7xyr7z_2yN3Y4vqILnNYfpCERhm9F6L8WAgy1eIuQx8WnYzrIGDqJNr5QKgTAd4bAxWB2qmMhS6DYka4Ghjd89Bj44rah6CMMXOFbtCxVFQWJESmidqgi2F0GJh_kLmgBtR05nle9VLeifZ8eH9T3urf_vsTRP2Ci2Jl6P7jxFT1Qse9v2UQv0Lb5Gf4FuarBfpXBpPvIn731wcUxE3JlTaK-678Pv61hSlBWIeKaOVB-5ocQWdj3YM_y0HqRr_Kwc2YW2JWlNiRH-W0HSjOkLsihx9Ry0tQyponFNTP13-HwNIZiqUFf5fCWcxCvsdQO6IoW9AwNI1CKCjA",
+    "results": [
+        {
+            "business_status": "OPERATIONAL",
+            "geometry": {
+                "location": {
+                    "lat": 34.0637293,
+                    "lng": -118.223954
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 34.0649501802915,
+                        "lng": -118.2225533697085
+                    },
+                    "southwest": {
+                        "lat": 34.0622522197085,
+                        "lng": -118.2252513302915
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+            "name": "San Antonio Winery",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 608,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/113754798936818199807\">San Antonio Winery</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAR0lfie4cV7hM8xpX0tS_tGUvtk6u9F5dWXUcKwtYSBm0izoU_Wdw09VDBSzsXMeBMjmuZ5SPA_8VbfN2X5u6YJS1bS7iCT_VVE9vkEAx5GPFJrkcDRTy_1Srk1e41OM3EhBopNsS6KC26JpiJCw8XFFwGhTmZBz0LLFbM_aHad9RyEh45BRmXQ",
+                    "width": 1080
+                }
+            ],
+            "place_id": "ChIJj2tUC2bGwoARwqdCDE37YD0",
+            "plus_code": {
+                "compound_code": "3Q7G+FC Los Angeles, CA, USA",
+                "global_code": "85633Q7G+FC"
+            },
+            "price_level": 1,
+            "rating": 4.7,
+            "reference": "ChIJj2tUC2bGwoARwqdCDE37YD0",
+            "scope": "GOOGLE",
+            "types": [
+                "tourist_attraction",
+                "bar",
+                "restaurant",
+                "food",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 1093,
+            "vicinity": "737 Lamar Street, Los Angeles"
+        },
+        {
+            "business_status": "CLOSED_TEMPORARILY",
+            "geometry": {
+                "location": {
+                    "lat": 34.13811680000001,
+                    "lng": -118.3533783
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 34.14022815000001,
+                        "lng": -118.34702235
+                    },
+                    "southwest": {
+                        "lat": 34.13178275,
+                        "lng": -118.36030975
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+            "name": "Universal Studios Hollywood",
+            "permanently_closed": true,
+            "photos": [
+                {
+                    "height": 533,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/105622011438711205531\">Mahmut Sami Parlak</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAJPCT0txCojSieuqUwDtqiY10HFoIowsCqexTsbZns7P3pqqpERLElWEz7zWr2nUBxp0stz4rZrBOraZsTKTDJpbeXICsdYbca-c58m-DyvnKDCcd9n51gTWeZQUeofC6EhDmMT2S4pQi52aLMVGwPGkKGhSR0zlURaEoJ4HhMFxaBjj0sl-YPQ",
+                    "width": 800
+                }
+            ],
+            "place_id": "ChIJzzgyJU--woARcZqceSdQ3dM",
+            "plus_code": {
+                "compound_code": "4JQW+6J Universal City, CA, USA",
+                "global_code": "85634JQW+6J"
+            },
+            "rating": 4.6,
+            "reference": "ChIJzzgyJU--woARcZqceSdQ3dM",
+            "scope": "GOOGLE",
+            "types": [
+                "tourist_attraction",
+                "amusement_park",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 107949,
+            "vicinity": "100 Universal City Plaza, Universal City"
+        },
+        {
+            "business_status": "CLOSED_TEMPORARILY",
+            "geometry": {
+                "location": {
+                    "lat": 34.0639323,
+                    "lng": -118.3592293
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 34.0654954302915,
+                        "lng": -118.3578265197085
+                    },
+                    "southwest": {
+                        "lat": 34.0627974697085,
+                        "lng": -118.3605244802915
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+            "name": "Los Angeles County Museum of Art",
+            "permanently_closed": true,
+            "photos": [
+                {
+                    "height": 3124,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/109849026903893201606\">Jayasimha Nuggehalli</a>"
+                    ],
+                    "photo_reference": "CmRaAAAApqEJ4diGmnODO8bH-hCeZ1yLpiMOG9PU70gHw0tWLauflIqDGwN9I61oR6bY3RgBwNaSbdcPBFt2hQuIl4FuL-2JDF6hKcoFXmoAuyHfNnvHTQufrwFZ1e42nt7l--QaEhDzIRHe30HrGr3FGemU7F7oGhTMx9-e3yy8mSH47nZBYj-eepMihQ",
+                    "width": 5122
+                }
+            ],
+            "place_id": "ChIJsXqcyjy5woARNz6sOh0ZmwA",
+            "plus_code": {
+                "compound_code": "3J7R+H8 Los Angeles, CA, USA",
+                "global_code": "85633J7R+H8"
+            },
+            "rating": 4.6,
+            "reference": "ChIJsXqcyjy5woARNz6sOh0ZmwA",
+            "scope": "GOOGLE",
+            "types": [
+                "art_gallery",
+                "tourist_attraction",
+                "museum",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 13065,
+            "vicinity": "5905 Wilshire Boulevard, Los Angeles"
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "geometry": {
+                "location": {
+                    "lat": 34.1195315,
+                    "lng": -118.2962896
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 34.1213376802915,
+                        "lng": -118.2948223197085
+                    },
+                    "southwest": {
+                        "lat": 34.1186397197085,
+                        "lng": -118.2975202802915
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+            "name": "The Greek Theatre",
+            "photos": [
+                {
+                    "height": 900,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/108383165923538930629\">The Greek Theatre</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAtccr0CjedH51iclkui2lS-COSKsSI1RKJu9RvZakjG0zTgR6MOmOLUhwC1MpVNN_eaTOWsUzVviJiLG78-2Ys1UMEXMmVfEhqlNHOzn5iiffY8NUGyPa8WKgvS-Z4thCEhBO2RwVPRMc22TsZAHzocUTGhSViHluD9IDDFU-Mdn3Z7f0j2vw2g",
+                    "width": 1600
+                }
+            ],
+            "place_id": "ChIJRUJ9pJjAwoARhqQ6EhQynzs",
+            "plus_code": {
+                "compound_code": "4P93+RF Los Angeles, CA, USA",
+                "global_code": "85634P93+RF"
+            },
+            "price_level": 3,
+            "rating": 4.7,
+            "reference": "ChIJRUJ9pJjAwoARhqQ6EhQynzs",
+            "scope": "GOOGLE",
+            "types": [
+                "tourist_attraction",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 3748,
+            "vicinity": "2700 North Vermont Avenue, Los Angeles"
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "geometry": {
+                "location": {
+                    "lat": 34.1341151,
+                    "lng": -118.3215482
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 34.13537033029149,
+                        "lng": -118.3203275697085
+                    },
+                    "southwest": {
+                        "lat": 34.13267236970849,
+                        "lng": -118.3230255302915
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+            "name": "Hollywood Sign",
+            "photos": [
+                {
+                    "height": 3096,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/113970556746089888969\">Manfredo Mazariegos</a>"
+                    ],
+                    "photo_reference": "CmRZAAAAiM5d2h1fvAhVFv1BEE2edGlPHTPNwvroWRXvgz9labBJ-0jmptz0_BMKKGW9bckJOOhfz57Uzl3c80hqxUlVx1vUUdJwJOdRby9u0IrTuqGLmlw8VWAUn16cSZ7ZSU2wEhCjhmXeKaIOe0kQ7sMuRpgqGhSlFZSSHpBo_0sniU5aJ2Cvd__83A",
+                    "width": 4128
+                }
+            ],
+            "place_id": "ChIJfVpQRQq_woARQ5hwJsast6s",
+            "plus_code": {
+                "compound_code": "4MMH+J9 Los Angeles, CA, USA",
+                "global_code": "85634MMH+J9"
+            },
+            "rating": 4.6,
+            "reference": "ChIJfVpQRQq_woARQ5hwJsast6s",
+            "scope": "GOOGLE",
+            "types": [
+                "tourist_attraction",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 7145,
+            "vicinity": "Los Angeles"
+        },
+        {
+            "business_status": "CLOSED_TEMPORARILY",
+            "geometry": {
+                "location": {
+                    "lat": 34.1184341,
+                    "lng": -118.3003935
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 34.1201897302915,
+                        "lng": -118.2990331697085
+                    },
+                    "southwest": {
+                        "lat": 34.1174917697085,
+                        "lng": -118.3017311302915
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+            "name": "Griffith Observatory",
+            "permanently_closed": true,
+            "photos": [
+                {
+                    "height": 2990,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/113169001330442360400\">Bradley Elliott</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAuxoqLOY-dOVnKZ6B1pIjFnhkjdysxopKTMKBdkUWQgWrKuu_FU03FVj0kheV6pkoowrbSuPrkSTyJFuyoLCUixxhKzfl00VNcjgnXda7v3k4rpS56WQ6sbgXJE8jO_FcEhDmm-cqNNcOiHkeo8frxt7-GhQxPQtGhlOTUzeU0G2UJtye7TlKuQ",
+                    "width": 3986
+                }
+            ],
+            "place_id": "ChIJywjU6WG_woAR3NrWwrEH_3M",
+            "plus_code": {
+                "compound_code": "4M9X+9R Los Angeles, CA, USA",
+                "global_code": "85634M9X+9R"
+            },
+            "rating": 4.7,
+            "reference": "ChIJywjU6WG_woAR3NrWwrEH_3M",
+            "scope": "GOOGLE",
+            "types": [
+                "tourist_attraction",
+                "museum",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 5965,
+            "vicinity": "2800 East Observatory Road, Los Angeles"
+        },
+        {
+            "business_status": "CLOSED_TEMPORARILY",
+            "geometry": {
+                "location": {
+                    "lat": 34.01578769999999,
+                    "lng": -118.2862095
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 34.01897470000001,
+                        "lng": -118.28080365
+                    },
+                    "southwest": {
+                        "lat": 34.01401989999999,
+                        "lng": -118.28895945
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+            "name": "California Science Center",
+            "permanently_closed": true,
+            "photos": [
+                {
+                    "height": 4024,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/113011283406424699669\">California Science Center</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAYDTVP89DVCb6s7Si2gCmDH0OtV24RrTWmVRW4jYlzPT-nn4IY4fZZxMbcm6hPUYKdUj1nJJ6sOpXpgYoF8rlgGjFh28zIX-_kUBtYj9FqE_h3voBRIaDR8iTnRCGFlVXEhCsjOv5mIk3jVZyS1ImEREUGhTvBZTvNdpYUfwcIcK3d-MWoIH49g",
+                    "width": 6048
+                }
+            ],
+            "place_id": "ChIJ21yHTgjIwoARcrUbrsffOB4",
+            "plus_code": {
+                "compound_code": "2P87+8G Los Angeles, CA, USA",
+                "global_code": "85632P87+8G"
+            },
+            "rating": 4.7,
+            "reference": "ChIJ21yHTgjIwoARcrUbrsffOB4",
+            "scope": "GOOGLE",
+            "types": [
+                "movie_theater",
+                "tourist_attraction",
+                "museum",
+                "point_of_interest",
+                "store",
+                "establishment"
+            ],
+            "user_ratings_total": 12155,
+            "vicinity": "700 Exposition Park Drive, Los Angeles"
+        },
+        {
+            "business_status": "CLOSED_TEMPORARILY",
+            "geometry": {
+                "location": {
+                    "lat": 34.0780358,
+                    "lng": -118.4740954
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 34.09341995,
+                        "lng": -118.4729818
+                    },
+                    "southwest": {
+                        "lat": 34.07290775000001,
+                        "lng": -118.4774362
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+            "name": "The Getty",
+            "permanently_closed": true,
+            "photos": [
+                {
+                    "height": 2242,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/113042727433747584880\">Cool Things To Do</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAdqb9E1j2SYPwmnrLiYsRgs7u5_FD1STokWY6_069Dmik1UaYD60p-_LIZJi-ywrOkvyCPTweCl55Mv6eKYSch-LVcHep9KJ6SxcFmILX2pqZXpzJJRkxxazJj7QiY3tiEhAesQIecFaE9HvTus4NnAeyGhT7coN6dSC-MxbWjxZ9EMdVFGdPeA",
+                    "width": 3992
+                }
+            ],
+            "place_id": "ChIJbzYnQte8woARJaqqFVpKeNo",
+            "plus_code": {
+                "compound_code": "3GHG+69 Los Angeles, CA, USA",
+                "global_code": "85633GHG+69"
+            },
+            "rating": 4.8,
+            "reference": "ChIJbzYnQte8woARJaqqFVpKeNo",
+            "scope": "GOOGLE",
+            "types": [
+                "tourist_attraction",
+                "museum",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 20897,
+            "vicinity": "1200 Getty Center Drive, Los Angeles"
+        },
+        {
+            "business_status": "CLOSED_TEMPORARILY",
+            "geometry": {
+                "location": {
+                    "lat": 34.1026919,
+                    "lng": -118.3404156
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 34.1037244802915,
+                        "lng": -118.3389085697085
+                    },
+                    "southwest": {
+                        "lat": 34.1010265197085,
+                        "lng": -118.3416065302915
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+            "name": "Dolby Theatre",
+            "permanently_closed": true,
+            "photos": [
+                {
+                    "height": 1080,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/106748439247716180853\">Karl 1974</a>"
+                    ],
+                    "photo_reference": "CmRaAAAADhZNyV1jgv_9I3lxh2KViZ7ctocPm9gwQbJFkV8Zs2DR4VBiWUPI51rGcbq01mltshkzRBNf34wyBwGS0db7PEFgdhdH32CT1q0aQUDAJye_80F0S8iQaBYqH8U9I5JAEhB06QTFgYx-t47PC1JBgfG8GhSpbxF3vKXCxrP9JglfO4CyYXBvIQ",
+                    "width": 1620
+                }
+            ],
+            "place_id": "ChIJxxS7wyO_woARdqtZOw0d8PU",
+            "plus_code": {
+                "compound_code": "4M35+3R Los Angeles, CA, USA",
+                "global_code": "85634M35+3R"
+            },
+            "rating": 4.6,
+            "reference": "ChIJxxS7wyO_woARdqtZOw0d8PU",
+            "scope": "GOOGLE",
+            "types": [
+                "movie_theater",
+                "tourist_attraction",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 2644,
+            "vicinity": "6801 Hollywood Boulevard, Hollywood"
+        },
+        {
+            "business_status": "CLOSED_TEMPORARILY",
+            "geometry": {
+                "location": {
+                    "lat": 34.0553454,
+                    "lng": -118.249845
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 34.0567844302915,
+                        "lng": -118.2472536
+                    },
+                    "southwest": {
+                        "lat": 34.0540864697085,
+                        "lng": -118.2518249
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+            "name": "Walt Disney Concert Hall",
+            "permanently_closed": true,
+            "photos": [
+                {
+                    "height": 1367,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/105303505373661530610\">indoorfish</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAbKxx_OxdP3S4T-bcEtt5U3pG7I_QPzNSZPpST_dNpLTkUPko9kfRGOM3FWYXKqR6Wb-dQRZrj1NSwmeTob5kjXcNDjgXk0HRGF3Y9Bpate5uHmG7BHNHdL2Izvvcd9ByEhBDGOZ4ID_K8-_EEpu3fnetGhQkOwrJiZYnsTDJVeBqMBM1sNaIaw",
+                    "width": 2048
+                }
+            ],
+            "place_id": "ChIJ0xG7n03GwoARsDH_OyyMcrM",
+            "plus_code": {
+                "compound_code": "3Q42+43 Los Angeles, CA, USA",
+                "global_code": "85633Q42+43"
+            },
+            "rating": 4.7,
+            "reference": "ChIJ0xG7n03GwoARsDH_OyyMcrM",
+            "scope": "GOOGLE",
+            "types": [
+                "tourist_attraction",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 7474,
+            "vicinity": "111 South Grand Avenue, Los Angeles"
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "geometry": {
+                "location": {
+                    "lat": 34.112224,
+                    "lng": -118.3391279
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 34.1139862802915,
+                        "lng": -118.3372216697085
+                    },
+                    "southwest": {
+                        "lat": 34.1112883197085,
+                        "lng": -118.3399196302915
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+            "name": "Hollywood Bowl",
+            "photos": [
+                {
+                    "height": 361,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/112396339482457198943\">Melissa Adlhoch</a>"
+                    ],
+                    "photo_reference": "CmRaAAAABvSlUuVuO4Qoxfgy0cWmrhTehTUUZY4UxclF9ozRTNcQi2ZSZ75SZSkIwTA1_ERTqsCsqdPbwcAm7x95DgrHDVfEuuYARrRYNhMUarvL9ZAEmcUBCRDu4rmYfz16eZFkEhB52X4sspjVOot9ePEEvn9QGhS1HRqJmhePlpr2bRpCqeYdqvC8Nw",
+                    "width": 600
+                }
+            ],
+            "place_id": "ChIJMwknwRu_woAR_eI2OM9ib2o",
+            "plus_code": {
+                "compound_code": "4M66+V8 Los Angeles, CA, USA",
+                "global_code": "85634M66+V8"
+            },
+            "price_level": 3,
+            "rating": 4.7,
+            "reference": "ChIJMwknwRu_woAR_eI2OM9ib2o",
+            "scope": "GOOGLE",
+            "types": [
+                "tourist_attraction",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 13394,
+            "vicinity": "2301 North Highland Avenue, Los Angeles"
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "geometry": {
+                "location": {
+                    "lat": 33.7526356,
+                    "lng": -118.1903235
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 33.7539521802915,
+                        "lng": -118.1889903697085
+                    },
+                    "southwest": {
+                        "lat": 33.7512542197085,
+                        "lng": -118.1916883302915
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+            "name": "The Queen Mary",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 3264,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/116867749553884425241\">Greg Ketchum</a>"
+                    ],
+                    "photo_reference": "CmRZAAAA1n9wffOkn7k0raElR44IfGgWe-O_WISJO_sPMnY2_v9vTjmKBiJc6Wexu5DPn_pdwdhhpOYby85ToO3l7LNrauhksSNKiFNl94O6pWQG4HRNjvYMxak-yxZA-gbAZ1njEhBPdDz8FqwCovO-Ljq7H6q8GhRU8d-Xfo4YyBcsoV03YJhFQD7b6Q",
+                    "width": 4928
+                }
+            ],
+            "place_id": "ChIJlWtAnNgw3YARNP74lzYz21U",
+            "plus_code": {
+                "compound_code": "QR35+3V Long Beach, CA, USA",
+                "global_code": "8553QR35+3V"
+            },
+            "price_level": 2,
+            "rating": 4.3,
+            "reference": "ChIJlWtAnNgw3YARNP74lzYz21U",
+            "scope": "GOOGLE",
+            "types": [
+                "tourist_attraction",
+                "lodging",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 21224,
+            "vicinity": "1126 Queens Highway, Long Beach"
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "geometry": {
+                "location": {
+                    "lat": 34.1613284,
+                    "lng": -118.1676462
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 34.16684705,
+                        "lng": -118.1616259
+                    },
+                    "southwest": {
+                        "lat": 34.15257524999998,
+                        "lng": -118.1737679
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/stadium-71.png",
+            "name": "Rose Bowl Stadium",
+            "photos": [
+                {
+                    "height": 3000,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/103390738779408718609\">Blue Dream Geospatial</a>"
+                    ],
+                    "photo_reference": "CmRZAAAAVtqsmf85MiwyUWk5Xlx1L0p3TqJah2w41KR5Ra70nAWtEzlDtk1LqdKo8rKpHOZ0tKF5TcvKkVuJxPZoviIhk0A-j5oeLxMU2wBvGVTnd7AzPVu92uBnor9mgcPGL_zgEhDfNe5HpzhLBVYt-eCeVlDfGhTYu5UKOxtiZRvJ1q5J0THTKP8JzQ",
+                    "width": 4000
+                }
+            ],
+            "place_id": "ChIJkRS5KKTDwoARL78qHMf9T0w",
+            "plus_code": {
+                "compound_code": "5R6J+GW Pasadena, CA, USA",
+                "global_code": "85635R6J+GW"
+            },
+            "rating": 4.5,
+            "reference": "ChIJkRS5KKTDwoARL78qHMf9T0w",
+            "scope": "GOOGLE",
+            "types": [
+                "stadium",
+                "tourist_attraction",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 6927,
+            "vicinity": "1001 Rose Bowl Drive, Pasadena"
+        },
+        {
+            "business_status": "CLOSED_TEMPORARILY",
+            "geometry": {
+                "location": {
+                    "lat": 34.0637378,
+                    "lng": -118.355451
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 34.06548130000001,
+                        "lng": -118.3543896
+                    },
+                    "southwest": {
+                        "lat": 34.0623363,
+                        "lng": -118.3587541
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+            "name": "The La Brea Tar Pits and Museum",
+            "permanently_closed": true,
+            "photos": [
+                {
+                    "height": 3006,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/108302286871740629003\">Vernon A Jones Jr</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAbT2a1ZwdJZHiB6JX-o3emDYjPoSkwLv55ctmc_uFbE6Rvs3fpKspGA5VbWO4zSJi3334PJQDZylBQ-36hl-_PIITGKdk6zYTPqvr5wgxPoxQ20IaXzcwR38LsXqUfbdWEhBIxaexPp39CimS_5KpO0NnGhTb7skzTtt2Qih44MPeBCybJjgdfQ",
+                    "width": 5344
+                }
+            ],
+            "place_id": "ChIJ_yD1_SK5woARmWLyCit3znQ",
+            "plus_code": {
+                "compound_code": "3J7V+FR Los Angeles, CA, USA",
+                "global_code": "85633J7V+FR"
+            },
+            "rating": 4.6,
+            "reference": "ChIJ_yD1_SK5woARmWLyCit3znQ",
+            "scope": "GOOGLE",
+            "types": [
+                "museum",
+                "tourist_attraction",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 9100,
+            "vicinity": "5801 Wilshire Boulevard, Los Angeles"
+        },
+        {
+            "business_status": "CLOSED_TEMPORARILY",
+            "geometry": {
+                "location": {
+                    "lat": 34.1365544,
+                    "lng": -118.2942
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 34.17812335,
+                        "lng": -118.2564482
+                    },
+                    "southwest": {
+                        "lat": 34.08504075,
+                        "lng": -118.3269518
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+            "name": "Griffith Park",
+            "permanently_closed": true,
+            "photos": [
+                {
+                    "height": 3024,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/104090936015184909231\">Shoumesh Rawat</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAL68dcOmZZraeNxw6_3MX7A5t1D5YrqQLIbtT2Hq6nxu5Kw3S4WLy6vcqpZCvc98vX1QzGNGJY2LeItSadw-eEd_A5R5uzQ59jDSUnZ0spjLSgMtRPaE23GW7VqBLWpuqEhBShjjxJDYxS2P4uRrHwr5eGhTDmgaWFR1ECmtlAzhJLZ3v4LFThg",
+                    "width": 4032
+                }
+            ],
+            "place_id": "ChIJ9590IY3AwoARquS6ie60MUc",
+            "plus_code": {
+                "compound_code": "4PP4+J8 Los Angeles, CA, USA",
+                "global_code": "85634PP4+J8"
+            },
+            "price_level": 0,
+            "rating": 4.7,
+            "reference": "ChIJ9590IY3AwoARquS6ie60MUc",
+            "scope": "GOOGLE",
+            "types": [
+                "park",
+                "tourist_attraction",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 46410,
+            "vicinity": "4730 Crystal Springs Drive, Los Angeles"
+        },
+        {
+            "business_status": "CLOSED_TEMPORARILY",
+            "geometry": {
+                "location": {
+                    "lat": 33.8443038,
+                    "lng": -118.0002265
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 33.8462260302915,
+                        "lng": -117.99680605
+                    },
+                    "southwest": {
+                        "lat": 33.8435280697085,
+                        "lng": -118.00136665
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+            "name": "Knott's Berry Farm",
+            "permanently_closed": true,
+            "photos": [
+                {
+                    "height": 3268,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/105303505373661530610\">indoorfish</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAn1vmbsPCPpKF-K5wQda0VkVxFhT-t4ryAufw7xelOIj2c8rfaDOiY3sn25PlK_KF6xPqzKoxph5CzxiLu7iO2Zui91BlnuuyeO98YgevA56oK2MG-xIyLZhI5vYqTHj3EhCg0bvS_Tuem_2x30q3kLwOGhQK1XW2Frs4F-cxGBWcjfrtAuXZkw",
+                    "width": 4895
+                }
+            ],
+            "place_id": "ChIJo3h_9V8p3YARVTAekE45jq4",
+            "plus_code": {
+                "compound_code": "RXVX+PW Buena Park, CA, USA",
+                "global_code": "8553RXVX+PW"
+            },
+            "rating": 4.6,
+            "reference": "ChIJo3h_9V8p3YARVTAekE45jq4",
+            "scope": "GOOGLE",
+            "types": [
+                "tourist_attraction",
+                "amusement_park",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 41846,
+            "vicinity": "8039 Beach Boulevard, Buena Park"
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "geometry": {
+                "location": {
+                    "lat": 34.136108,
+                    "lng": -118.3537141
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 34.13751233029151,
+                        "lng": -118.35287595
+                    },
+                    "southwest": {
+                        "lat": 34.13481436970851,
+                        "lng": -118.35622855
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+            "name": "Universal CityWalk Hollywood",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 3024,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/107367323300201386407\">XGP</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAkVqvkDvi-Z6wOP4CyWIpnpewQa9sQaBJPtEBWmDhaQAVQ1mB_0FdzimH9FdJXe0sSk34WLh-F04wWgJf3KcIicb02Oj6gGo0YgIHF-lcF6XpGfqFZsa-EGaRdUCAf0LNEhBiO6o3kijb9oP7iR6aXKe3GhTl4qs7V9OF8M5KSmDpap7Xpbp7UA",
+                    "width": 4032
+                }
+            ],
+            "place_id": "ChIJdzBcVka-woARXKXAmSS8NW4",
+            "plus_code": {
+                "compound_code": "4JPW+CG Universal City, CA, USA",
+                "global_code": "85634JPW+CG"
+            },
+            "rating": 4.6,
+            "reference": "ChIJdzBcVka-woARXKXAmSS8NW4",
+            "scope": "GOOGLE",
+            "types": [
+                "shopping_mall",
+                "tourist_attraction",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 45155,
+            "vicinity": "100 Universal City Plaza, Universal City"
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "geometry": {
+                "location": {
+                    "lat": 34.06868850000001,
+                    "lng": -118.231565
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 34.07239595000001,
+                        "lng": -118.22373685
+                    },
+                    "southwest": {
+                        "lat": 34.06263415,
+                        "lng": -118.23893745
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+            "name": "Los Angeles State Historic Park",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 809,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/113038594341580212374\">Calvin Wilson</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAgZsDSdB_UQyWZzrDqIqbZ4RJnYcwtovGWdmhzQBCcQ596j0QOX1JWcVNZXXETHKIu1RzE5AErOAYv7Y-LK08da8uJSsnexDFtHGjhkjJBClASL7myFO_7Nl3Lc-4HR23EhB_PObq8OeBaiVI2iwNPe0EGhTC09Pjru3H7tR6jAVwRWKSrv8ygw",
+                    "width": 1080
+                }
+            ],
+            "place_id": "ChIJgfk0NV7GwoAR4ja9LMYRY0s",
+            "plus_code": {
+                "compound_code": "3Q99+F9 Los Angeles, CA, USA",
+                "global_code": "85633Q99+F9"
+            },
+            "rating": 4.6,
+            "reference": "ChIJgfk0NV7GwoAR4ja9LMYRY0s",
+            "scope": "GOOGLE",
+            "types": [
+                "tourist_attraction",
+                "park",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 1961,
+            "vicinity": "1245 North Spring Street, Los Angeles"
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "geometry": {
+                "location": {
+                    "lat": 33.7625243,
+                    "lng": -118.1967038
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 33.76400535,
+                        "lng": -118.1952396697085
+                    },
+                    "southwest": {
+                        "lat": 33.75947915000001,
+                        "lng": -118.1979376302915
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+            "name": "Aquarium of the Pacific",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 3024,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/110355270184275670339\">RR Kalra</a>"
+                    ],
+                    "photo_reference": "CmRaAAAA1Tt0Ew1Q1_8f0uB-ZPwNT2oXtwWzPf6eXbVf34UhuGSVf2Sb1vb8O_7gfzGE-DRR50a3c-Nd6jSNbEyKLjHqXcB4NVtkCA8yy2s8dfyavppr8unT2lMmVohnFc7hypimEhAWmj0YF0Svo-YU_q4gFca5GhSC4U6Ofid0LxFuP9CSCE_PqLTI_w",
+                    "width": 4032
+                }
+            ],
+            "place_id": "ChIJtXzMMjAx3YARll7hgkff2pY",
+            "plus_code": {
+                "compound_code": "QR73+28 Long Beach, CA, USA",
+                "global_code": "8553QR73+28"
+            },
+            "rating": 4.6,
+            "reference": "ChIJtXzMMjAx3YARll7hgkff2pY",
+            "scope": "GOOGLE",
+            "types": [
+                "aquarium",
+                "tourist_attraction",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 21197,
+            "vicinity": "100 Aquarium Way, Long Beach"
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "geometry": {
+                "location": {
+                    "lat": 34.1568,
+                    "lng": -118.3252223
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 34.16118245,
+                        "lng": -118.3223314
+                    },
+                    "southwest": {
+                        "lat": 34.15212744999999,
+                        "lng": -118.3285462
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+            "name": "Walt Disney Studios",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 798,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/106771803443409432787\">The Walt Disney Studios</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAC2ASwNZvCnJasnwicYhr2TSk0U8qLBskOB8kzhxe7K3UBg5AobHQTeCBm0QNVxbIORKh0w9SSjOO03P9yPAdhnY2g9XrI8tgKWvvCA5qf3tPypNyOvDoLytdmnOdttXJEhCdbFQivtdSZNDUE-V4X6vZGhQcLSsXa-S26g_hn9-BSA3a5uCmIw",
+                    "width": 1200
+                }
+            ],
+            "place_id": "ChIJkyPnxsO_woARXQl-tdWAFi8",
+            "plus_code": {
+                "compound_code": "5M4F+PW Burbank, CA, USA",
+                "global_code": "85635M4F+PW"
+            },
+            "rating": 4.6,
+            "reference": "ChIJkyPnxsO_woARXQl-tdWAFi8",
+            "scope": "GOOGLE",
+            "types": [
+                "tourist_attraction",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 839,
+            "vicinity": "500 South Buena Vista Street, Burbank"
+        }
+    ],
+    "status": "OK"
+}

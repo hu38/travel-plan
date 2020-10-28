@@ -1,0 +1,960 @@
+{
+    "html_attributions": [],
+    "next_page_token": "AcnaJv0jyi5stC1XSubHHnJk_NK6etHDlzEJjKaO49SwSsfBhZ6KAZkSncd8DajyfnUzybJ6BxWCrrICDvCPjCXwRyqyWDEfgyEx93CCSKhRUhZ8jweVryaIfll-A6QwAYVVmoUlk1bDJjFWd4GZxWbJcrwRQbnBcGnvsobi5R-H3iF6kmLI9bcQTQwI7ekVL4TR0nu1xjK_73nN9gOJw_xfzSH79cS6sv05g9vqM5Dpa4Z9a6A12Jnc98fdjfi9nz1kk5V-IXaO5n02p5ZHoNpqxgQf6F7iLOeTnhIrjIkAvrcDrYXTUAeYvBpe57WRgYpabwSEsdJcFqD2x5alF9TZRnV7oJ-XRVVgdZycGhrYacJ7zJo58NWlVTFS2Qcqis3CyeidIUIiChuSgNQcKrZJeP8EVekmNxZj7O3d-vDbdMdc4C_KhVU_M-Dl_2_Yr_W2ktD36T_RJN5THhX-DuVmFVjpJ1gCsOiPPGvyM9hn8basQJiLDGlnQzS4dsjoXkqicuHF40xIQJTnam6O-opM0FCzIu1MvkLNw-4OR1XO1LUWvZQ0PjQQJRvxOz3qjaGS90MSDqMFX-HK2BNHBMqfnwJMGe5CUFpKfmxcIfx1pGDFia5YxWIS5vfQc4qAIrJcqYekAZr97dlQzi52XowmtA",
+    "results": [
+        {
+            "business_status": "OPERATIONAL",
+            "formatted_address": "633 W 5th St, Los Angeles, CA 90071, United States",
+            "geometry": {
+                "location": {
+                    "lat": 34.0515029,
+                    "lng": -118.2544457
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 34.05245537989271,
+                        "lng": -118.2531234701073
+                    },
+                    "southwest": {
+                        "lat": 34.04975572010727,
+                        "lng": -118.2558231298927
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+            "name": "Public Art \"Source Figure\"",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 3875,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/102177209105474832657\">Kenneth Lui</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAJxbJZe_KmaPum3LuKxToDNpVZtMxp9eshbB0_LFV0EEVbrrLRiaVwLSbdsqEpMhJKN9LQfYewiCyXPo6Mr6qXoPWdAYAIl6Qo0zFxab7djUjuYe5ADRPLUnI4WmX52jdEhCuyv9aYkigk4K6EspYtjbYGhRNljKUgbfK8Qq3YcBfcK6i201Zfw",
+                    "width": 2178
+                }
+            ],
+            "place_id": "ChIJ_3AGFLPHwoAReeS6IhMFyes",
+            "plus_code": {
+                "compound_code": "3P2W+J6 Los Angeles, California, United States",
+                "global_code": "85633P2W+J6"
+            },
+            "rating": 4,
+            "reference": "ChIJ_3AGFLPHwoAReeS6IhMFyes",
+            "types": [
+                "tourist_attraction",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 1
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "formatted_address": "2330 E 1st St, Los Angeles, CA 90033, United States",
+            "geometry": {
+                "location": {
+                    "lat": 34.0436042,
+                    "lng": -118.210195
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 34.04506807989272,
+                        "lng": -118.2087790701073
+                    },
+                    "southwest": {
+                        "lat": 34.04236842010728,
+                        "lng": -118.2114787298927
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+            "name": "Public Art \"Landings\"",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 1536,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/114869409171934317910\">Public Art in Public Places</a>"
+                    ],
+                    "photo_reference": "CmRaAAAA5zsVQNC3MQ2Uf21PRAhdZeLC6AbSdphYQg0el7Fg-7yjF2WRYXhhOjWEL222rRaBZ7aEC6-1NQLYH7M4_NRGuHWWp_aa9yu90TQqjRTaXawMmxEeaX49N5_JD0lXW5yWEhBwB81YYbp-F_0DGj1hZzmgGhTi-2ZLJa9rw1jWybHkGoxemeqOXg",
+                    "width": 2048
+                }
+            ],
+            "place_id": "ChIJXenIQgbGwoARcsVs6JFLIvo",
+            "plus_code": {
+                "compound_code": "2QVQ+CW Los Angeles, California, United States",
+                "global_code": "85632QVQ+CW"
+            },
+            "rating": 0,
+            "reference": "ChIJXenIQgbGwoARcsVs6JFLIvo",
+            "types": [
+                "tourist_attraction",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 0
+        },
+        {
+            "business_status": "CLOSED_TEMPORARILY",
+            "formatted_address": "1200 Getty Center Dr, Los Angeles, CA 90049, United States",
+            "geometry": {
+                "location": {
+                    "lat": 34.07803579999999,
+                    "lng": -118.4740954
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 34.09341995,
+                        "lng": -118.4729818
+                    },
+                    "southwest": {
+                        "lat": 34.07290775000001,
+                        "lng": -118.4774362
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+            "name": "The Getty",
+            "permanently_closed": true,
+            "photos": [
+                {
+                    "height": 3024,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/104760340754793968845\">羅百良</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAiFvhCrrQAUm7t9vBB5tx_DxWX6xGD-NU13K3fNG-x2N79glGV6zS3002hSQA0hVuSPjiEEeuBJMHzGilYa1NnBeKamrnm1e87kDwYHNa6VFRypPPiIIpiJHosjPJustkEhD-5ScZF_bIR3Lj4eclAi9sGhRYHkLKq6TerlaoIDqB1SM0AuL55A",
+                    "width": 4032
+                }
+            ],
+            "place_id": "ChIJbzYnQte8woARJaqqFVpKeNo",
+            "plus_code": {
+                "compound_code": "3GHG+69 Los Angeles, California, United States",
+                "global_code": "85633GHG+69"
+            },
+            "rating": 4.8,
+            "reference": "ChIJbzYnQte8woARJaqqFVpKeNo",
+            "types": [
+                "tourist_attraction",
+                "museum",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 20897
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "formatted_address": "Hollywood Boulevard, Vine St, Los Angeles, CA 90028, United States",
+            "geometry": {
+                "location": {
+                    "lat": 34.1015549,
+                    "lng": -118.3268568
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 34.10290527989272,
+                        "lng": -118.3254307201073
+                    },
+                    "southwest": {
+                        "lat": 34.10020562010727,
+                        "lng": -118.3281303798928
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+            "name": "Hollywood Walk of Fame",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 1071,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/102270258873433364950\">Wonder Hearts</a>"
+                    ],
+                    "photo_reference": "CmRaAAAA6bBuLaw5JgqPsHh3KAAqFkSz3n-NAjhzIbrC0U7qwOjcQ83ZDmNghQ0SqFl9hfqgSmF-n76F7tspddw-iXNRpJOzuMAym6CGCk5Qn94PkROBy4Z0zdzUmwTFDnG7rNDOEhDXs_i0Y_DFrEUEgS-PL9CpGhTL_yPQHqeGY5e5s1xv_8DhCtPsdA",
+                    "width": 1600
+                }
+            ],
+            "place_id": "ChIJXyC7WTu_woARPvVMCHBXd4U",
+            "plus_code": {
+                "compound_code": "4M2F+J7 Los Angeles, California, United States",
+                "global_code": "85634M2F+J7"
+            },
+            "rating": 4,
+            "reference": "ChIJXyC7WTu_woARPvVMCHBXd4U",
+            "types": [
+                "tourist_attraction",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 30794
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "formatted_address": "319 E 2nd St, Los Angeles, CA 90012, United States",
+            "geometry": {
+                "location": {
+                    "lat": 34.0493433,
+                    "lng": -118.2396309
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 34.05074017989272,
+                        "lng": -118.2382336701073
+                    },
+                    "southwest": {
+                        "lat": 34.04804052010728,
+                        "lng": -118.2409333298927
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+            "name": "Little Tokyo",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 2448,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/116881546991254373432\">Victor Mora</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAGthPZWY2znLgqSyTsxQc8FLnMR2Yh7vpRmyVTvLHF9oFbxafBfzti-ri6_gW7Bv1tRDWNiLYmxqK89c6buSg5Ex4SBO9XJ7uzCwm4_1vtVPFkOSANX-9xJHczeOeefqOEhCyF_F1kyWl4nRjxxtsHhyPGhS-l4Pc0H-9-e5rPrcfV4G8kdf2dA",
+                    "width": 3264
+                }
+            ],
+            "place_id": "ChIJl7OFCzfGwoARZYJhjm93dIg",
+            "plus_code": {
+                "compound_code": "2QX6+P4 Los Angeles, California, United States",
+                "global_code": "85632QX6+P4"
+            },
+            "rating": 4.5,
+            "reference": "ChIJl7OFCzfGwoARZYJhjm93dIg",
+            "types": [
+                "tourist_attraction",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 944
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "formatted_address": "943 N Broadway, Los Angeles, CA 90012, United States",
+            "geometry": {
+                "location": {
+                    "lat": 34.065226,
+                    "lng": -118.237499
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 34.06687617989272,
+                        "lng": -118.2360722201073
+                    },
+                    "southwest": {
+                        "lat": 34.06417652010727,
+                        "lng": -118.2387718798928
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+            "name": "Chinatown Central Plaza",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 2304,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/106095321625128062623\">Tak Hang Fung</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAuwbXlB5wblfwsA4REaQm1On_5NksLWhnZOOUv2OILFu7SFK0NFJZ8YCtNDaC2ME2e3v_iwpCXv9RcK9GhTmtJqbT8FUKJGB5_k8G23S5GrWKZA_DaO_9N07ExW0zpm0OEhDWFz_vHfrQsxQ71fQqQ9taGhS64l0sQT2rSk0KnBVKG-8gdjTHhg",
+                    "width": 4096
+                }
+            ],
+            "place_id": "ChIJodIfJFrGwoARLdxWbyjLv8g",
+            "plus_code": {
+                "compound_code": "3Q87+32 Los Angeles, California, United States",
+                "global_code": "85633Q87+32"
+            },
+            "rating": 4.2,
+            "reference": "ChIJodIfJFrGwoARLdxWbyjLv8g",
+            "types": [
+                "tourist_attraction",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 6389
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "formatted_address": "E 1st St, Los Angeles, CA 90012, United States",
+            "geometry": {
+                "location": {
+                    "lat": 34.0497696,
+                    "lng": -118.2402411
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 34.05111507989273,
+                        "lng": -118.2388068201073
+                    },
+                    "southwest": {
+                        "lat": 34.04841542010728,
+                        "lng": -118.2415064798927
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+            "name": "Public Art \"Aurora\"",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 1849,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/114869409171934317910\">Public Art in Public Places</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAsjaVdjN-HDCVd5IAM5vrExOSM9joPhGClEK2KhfGI1yHKRAWzz8CrzD2s43F9i17aH5EeEsBj_g6UUH8Of0KWGHcsrl9aVwO3_faQtaoJsny9PzaDpdR7mt2_iZVy2czEhAfCW1jCrgAZqbb6mVnq4p3GhQEvhdYe1M_Ph6JglIcfn-N5zBx2g",
+                    "width": 2596
+                }
+            ],
+            "place_id": "ChIJMxLqwkfGwoARQKi68VkhoA0",
+            "plus_code": {
+                "compound_code": "2QX5+WW Los Angeles, California, United States",
+                "global_code": "85632QX5+WW"
+            },
+            "rating": 0,
+            "reference": "ChIJMxLqwkfGwoARQKi68VkhoA0",
+            "types": [
+                "tourist_attraction",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 0
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "formatted_address": "Pershing Square, S Hill St, Los Angeles, CA 90013, United States",
+            "geometry": {
+                "location": {
+                    "lat": 34.0485167,
+                    "lng": -118.2525559
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 34.04978182989272,
+                        "lng": -118.2511400201073
+                    },
+                    "southwest": {
+                        "lat": 34.04708217010727,
+                        "lng": -118.2538396798927
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+            "name": "Public Art \"The Doughboy\"",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 4032,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/117268049427195277728\">A Google User</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAZWsgSv75U1Ggw_6LR3YDLgikYIMrGBk0McI7UzMtMO5Dgfd9rDylDa-_Hsp4a2ODieO1QghEj_s2Nuo6hKDUuGtCVZnumGYGHpAPPNhDMd8r6alrLE-OvWxbyAMFo8s3EhBmp1iRRPOHd8LT-apzFhd_GhSyr4Pjf2bOcSqFh39VpcH_NnqLcw",
+                    "width": 3024
+                }
+            ],
+            "place_id": "ChIJXx-PMkvGwoARQiW6kKylWAY",
+            "plus_code": {
+                "compound_code": "2PXW+CX Los Angeles, California, United States",
+                "global_code": "85632PXW+CX"
+            },
+            "rating": 0,
+            "reference": "ChIJXx-PMkvGwoARQiW6kKylWAY",
+            "types": [
+                "tourist_attraction",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 0
+        },
+        {
+            "business_status": "CLOSED_TEMPORARILY",
+            "formatted_address": "6933 Hollywood Blvd, Hollywood, CA 90028, United States",
+            "geometry": {
+                "location": {
+                    "lat": 34.1017476,
+                    "lng": -118.3415776
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 34.10299617989272,
+                        "lng": -118.3402289701073
+                    },
+                    "southwest": {
+                        "lat": 34.10029652010728,
+                        "lng": -118.3429286298927
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+            "name": "Madame Tussauds Hollywood",
+            "permanently_closed": true,
+            "photos": [
+                {
+                    "height": 2160,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/114118451392288609524\">Pako Valera</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAgT8RyltU0piqN_Qp1xJ7UoMSh9Cp_UpBlxBhABZmAjx_2dwGLGuuTKM8oVccsxdFrTFLJlqnou1v2QbZxBGXnxvcat-34DVc-Hxoi13bm1z2L50W_seUYG3QY0I2Kc7LEhBqnVfRxr144Nnwn5_J0BZ-GhTnKpdZjLJoAOAWt5dtuwOmaFc8mA",
+                    "width": 2880
+                }
+            ],
+            "place_id": "ChIJlaOcbiG_woARZMl0UJaNYAc",
+            "plus_code": {
+                "compound_code": "4M25+M9 Los Angeles, California, United States",
+                "global_code": "85634M25+M9"
+            },
+            "rating": 4.5,
+            "reference": "ChIJlaOcbiG_woARZMl0UJaNYAc",
+            "types": [
+                "tourist_attraction",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 5465
+        },
+        {
+            "business_status": "CLOSED_TEMPORARILY",
+            "formatted_address": "221 S Grand Ave, Los Angeles, CA 90012, United States",
+            "geometry": {
+                "location": {
+                    "lat": 34.0541472,
+                    "lng": -118.2505056
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 34.05579992989272,
+                        "lng": -118.249345
+                    },
+                    "southwest": {
+                        "lat": 34.05310027010728,
+                        "lng": -118.2520746
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+            "name": "The Broad",
+            "permanently_closed": true,
+            "photos": [
+                {
+                    "height": 3456,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/117441245252193412332\">Enil Enchev</a>"
+                    ],
+                    "photo_reference": "CmRaAAAASKCVTnHUf2AfZcMbQWIXWq7zwOAfRC8FEPyjR7TuHz-hsaDGJ6D2m6V5kmO8UInKafz1NperLq1sujJjwjI4CDEEM2rZ9phKCtLTwBUGEbLbmANUDi_KSlTtctaprzbbEhDq-3Md8_bysrX6Ia1CxypEGhS7AtAJYW6unNgp6BOASKccH-7cHw",
+                    "width": 4608
+                }
+            ],
+            "place_id": "ChIJXaYsEk3GwoARvx7RKBUE8Zg",
+            "plus_code": {
+                "compound_code": "3P3X+MQ Los Angeles, California, United States",
+                "global_code": "85633P3X+MQ"
+            },
+            "rating": 4.6,
+            "reference": "ChIJXaYsEk3GwoARvx7RKBUE8Zg",
+            "types": [
+                "art_gallery",
+                "tourist_attraction",
+                "museum",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 10243
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "formatted_address": "YMCA Courtyard, W 4th St, Los Angeles, CA 90071, United States",
+            "geometry": {
+                "location": {
+                    "lat": 34.0524028,
+                    "lng": -118.2545274
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 34.05368852989272,
+                        "lng": -118.2529265701073
+                    },
+                    "southwest": {
+                        "lat": 34.05098887010727,
+                        "lng": -118.2556262298928
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+            "name": "Public Art \"Olympiade '84\"",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 1536,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/110370895740150301591\">Public Art in Public Places</a>"
+                    ],
+                    "photo_reference": "CmRaAAAA9r5B2lmRj5u8kRORQBp4UlOX-3Bs7cpGnD9Ay69jiNL5y-TF3nVCSpgV5pJq9peszyNQDKFyq9l-sszdjMKQAtpIPZp3CpxQVd5uCZZ9erOyO5qNX0ouM9Am_MP7I8KREhD3gUOX-_U-KDhdA-tJj-HZGhQzJDHU8IfqS_NdH1kLttB8MvxGYQ",
+                    "width": 2048
+                }
+            ],
+            "place_id": "ChIJN0PdHbPHwoARxdisXpCAaas",
+            "plus_code": {
+                "compound_code": "3P2W+X5 Los Angeles, California, United States",
+                "global_code": "85633P2W+X5"
+            },
+            "rating": 4,
+            "reference": "ChIJN0PdHbPHwoARxdisXpCAaas",
+            "types": [
+                "tourist_attraction",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 1
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "formatted_address": "Unnamed Road, Los Angeles, CA 90028, United States",
+            "geometry": {
+                "location": {
+                    "lat": 34.101442,
+                    "lng": -118.3420151
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 34.10279182989273,
+                        "lng": -118.3406652701073
+                    },
+                    "southwest": {
+                        "lat": 34.10009217010728,
+                        "lng": -118.3433649298928
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+            "name": "Los Angeles Times's Star",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 4160,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/100873294229536788736\">A Google User</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAsGHQf4A1GXx94gXkLzBrynfweRTI4P4Cu5pcwW7fJA_vnAWrgvvNgzrR9snmsuvJr7M_qTXMYFzQ9vS5eOiR2EJezO7p0zRcohN2Pf5kjT4py-aK02BfSYliSMBjBBAMEhDljHVJeRV3n4uL8XorNcW-GhScG_19ePhvta52IFrhMi2X4GaYEA",
+                    "width": 3120
+                }
+            ],
+            "place_id": "ChIJgzHea0W_woAR63bUP0H3k_M",
+            "plus_code": {
+                "compound_code": "4M25+H5 Los Angeles, California, United States",
+                "global_code": "85634M25+H5"
+            },
+            "rating": 5,
+            "reference": "ChIJgzHea0W_woAR63bUP0H3k_M",
+            "types": [
+                "tourist_attraction",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 2
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "formatted_address": "Station Platform, 3214 Flower St, Los Angeles, CA 90007, United States",
+            "geometry": {
+                "location": {
+                    "lat": 34.02198610000001,
+                    "lng": -118.2781583
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 34.02337582989272,
+                        "lng": -118.2768995701073
+                    },
+                    "southwest": {
+                        "lat": 34.02067617010728,
+                        "lng": -118.2795992298927
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+            "name": "Public Art \"Urban Dualities\"",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 1536,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/115181039335312980997\">Manuel GilHerr</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAK_BWYlCY8MSgEugG6UmoxKCKiRfKT57_2wVu7DtyQawb42TvNo8EFeetXH_Z0LeBDlW08m431K5LUu-XmQ0Ab8oQMR-SC_GBKY7IiWpwJDz7wTfyyjwz-G7gTDHOgci3EhCmFq_VOhgkZCXIdsztHkqrGhQrfDI61Nx07KH-4AwUJTStWTRTkQ",
+                    "width": 2560
+                }
+            ],
+            "place_id": "ChIJVeR05uDHwoAR-DPdPQoo_XU",
+            "plus_code": {
+                "compound_code": "2PCC+QP Los Angeles, California, United States",
+                "global_code": "85632PCC+QP"
+            },
+            "rating": 0,
+            "reference": "ChIJVeR05uDHwoAR-DPdPQoo_XU",
+            "types": [
+                "tourist_attraction",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 0
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "formatted_address": "5515 Melrose Ave, Los Angeles, CA 90038, United States",
+            "geometry": {
+                "location": {
+                    "lat": 34.0837995,
+                    "lng": -118.3208331
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 34.08500262989273,
+                        "lng": -118.3194725701073
+                    },
+                    "southwest": {
+                        "lat": 34.08230297010729,
+                        "lng": -118.3221722298928
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+            "name": "Paramount Pictures Studio Tour",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 2400,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/116792468397960560179\">A Google User</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAyqH6UDYhPD8A4BXleOtSSY1bMoBNl7qDJDvNV37ZqrM1y8seYnzJRWKcoPUPUyHheJCAQLEnO8xIWQGrbYnl6WsbU8Bms4vE_6q_khsNpaQx34BYlxw1g2GO-ioCQf-9EhCZ1lehATZNi4I2TfdrDIiZGhRZ-CnmeTYxcmkILlvQeGiZ_RTnGw",
+                    "width": 3600
+                }
+            ],
+            "place_id": "ChIJS5t8bra4woARgmRnxyfiP7s",
+            "plus_code": {
+                "compound_code": "3MMH+GM Los Angeles, California, United States",
+                "global_code": "85633MMH+GM"
+            },
+            "rating": 4.6,
+            "reference": "ChIJS5t8bra4woARgmRnxyfiP7s",
+            "types": [
+                "tourist_attraction",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 2858
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "formatted_address": "Venice, CA 90292, United States",
+            "geometry": {
+                "location": {
+                    "lat": 33.9835027,
+                    "lng": -118.4676805
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 33.9894539,
+                        "lng": -118.46090355
+                    },
+                    "southwest": {
+                        "lat": 33.9772567,
+                        "lng": -118.47170375
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+            "name": "Venice Canals",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 683,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/114238677335569547938\">A Google User</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAvEzCIrk8DlqEfLVZtV8rtUv5zF6nWm7Z_Yls1pl4gNjpwQUlBHtidWqRU8CndvnP09MjqNNVcqgL39jLWgfr3ZE8iZ0mwIDt-DKTkeI_UO8WCPPt0OA9w5LzIx2o8Or7EhC2hZfcqpgxnUfb09TfYlsiGhT1m9rC1sEvlvesB6f72NYzKCQQcA",
+                    "width": 1024
+                }
+            ],
+            "place_id": "ChIJiXJav6K6woARGPmX6Bsp55Y",
+            "plus_code": {
+                "compound_code": "XGMJ+CW Los Angeles, California, United States",
+                "global_code": "8553XGMJ+CW"
+            },
+            "rating": 4.6,
+            "reference": "ChIJiXJav6K6woARGPmX6Bsp55Y",
+            "types": [
+                "tourist_attraction",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 7751
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "formatted_address": "S Park View St, Los Angeles, CA 90057, United States",
+            "geometry": {
+                "location": {
+                    "lat": 34.060087,
+                    "lng": -118.2790111
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 34.06147877989272,
+                        "lng": -118.2777526201073
+                    },
+                    "southwest": {
+                        "lat": 34.05877912010728,
+                        "lng": -118.2804522798927
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+            "name": "Public Art \"Why We Immigrate / Porque Emigramos\"",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 1080,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/104330299118647853949\">Britney Small</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAKl24Q0pncIrnV1iGf-mOIXXHJ6_gex0SoDUEX1w5r6xeDO0zj2cPJt2mDvqEIz4ojyB3aeTHThGvlrFbSn6CelhTegxGtsE2_LhsCxqTpl4RJn4oGjtQTpm318yXk-CGEhA70Z2wO1jlXn1_C-iWrv0vGhTFPTK7nzrPD4XcdCUgZuaT9kE2Aw",
+                    "width": 1620
+                }
+            ],
+            "place_id": "ChIJ7Rz9nXXHwoARqHPpFE42dz4",
+            "plus_code": {
+                "compound_code": "3P6C+29 Los Angeles, California, United States",
+                "global_code": "85633P6C+29"
+            },
+            "rating": 3.9,
+            "reference": "ChIJ7Rz9nXXHwoARqHPpFE42dz4",
+            "types": [
+                "tourist_attraction",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 8
+        },
+        {
+            "business_status": "CLOSED_TEMPORARILY",
+            "formatted_address": "5905 Wilshire Blvd, Los Angeles, CA 90036, United States",
+            "geometry": {
+                "location": {
+                    "lat": 34.0639323,
+                    "lng": -118.3592293
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 34.06549627989271,
+                        "lng": -118.3578256701073
+                    },
+                    "southwest": {
+                        "lat": 34.06279662010727,
+                        "lng": -118.3605253298928
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+            "name": "Los Angeles County Museum of Art",
+            "permanently_closed": true,
+            "photos": [
+                {
+                    "height": 3465,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/107259579285367960461\">selma stegmann</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAfW3lGHzdJWedLV6qyYSGvedkmQ4otN5R5mq4013BfmbIKP5AHnN8xDKRhue0-zc7QfvuzHISqYgEZ9kjune8fKuwZBr5faf26Klgb-xEvrhJk5KT13ICivkp4JPsVOh9EhDq460MYz_mJLvm_nDAKkwHGhRBRBcEiubN_eIjZSikW3XF95jLsg",
+                    "width": 4616
+                }
+            ],
+            "place_id": "ChIJsXqcyjy5woARNz6sOh0ZmwA",
+            "plus_code": {
+                "compound_code": "3J7R+H8 Los Angeles, California, United States",
+                "global_code": "85633J7R+H8"
+            },
+            "rating": 4.6,
+            "reference": "ChIJsXqcyjy5woARNz6sOh0ZmwA",
+            "types": [
+                "art_gallery",
+                "tourist_attraction",
+                "museum",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 13065
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "formatted_address": "Los Angeles, CA 90068, United States",
+            "geometry": {
+                "location": {
+                    "lat": 34.1341151,
+                    "lng": -118.3215482
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 34.14120219999999,
+                        "lng": -118.2894589
+                    },
+                    "southwest": {
+                        "lat": 34.11410300000001,
+                        "lng": -118.3326229
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+            "name": "Hollywood Sign",
+            "photos": [
+                {
+                    "height": 3120,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/116719743529561164087\">A Google User</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAVM3jQJW2IIv9rOsWnYD_uk7zYh_uzy6EGIW7YHHA5SCwn_ETXeSDYuFudgvjgsLeldkbz4accrBr-3yfvRRqgFRukKaAzHI4UYclNQsls7VOyxbdZqFwWgH904BiBcQQEhDxfEb0J_nOl9U_r572IljRGhSGn42sewlYCp8sORFoEyU0lwEsag",
+                    "width": 4160
+                }
+            ],
+            "place_id": "ChIJfVpQRQq_woARQ5hwJsast6s",
+            "plus_code": {
+                "compound_code": "4MMH+J9 Los Angeles, California, United States",
+                "global_code": "85634MMH+J9"
+            },
+            "rating": 4.6,
+            "reference": "ChIJfVpQRQq_woARQ5hwJsast6s",
+            "types": [
+                "tourist_attraction",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 7145
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "formatted_address": "2000 N Fuller Ave, Los Angeles, CA 90046, United States",
+            "geometry": {
+                "location": {
+                    "lat": 34.1124069,
+                    "lng": -118.3512352
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 34.1266358,
+                        "lng": -118.34628265
+                    },
+                    "southwest": {
+                        "lat": 34.09808020000001,
+                        "lng": -118.35685885
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+            "name": "Runyon Canyon Park",
+            "opening_hours": {},
+            "photos": [
+                {
+                    "height": 3024,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/100939510656522314910\">Kevin Fanning</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAu7WRBNzM1ySwka0zFs9zwI-Jf6_d5Bym-mDNYmpGmgYr-qFaWzNTTVPKqOO6n5iAZccuOPn4_uRASOj6Gn6Om7l2XEwu7LrbQzviMGXGUmC4_vc9FxKgQfADh-OgoGfLEhDNaUwqN_7eKwwCriodm4vdGhS2pcZg_B04MmwdZrmy73mt11PpsQ",
+                    "width": 4032
+                }
+            ],
+            "place_id": "ChIJhX1uVuC-woARQNzq4-b1Prk",
+            "plus_code": {
+                "compound_code": "4J6X+XG Los Angeles, California, United States",
+                "global_code": "85634J6X+XG"
+            },
+            "rating": 4.7,
+            "reference": "ChIJhX1uVuC-woARQNzq4-b1Prk",
+            "types": [
+                "park",
+                "tourist_attraction",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 4030
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "formatted_address": "Los Angeles, CA 90071, United States",
+            "geometry": {
+                "location": {
+                    "lat": 34.0518523,
+                    "lng": -118.252843
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 34.05317357989273,
+                        "lng": -118.2515195201073
+                    },
+                    "southwest": {
+                        "lat": 34.05047392010728,
+                        "lng": -118.2542191798927
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+            "name": "Public Art \"Uptown Rocker\"",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 5584,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/111919613840625528710\">Sascha Gilly Israel</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAhSO1-dsqS2handAuxdWOpPYA5LPTNZ318Y4elWy3z1a0xoYj5IIq43us6fWpPf0jlF9KH8IVBKLqxhoAIHoxxW6TP6EWaviSe5_kimWYGWMw4lJNzi4R5o31x98nQZPYEhDKaha1vKXig85vspU6Lx9nGhTmwMrMuY0eYqfLuyoa9esLHKhslA",
+                    "width": 8368
+                }
+            ],
+            "place_id": "ChIJ_RiINLPHwoARBPlWSEa7dcY",
+            "plus_code": {
+                "compound_code": "3P2W+PV Los Angeles, California, United States",
+                "global_code": "85633P2W+PV"
+            },
+            "rating": 5,
+            "reference": "ChIJ_RiINLPHwoARBPlWSEa7dcY",
+            "types": [
+                "tourist_attraction",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 1
+        }
+    ],
+    "status": "OK"
+}

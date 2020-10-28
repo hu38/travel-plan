@@ -1,0 +1,39 @@
+##################################################################################################
+##
+## response from Find Place:
+##   basic:
+##     business_status, formatted_address, geometry, icon, name, permanently_closed (deprecated), photos, place_id, plus_code, types
+##   contact:
+##     opening_hours(returns only open_now)
+##   atmosphere
+##     price_level, rating, user_ratings_total
+##
+## response from Nearby Search (every single result contains):
+##    geometry, icon, id, name, opening_hours(returns only open_now), photos, place_id, reference, types, vicinity
+##
+## response from Place Details:
+##   basic:
+##     address_component, adr_address, business_status, formatted_address, geometry, 
+##     icon, name, permanently_closed (deprecated), photo, place_id, plus_code, type, url, utc_offset, vicinity
+##   contact:
+##     formatted_phone_number, international_phone_number, opening_hours, website
+##   atmosphere:
+##     price_level, rating, review, user_ratings_total
+##
+## what we need for FE:
+##   must have:
+##     place_id, name, photo
+##   good to have:
+##     opening_hours(open_now + periods[] + weekday_text), rating, review, price_level, formatted_phone_number, website, formatted_address
+##
+##
+##
+## response from Directions:
+##   geocoded_waypoints(contains place_id), routes(contains legs(contains steps(contains travel_mode, start_location, end_location, polyline, duration, distance)))
+##
+## what we need for FE:
+##   must have:
+##     polyline[], place_id[]
+##
+##################################################################################################
+
