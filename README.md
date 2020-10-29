@@ -6,7 +6,7 @@
 ### Xinyi Zhao xinyizhao1214@gmail.com
 ### Xiaohua Wang wangxin.cyn@gmail.com, Flora-OvO, front-end
 ### Zhuojun Yu, johnnyyuzj@gmail.com, github.com/Johnny-YuZJ
-### Da wANG, wangda.mme@gmail.com, github.com/WangDaMME
+### Da WANG, wangda.mme@gmail.com, github.com/WangDaMME
 
 <br/>
 
