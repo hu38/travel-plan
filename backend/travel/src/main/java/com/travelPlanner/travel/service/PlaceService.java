@@ -16,6 +16,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.net.URISyntaxException;
 
 
@@ -23,10 +24,10 @@ import java.net.URISyntaxException;
 public class PlaceService {
     private static final String GET_CITY_LOCATION_URL_TEMPLATE =
             "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=%s&inputtype=textquery&key=%s&fields=geometry";
-    public CityResponse getCityLocation(String city) throws URISyntaxException, IOException, InterruptedException {
+
+    public CityResponse getCityLocation(String city) throws UnsupportedEncodingException {
         CityResponse cityResponse = new CityResponse();
         String url = String.format(GET_CITY_LOCATION_URL_TEMPLATE,city, Constants.GOOGLE_API_KEY);
-
         CloseableHttpClient httpClient = HttpClients.createDefault();
         ObjectMapper mapper = new ObjectMapper();
         ResponseHandler<CityGoogleAPIResponse> responseHandler = httpResponse -> {
@@ -37,7 +38,6 @@ public class PlaceService {
             if(entity==null) {
                 return new CityGoogleAPIResponse();
             }
-
 
             CityGoogleAPIResponse cityGoogleAPIResponse = mapper.readValue(entity.getContent(), CityGoogleAPIResponse.class);
             return cityGoogleAPIResponse;
@@ -54,6 +54,8 @@ public class PlaceService {
         }
         return cityResponse;
     }
+
+
 
     public static void main(String[] args) throws InterruptedException, IOException, URISyntaxException {
 
