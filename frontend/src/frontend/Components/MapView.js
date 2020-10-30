@@ -1,11 +1,11 @@
 import React from "react";
-import GoogleMaps_react from './Google JavaScript API/GoogleMaps_react'
+import ReactGoogleMaps from './Google JavaScript API/ReactGoogleMaps';
 
 const MapView = () => {
 
     return (
         <div>
-            <GoogleMaps_react />
+            <ReactGoogleMaps />
         </div>
     )
 }
