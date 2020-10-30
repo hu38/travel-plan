@@ -7,7 +7,7 @@ import Main from './frontend/Components/Main'
 
 ReactDOM.render(
   <React.StrictMode>
-    <Main />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
