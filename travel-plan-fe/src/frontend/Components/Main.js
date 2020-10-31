@@ -10,7 +10,6 @@ const Main = () => {
 
             <CollapseList style={{position:"fixed" }}/>
 
-
            <MapView style={{position: "absolute"}}/>
 
         </div>
