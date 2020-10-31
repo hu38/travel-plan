@@ -1,43 +1,63 @@
 import React, { Component } from 'react';
-import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogTitle from '@material-ui/core/DialogTitle';
-import Paper from '@material-ui/core/Paper';
-import Draggable from 'react-draggable';
-import './Dialog.css';
+import '../Style/SearchAndAdd.css';
 
-function PaperComponent(props) {
-    return (
-      <Draggable handle="#draggable-dialog-title" cancel={'[class*="MuiDialogContent-root"]'}>
-        <Paper {...props} />
-      </Draggable>
-    );
-  }
+export default class Dialog extends Component {
+    constructor(props) {
+        super(props);
 
-export default function DraggableDialog() {
+        this.state = {
+            diffX: 0,
+            diffY: 0,
+            dragging: false,
+            styles: {}
+        }
 
-    return (
-        <div>
-           <Dialog PaperComponent={PaperComponent} aria-labelledby="draggable-dialog-title">
-           <DialogTitle style={{ cursor: 'move' }} id="draggable-dialog-title">
-               Search and Add
-           </DialogTitle>
-           <DialogContent>
-           <TextField
-             id="outlined-basic" 
-             label="Outlined" 
-             variant="outlined"
-           />
-          </DialogContent>
-          <DialogActions>
-          <Button onClick={shoot} color="primary">
-           Subscribe
-          </Button>
-          </DialogActions>
-          </Dialog>
-        </div>
-    );
+        this._dragStart = this._dragStart.bind(this);
+        this._dragging = this._dragging.bind(this);
+        this._dragEnd = this._dragEnd.bind(this);
+    }
+
+    _dragStart(e) {
+        this.setState({
+            diffX: e.screenX - e.currentTarget.getBoundingClientRect().left,
+            diffY: e.screenY - e.currentTarget.getBoundingClientRect().top,
+            dragging: true
+        });
+    }
+
+    _dragging(e) {
+
+        if(this.state.dragging) {
+            var left = e.screenX - this.state.diffX;
+            var top = e.screenY - this.state.diffY;
+    
+            this.setState({
+                styles: {
+                    left: left,
+                    top: top
+                }
+            });
+        }
+    }    
+
+    _dragEnd() {
+        this.setState({
+            dragging: false
+        });
+    }
+
+    render() {
+        
+        return (
+            <div className='Dialog' style={this.state.styles} onMouseDown={this._dragStart} onMouseMove={this._dragging} onMouseUp={this._dragEnd}>
+                <div className='DialogTitle'>Search And Add</div>
+                <form>
+                  <input type = "text"/>
+                </form>
+                <div className='Gobotton' onClick={this.props.shoot}>
+                    Go!
+                </div>
+            </div>
+        );
+    }
 }
