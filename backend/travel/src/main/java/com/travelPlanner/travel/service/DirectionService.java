@@ -1,5 +1,6 @@
 package com.travelPlanner.travel.service;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.travelPlanner.travel.Constants;
