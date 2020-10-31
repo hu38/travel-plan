@@ -1,13 +1,14 @@
 import React from "react";
-import Locations from "./RecommendAndSelect/Locations";
+import CollapseList from "./RecommendAndSelect/Collapse";
 import MapView from "./MapView";
+import { Collapse } from "antd";
 
 const Main = () => {
 
     return (
         <div>
 
-            <Locations style={{position:"fixed" }}/>
+            <CollapseList style={{position:"fixed" }}/>
 
 
            <MapView style={{position: "absolute"}}/>
