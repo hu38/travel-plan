@@ -4,9 +4,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.travelPlanner.travel.Constants;
-import com.travelPlanner.travel.model.DirectionGoogleAPIResponse.DirectionGoogleAPIResponse;
-import com.travelPlanner.travel.model.DirectionGoogleAPIResponse.OverviewPolyline;
+import com.travelPlanner.travel.model.DirectionGoogleAPIResponse.*;
 import com.travelPlanner.travel.model.DirectionResponse;
+import com.travelPlanner.travel.model.DirectionResponseBody;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.ResponseHandler;
 import org.apache.http.client.methods.HttpGet;
@@ -26,34 +26,41 @@ public class DirectionService {
     private static final String GET_DIRECTION_URL_TEMPLATE =
             "https://maps.googleapis.com/maps/api/directions/json?origin=%s&destination=%s&key=%s&waypoints=%s";
 
-    public DirectionResponse getPolylines(String list) throws UnsupportedEncodingException {
-//        list = URLDecoder.decode(list, "UTF-8");
-//        System.out.println(list);
-//        String[] placeList = list.split("\\+");
-        String[] placeList = list.split(" ");
+    public DirectionResponse getRoute(String placeIDList, String optimizeFlag) throws UnsupportedEncodingException {
 
-        //System.out.println(placeList.length);
-       // System.out.println(placeList[2]);
+        String[] placeList = placeIDList.split(" ");
+        String origin = "place_id:".concat(placeList[0]);
+        String destination = "place_id:".concat(placeList[placeList.length - 1]);
+        String waypoints = "";
+
+        if (placeList.length > 2) {
+            if (optimizeFlag.equals("true")) {
+                waypoints = "optimize:true|" + "place_id:" + placeList[1];
+            } else {
+                waypoints = "place_id:".concat(placeList[1]);
+            }
+        }
+        for (int i = 2; i < placeList.length - 1; i++) {
+            waypoints = waypoints + "|place_id:" + placeList[i];
+        }
+
         DirectionResponse directionResponse = new DirectionResponse();
-        // placeList.length == 3
-        placeList[0] = URLEncoder.encode(placeList[0],"UTF-8");
-        placeList[1] = URLEncoder.encode(placeList[1],"UTF-8");
-        placeList[2] = URLEncoder.encode(placeList[2],"UTF-8");
-        String url = String.format(GET_DIRECTION_URL_TEMPLATE, placeList[0], placeList[1], Constants.GOOGLE_API_KEY, placeList[2]);
-//        System.out.println(url);
+
+        origin = URLEncoder.encode(origin,"UTF-8");
+        destination = URLEncoder.encode(destination,"UTF-8");
+        waypoints = URLEncoder.encode(waypoints,"UTF-8");
+        String url = String.format(GET_DIRECTION_URL_TEMPLATE, origin, destination, Constants.GOOGLE_API_KEY, waypoints);
+
+//        System.out.println("url is: " + url);
 
         CloseableHttpClient httpClient = HttpClients.createDefault();
         ObjectMapper mapper = new ObjectMapper();
         mapper.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
         ResponseHandler<DirectionGoogleAPIResponse> responseHandler = httpResponse -> {
-            System.out.println(httpResponse.getStatusLine().getStatusCode());
-
             if (httpResponse.getStatusLine().getStatusCode()!=200){
                 return new DirectionGoogleAPIResponse();
             }
             HttpEntity entity = httpResponse.getEntity();
-
-            System.out.println(entity);
 
             if(entity==null) {
                 return new DirectionGoogleAPIResponse();
@@ -64,14 +71,31 @@ public class DirectionService {
         };
 
         try {
-//            url = URLEncoder.encode(url, "UTF-8");
-            System.out.println(url);
             DirectionGoogleAPIResponse response = httpClient.execute(new HttpGet(url),responseHandler);
-            System.out.println(response);
 
-            OverviewPolyline overview_polyline = response.routes[0].overview_polyline;
-            directionResponse.body = overview_polyline;
-            directionResponse.statusCode = HttpStatus.OK.value();
+            Leg[] legs = response.routes[0].legs;
+            Distance totalDistance = new Distance();
+            Duration totalDuration = new Duration();
+            double distance = 0;
+            double duration = 0;
+            for (Leg leg : legs) {
+                System.out.println("this leg's distance is: " + leg.distance.value);
+                System.out.println("this leg's duration is: " + leg.duration.value);
+                distance += leg.distance.value;
+                duration += leg.duration.value;
+            }
+            totalDistance.value = distance;
+            totalDuration.value = duration;
+
+            DirectionResponseBody body = new DirectionResponseBody();
+            body.overviewPolyline = response.routes[0].overview_polyline;
+            body.distance = totalDistance;
+            body.duration = totalDuration;
+
+/*            OverviewPolyline overview_polyline = response.routes[0].overview_polyline;
+            directionResponse.statusCode = HttpStatus.OK.value();*/
+
+            directionResponse.body = body;
             return directionResponse;
         }catch(Exception e) {
             e.printStackTrace();

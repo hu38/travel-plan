@@ -16,11 +16,10 @@ public class DirectionController {
     @Autowired
     DirectionService directionService;
 
-    @RequestMapping(value = "/direction/overview_polyline", method = RequestMethod.GET)
-    public DirectionResponse findPolyline(@RequestParam(value = "list", defaultValue = "place_id:ChIJj2tUC2bGwoARwqdCDE37YD0 place_id:ChIJkyPnxsO_woARXQl-tdWAFi8 place_id:ChIJzzgyJU--woARcZqceSdQ3dM") String placeIDList) throws UnsupportedEncodingException {
-//        placeIDList = URLEncoder.encode(placeIDList,"UTF-8");
+    @RequestMapping(value = "/direction/get-route", method = RequestMethod.GET)
+    public DirectionResponse getRoute(@RequestParam(value = "places", defaultValue = "ChIJj2tUC2bGwoARwqdCDE37YD0 ChIJkyPnxsO_woARXQl-tdWAFi8 ChIJzzgyJU--woARcZqceSdQ3dM ChIJdZbSPDg23YAR6yR-akC2g4E") String placeIDList, @RequestParam(value = "optimize", defaultValue = "false") String optimizeFlag) throws UnsupportedEncodingException {
         System.out.println(placeIDList);
-        DirectionResponse directionResponse = directionService.getPolylines(placeIDList);
+        DirectionResponse directionResponse = directionService.getRoute(placeIDList, optimizeFlag);
         return directionResponse;
     }
 }

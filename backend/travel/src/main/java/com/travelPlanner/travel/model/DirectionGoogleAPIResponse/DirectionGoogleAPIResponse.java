@@ -8,6 +8,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonIgnoreProperties(ignoreUnknown = true)    // ignore unnecessary fields
 @JsonInclude(JsonInclude.Include.NON_NULL)     // skip null values
 public class DirectionGoogleAPIResponse {
-    public Routes[] routes;
+    public Route[] routes;
     public String status;
 }
