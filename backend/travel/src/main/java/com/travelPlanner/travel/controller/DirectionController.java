@@ -18,7 +18,7 @@ public class DirectionController {
 
     @RequestMapping(value = "/direction/overview_polyline", method = RequestMethod.GET)
     public DirectionResponse findPolyline(@RequestParam(value = "list", defaultValue = "place_id:ChIJj2tUC2bGwoARwqdCDE37YD0 place_id:ChIJkyPnxsO_woARXQl-tdWAFi8 place_id:ChIJzzgyJU--woARcZqceSdQ3dM") String placeIDList) throws UnsupportedEncodingException {
-        placeIDList = URLEncoder.encode(placeIDList,"UTF-8");
+//        placeIDList = URLEncoder.encode(placeIDList,"UTF-8");
         System.out.println(placeIDList);
         DirectionResponse directionResponse = directionService.getPolylines(placeIDList);
         return directionResponse;
