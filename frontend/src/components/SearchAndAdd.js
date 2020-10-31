@@ -1,5 +1,6 @@
+import { Button } from 'antd';
 import React, { Component } from 'react';
-import '../Style/SearchAndAdd.css';
+import '../styles/SearchAndAdd.css';
 
 export default class Dialog extends Component {
     constructor(props) {
@@ -54,9 +55,9 @@ export default class Dialog extends Component {
                 <form>
                   <input type = "text"/>
                 </form>
-                <div className='Gobotton' onClick={this.props.shoot}>
+                <Button className='Gobotton' onClick={this.props.shoot}>
                     Go!
-                </div>
+                </Button>
             </div>
         );
     }
