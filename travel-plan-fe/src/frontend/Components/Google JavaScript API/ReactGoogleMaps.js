@@ -1,25 +1,17 @@
 import React, { useState } from 'react';
 import { GoogleMap, LoadScript, Marker, Polyline, InfoWindow } from '@react-google-maps/api';
-
+import { Button } from 'antd';
 const containerStyle = {
   height: '95vh'
 };
 
 // const cityInfo = () => {
-//   const [center, setCenter] = useState([]);
+//   const [center, setCenter] = useState({});
 //   const [northEast, setNorthEast] = useState([]);
 //   const [southWest, setSouthWest] = useState([]);
 // }
 
-// const center = { lat: 37.7857, lng: -122.4011 };
-const getCenter = () => {
-  fetch(`api/place/find-city?city=st jose`).then(res=>res.json())
-    .then(data => {
-      console.log(data.body.location);
-      return data.body.location;
-    }
-  )
-}
+ const centerfake = { lat: 37.7857, lng: -122.4011 };
 
 const positions = [
   { lat: 37.7857, lng: -122.4011 },
@@ -71,13 +63,30 @@ const options = {
 //infoWindow
 
 function MyComponent() {
+  const [center, setCenter] = useState({});
+
+  const getCenter = () => {
+    fetch(`api/place/find-city?city=st jose`).then(res=>res.json())
+        .then(data => {
+
+          console.log({...data.body.location})
+
+          setCenter(data.body.location);
+
+              return data.body.location;
+            }
+        )
+  }
+
   return (
+      <>
+          <Button type="primary" onClick={getCenter}>Primary Button</Button>
     <LoadScript
       googleMapsApiKey="AIzaSyDNJpRDz7c_p0kP3YzS0iRonyWoWKdU5ns"
     >
       <GoogleMap
         mapContainerStyle={containerStyle}
-        center={getCenter}
+        center={center}
         zoom={14}
       >
         { /* Child components, such as markers, info windows, etc. */ }
@@ -95,6 +104,7 @@ function MyComponent() {
 
       </GoogleMap>
     </LoadScript>
+        </>
   )
 }
 
