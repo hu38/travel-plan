@@ -28,11 +28,11 @@ const PlaceList=(props)=> {
                     <List.Item>
                         <List.Item.Meta
                             title={<p>{item.name}</p>}/>
-                        <Card 
+                        {/* <Card 
                         hoverable style={{height:150}} 
                         cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
                         >
-                        </Card>
+                        </Card> */}
                         <Checkbox></Checkbox>
                     </List.Item>
                 )}

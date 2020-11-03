@@ -31,7 +31,8 @@ const EnterDestination = (props) => {
     
     const handleOk = () => {
   
-      props.findCityLocation(); // ** Use**
+      props.findCityLocation(); 
+      props.findRecommendCityList();
       setVisible(false);
 
     };

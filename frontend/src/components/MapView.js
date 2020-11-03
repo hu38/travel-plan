@@ -22,7 +22,7 @@ const MapView = ({cityResult}) => {
         <>
         {/* <Button onClick={handleclick}> buttonnn </Button> */}
         <div>
-            <ReactGoogleMaps cityResult={{cityResult}}/>
+            <ReactGoogleMaps cityResult={cityResult}/>
         </div>
         </ >
     )
