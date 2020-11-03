@@ -46,6 +46,8 @@ const PlaceBox =(props) =>
         <div className="placebox-container">
             <span>{props.name} </span>
             {/* <Image src= {photoUrl=>{  setPhotoUrl()}} alt={props.name} style={{width:"40%" }}/> */}
+            {/* Surprise */}
+            <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRvMMiC-2B5o_EEi-MM8Rv2WRsqLRDe9-YjrA&usqp=CAU" height={"80px"} width={"80px"}/>
         </div>
         </>
     )
