@@ -1,19 +1,23 @@
-import React from "react";
-import CollapseList from "./RecommendAndSelect/Collapse";
+import React, { useState } from "react";
 import MapView from "./MapView";
 import SearchAndAdd from "./SearchAndAdd";
-import { Collapse } from "antd";
+import Locations from "./Locations/Locations";
+import recommendedData from './Locations/Locations.data';
 
-const Main = () => {
+function Main() {
+    const [selected, setSelected] = useState([]);
+    const [recommended, setRecommended] = useState(recommendedData);
 
     return (
         <div>
-            <SearchAndAdd/>
-            <CollapseList style={{position:"fixed" }}/>
-
-
-           <MapView style={{position: "absolute"}}/>
-
+            <SearchAndAdd />
+            <Locations 
+                recommended={recommended} 
+                selected={selected} 
+                handleUpdateRecommended={setRecommended}
+                handleUpdateSelected={setSelected}
+            />
+            <MapView />
         </div>
     )
 }
