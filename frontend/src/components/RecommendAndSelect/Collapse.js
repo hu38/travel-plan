@@ -51,7 +51,7 @@ const Collapsible = ({recomendCityList}) => {
                 renderItem={item => (
                     <List.Item>
                         {/* <span> {item.name} </span> */}
-                        <PlaceBox name={item.name}  />   
+                        <PlaceBox name={item.name}  photo_reference={item.photo_reference}/>   
                         {/* photo_reference={item.photo_reference} */}
                         {/* <List.Item.Meta
                             title={<p>{item.name}</p>}/> */}
