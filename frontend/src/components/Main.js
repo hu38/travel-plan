@@ -112,7 +112,10 @@ const Main = () => {
             />
 
 
-           <MapView style={{position: "absolute"}} cityResult={cityResult}  /> 
+           <MapView style={{position: "absolute"}} 
+                cityResult={cityResult}
+                recomendCityList={recomendCityList}
+            /> 
 
         </div> 
 
@@ -147,4 +150,3 @@ export default Main;
 //     "rating": 4.7,
 //     "user_ratings_total": 3824
 //   },
-  

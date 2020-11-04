@@ -38,7 +38,6 @@ const Collapsible = ({recomendCityList}) => {
     // console.log("collape list");
     // console.log(recomendCityList);
 
-
     return (
     <>
     <Collapse defaultActiveKey={['1']} onChange={callback}>
@@ -60,7 +59,7 @@ const Collapsible = ({recomendCityList}) => {
             />    
         </Panel>
         <Panel header="Selected List" key="2" className="collapse-panel">
-            <p>
+            {/* <p>
                 <Tag closable onClose={log}>San Francisco MOMA</Tag>
             </p>
             <p>
@@ -71,7 +70,7 @@ const Collapsible = ({recomendCityList}) => {
             </p>
             <p>
                 <Tag closable onClose={log}>SF Ferry Building</Tag>
-            </p>
+            </p>  */}
         </Panel>
     </Collapse>
     
