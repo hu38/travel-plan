@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import { Modal} from 'antd';
-import { Select, Button } from 'antd';
+import { Select, Button, message } from 'antd';
 
 
 const EnterDestination = (props) => {
     
   const [visible, setVisible] = useState(true);
-
-
+  const [options, setOptions] = useState([]);
 
     // lifted State
     /* lift to <Main />
@@ -22,15 +21,10 @@ const EnterDestination = (props) => {
     /* "body":{"location":{"lat":34.0522342,"lng":-118.2436849},
               "viewport":{"northeast":{"lat":34.3373061,"lng":-118.1552891},"southwest":{"lat":33.7036519,"lng":-118.6681759}}*/
 
-
-
-    const { Option } = Select;
-
     // test
     // const useEffect{}  // side effect after done
     
     const handleOk = () => {
-  
       props.findCityLocation(); 
       props.findRecommendCityList();
       setVisible(false);
@@ -38,12 +32,26 @@ const EnterDestination = (props) => {
     };
   
     const handleCancel = () => {
-      console.log("Cancel");
-      setVisible(false);
+      message.warning('Please enter a city and press Go button');
     };
 
-    const handleChange = (value) => {
-      props.setCityText(value);
+    const onSearch = (searchText) => {
+      setOptions(
+        !searchText ? [] : [mockVal(searchText), mockVal(searchText, 2), mockVal(searchText, 3)],
+      );
+      if(options.indexOf(searchText,0)!= -1){
+        props.setCityText(searchText);
+      }
+    };
+
+    const handleChange = (data) => {
+      props.setCityText(data);
+    };
+
+    const mockVal = (str, repeat = 1) => {
+      return {
+        value: str.repeat(repeat),
+      };
     };
 
   
@@ -62,13 +70,13 @@ const EnterDestination = (props) => {
           >
               <Select
                 showSearch
+                options={options}
                 style={{ width: 200 }}
-                placeholder="Destination"
+                placeholder="e.g.Boston"
                 onChange={handleChange}
+                onSearch={onSearch}
+                filterOption={false}
             >
-                <Option value="New York">New York</Option>
-                <Option value="Boston">Boston</Option>
-                <Option value="Dallas">Dallas</Option>
             </Select>
           </Modal>
           
