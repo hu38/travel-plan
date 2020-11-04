@@ -2,6 +2,14 @@ import React, { useState }  from "react";
 import { List, Typography, Drawer, Button, Collapse, Tag  } from 'antd';
 import PlaceBox from "./PlaceBox";
 
+const data = [
+    'Racing car sprays burning fuel into crowd.',
+    'Japanese princess to wed commoner.',
+    'Australian walks 100km after outback crash.',
+    'Man charged over missing wedding girl.',
+    'Los Angeles battles huge wildfires.',
+];
+
 //tag
 function log(e) {
     console.log(e);
@@ -42,7 +50,7 @@ const Collapsible = ({recomendCityList}) => {
                 renderItem={item => (
                     <List.Item>
                         {/* <span> {item.name} </span> */}
-                        <PlaceBox name={item.name}  />   
+                        <PlaceBox name={item.name}  photo_reference={item.photo_reference}/>   
                         {/* photo_reference={item.photo_reference} */}
                         {/* <List.Item.Meta
                             title={<p>{item.name}</p>}/> */}
@@ -62,7 +70,7 @@ const Collapsible = ({recomendCityList}) => {
             </p>
             <p>
                 <Tag closable onClose={log}>SF Ferry Building</Tag>
-            </p> */}
+            </p>  */}
         </Panel>
     </Collapse>
     

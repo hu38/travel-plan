@@ -28,13 +28,11 @@ public class PlaceService {
             "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=%s&inputtype=textquery&key=%s&fields=geometry";
 
     private static final String GET_RECOMMENDED_ATTRACTIONS_URL_TEMPLATE =
-            "https://maps.googleapis.com/maps/api/place/textsearch/json?query=%s+point+of+interest&key=%s";
+            "https://maps.googleapis.com/maps/api/place/textsearch/json?query=%s+point+of+interest&location=%.2f,%.2f&radius=500&key=%s";
 
     private static final String GET_PLACE_DETAIL_URL_TEMPLATE =
             "https://maps.googleapis.com/maps/api/place/details/json?place_id=%s&fields=business_status,opening_hours&key=%s";
 
-    private static final String GET_PHOTO_URL_TEMPLATE =
-            "https://maps.googleapis.com/maps/api/place/photo?maxwidth=%d&photoreference=%s&key=%s";
 
     private final String CLOSED = "closed";
     private final String PAGE_TOKEN_QUERY = "&pagetoken=";
@@ -76,7 +74,9 @@ public class PlaceService {
             recommendedAttraction.rating = attraction.rating;
             recommendedAttraction.user_ratings_total = attraction.user_ratings_total;
 
-            recommendedAttraction.photo_reference = attraction.photos[0].photoReference;
+            if (attraction.photos!=null && attraction.photos.length > 0){
+                recommendedAttraction.photo_reference = attraction.photos[0].photoReference;
+            }
             recommendedAttraction.opening_hours = getOpenHours(attraction.placeID);
 
             recommendedAttractions[i] = recommendedAttraction;
@@ -103,8 +103,11 @@ public class PlaceService {
     }
 
     private AttractionsGoogleAPIResponse getGoogleRecommendedAttractions(String city,String next_page_token) throws UnsupportedEncodingException {
+        CityResponse cityResponse = getCityLocation(city);
+        double lat = cityResponse.body.location.lat;
+        double lng = cityResponse.body.location.lng;
         city = encode(city);
-        String url = String.format(GET_RECOMMENDED_ATTRACTIONS_URL_TEMPLATE,city,Constants.GOOGLE_API_KEY);
+        String url = String.format(GET_RECOMMENDED_ATTRACTIONS_URL_TEMPLATE,city,lat,lng,Constants.GOOGLE_API_KEY);
         if (next_page_token!=null){
             next_page_token = encode(next_page_token);
             url += PAGE_TOKEN_QUERY+next_page_token;
