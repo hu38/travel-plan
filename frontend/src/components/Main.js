@@ -3,7 +3,8 @@ import CollapseList from "./RecommendAndSelect/Collapse";
 import MapView from "./MapView";
 import SearchAndAdd from "./SearchAndAdd";
 import EnterDestination from "./EnterDestination";
-import { Collapse } from "antd";
+import { Button } from "antd";
+import OptimizeRoute from "./RecommendAndSelect/OptimizeRoute"
 
 
 
@@ -15,9 +16,14 @@ const Main = () => {
     // 1. <EnterDestination />
     const [cityText,   setCityText]= useState("Boston"); 
     const [cityResult, setcityResult]= useState(undefined);  
+    const [enterVisible, setEnterVisible] = useState(true);
     
     // 2. <Collapse />
     const [recomendCityList, setRecomendCityList] = useState([]);
+
+    //3. Optimize Routes
+    const [placeID, setPlaceID] = useState("ChIJj2tUC2bGwoARwqdCDE37YD0 ChIJkyPnxsO_woARXQl-tdWAFi8 ChIJzzgyJU--woARcZqceSdQ3dM ChIJdZbSPDg23YAR6yR-akC2g4E");
+    const [encodedRoute, setEncodedRoute] = useState('');
 
     /*** -----  Lifted State Sourth of Truth  ----- ***/
 
@@ -46,6 +52,16 @@ const Main = () => {
             //   console.log(cityResult);
             }
           )
+    }
+
+    const changeCity=() => {    //pop out window
+      setEnterVisible(true);
+      console.log("open enter destination");
+    }
+
+    const closeCity=() => {   //close the window
+      setEnterVisible(false);
+      console.log("close enter destination")
     }
 
 
@@ -91,6 +107,19 @@ const Main = () => {
             }
           )
     }
+
+    //3. Optimize Routes
+    // console.log("placeID is here" + placeID);
+    const findOptimizeRoutes=() =>{
+      fetch(`api/direction/get-route?places=${placeID}&optimize=true`).then(res=>res.json()).then(
+          data=>{
+            if (data.statusCode===0) {
+              setEncodedRoute(data.body.overviewPolyline.points);
+            }
+            // console.log("this is encoded route: " + data.statusCode);
+            // console.log("this is url: " + "api/direction/get-route?places=" + placeID + "&optimize=true");
+          })
+    }
     
 
 
@@ -103,6 +132,8 @@ const Main = () => {
                     findCityLocation={findCityLocation} 
                     setCityText={setCityText} 
                     findRecommendCityList={findRecommendCityList}
+                    enterVisible={enterVisible}
+                    closeCity={closeCity}
             /> 
 
             {/* <SearchAndAdd/> */}
@@ -111,12 +142,21 @@ const Main = () => {
                     recomendCityList={recomendCityList}
             />
 
+            <Button type="primary" onClick={changeCity}>
+                Change City
+            </Button>
+
+            <OptimizeRoute
+                recomendCityList={recomendCityList}
+                setPlaceID={setPlaceID}
+                findOptimizeRoutes={findOptimizeRoutes}
+            />
 
            <MapView style={{position: "absolute"}} 
                 cityResult={cityResult}
                 recomendCityList={recomendCityList}
+                encodedRoute={encodedRoute}
             /> 
-
         </div> 
 
         
