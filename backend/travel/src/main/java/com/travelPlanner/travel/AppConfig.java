@@ -20,7 +20,7 @@ public class AppConfig {
     public LocalSessionFactoryBean sessionFactory() {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setDataSource(dataSource());
-        sessionFactory.setPackagesToScan("travel.model");
+        sessionFactory.setPackagesToScan("com.travelPlanner.travel.model");
         sessionFactory.setHibernateProperties(hibernateProperties());
         return sessionFactory;
     }
@@ -29,7 +29,7 @@ public class AppConfig {
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://laiproject-instance.codvnc8vwvtr.us-east-2.rds.amazonaws.com:3306/ecommerce?createDatabaseIfNotExist=true&serverTimezone=UTC");
+        dataSource.setUrl("jdbc:mysql://laiproject-instance.codvnc8vwvtr.us-east-2.rds.amazonaws.com:3306/ecommerce");
         dataSource.setUsername("admin");
         dataSource.setPassword("NO.1johnny1122");
 
@@ -38,8 +38,9 @@ public class AppConfig {
 
     private final Properties hibernateProperties() {
         Properties hibernateProperties = new Properties();
-        hibernateProperties.setProperty("hibernate.hbm2ddl.auto", "update");
+        hibernateProperties.setProperty("hibernate.hbm2ddl.auto", "create");
         hibernateProperties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
+        //hibernateProperties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQLInnoDBDialect");
         return hibernateProperties;
     }
 }

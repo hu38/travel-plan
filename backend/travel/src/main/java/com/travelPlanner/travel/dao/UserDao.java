@@ -37,7 +37,7 @@ public class UserDao {
         }
     }
 
-    public User getUserById(String id){
+    public User getUserById(long id){
         User user;
         try(Session session = sessionFactory.openSession()) {
             session.beginTransaction();
