@@ -1,5 +1,7 @@
 package com.travelPlanner.travel.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -8,20 +10,21 @@ import java.io.Serializable;
 public class User implements Serializable {
     private static final long serialVersionUID = 2681531852204068105L;
 
+    @JsonProperty("user_id")
     @Id
     @Column(name = "user_id")
-    private String id;
+    private long id;
 
-    private String password;
-    private boolean enabled;
-
-    public String getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(long id) {
         this.id = id;
     }
+
+    private String password;
+    private boolean enabled;
 
     public String getPassword() {
         return password;
