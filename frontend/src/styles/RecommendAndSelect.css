@@ -1,0 +1,6 @@
+div.ant-list.ant-list-split.ant-list-bordered.ant-list-something-after-last-item{
+    width: 300px;
+    position: fixed;
+    background-color: beige;
+    z-index: 5;
+}
