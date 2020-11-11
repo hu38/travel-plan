@@ -1,5 +1,6 @@
 import React, { useState }  from "react";
 import { List, Typography, Drawer, Button, Collapse, Tag  } from 'antd';
+import PlaceBox from "./PlaceBox";
 
 const data = [
     'Racing car sprays burning fuel into crowd.',
@@ -28,25 +29,37 @@ function callback(key) {
 }
 //collapse
 
-const Collapsible = () => {
+
+// 1. onload More ... ?  Ant Design
+
+const Collapsible = ({recomendCityList}) => {
+
+
+    // console.log("collape list");
+    // console.log(recomendCityList);
+
     return (
-<>
+    <>
     <Collapse defaultActiveKey={['1']} onChange={callback}>
-        <Panel header="Selected List" key="1" className="collapse-panel">
+        <Panel header="Tourists Nearby Recommendation List" key="1" className="collapse-panel">
             <List
                 header={<div></div>}
-                footer={<div>Footer</div>}
+                // footer={<div>Footer</div>}
                 bordered
-                dataSource={data}
+                dataSource={recomendCityList}
                 renderItem={item => (
                     <List.Item>
-                        <Typography.Text mark>[ITEM]</Typography.Text> {item}
+                        {/* <span> {item.name} </span> */}
+                        <PlaceBox name={item.name}  photo_reference={item.photo_reference}/>   
+                        {/* photo_reference={item.photo_reference} */}
+                        {/* <List.Item.Meta
+                            title={<p>{item.name}</p>}/> */}
                     </List.Item>
                 )}
             />    
         </Panel>
-        <Panel header="Recommendation List" key="2" className="collapse-panel">
-            <p>
+        <Panel header="Selected List" key="2" className="collapse-panel">
+            {/* <p>
                 <Tag closable onClose={log}>San Francisco MOMA</Tag>
             </p>
             <p>
@@ -57,9 +70,10 @@ const Collapsible = () => {
             </p>
             <p>
                 <Tag closable onClose={log}>SF Ferry Building</Tag>
-            </p>
+            </p>  */}
         </Panel>
     </Collapse>
+    
     </>
     )
 }
