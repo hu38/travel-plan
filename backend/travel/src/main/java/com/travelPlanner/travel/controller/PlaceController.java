@@ -3,8 +3,10 @@ package com.travelPlanner.travel.controller;
 
 import com.travelPlanner.travel.model.CityResponse;
 import com.travelPlanner.travel.model.RecommendedAttractionsResponse;
+import com.travelPlanner.travel.model.Response;
 import com.travelPlanner.travel.service.PlaceService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.UnsupportedEncodingException;
@@ -26,5 +28,13 @@ public class PlaceController {
     public RecommendedAttractionsResponse recommendPlaces(@RequestParam(value = "city", defaultValue = "minneapolis") String cityLocation,
                                                           @RequestParam(value = "pagetoken", required = false) String pageToken) throws UnsupportedEncodingException {
         return placeService.getRecommendedAttractions(cityLocation,pageToken);
+    }
+
+    @RequestMapping(value = "/place/detail", method = RequestMethod.GET)
+    public Response<String[]> getPlaceDetail(@RequestParam(value = "placeId") String placeId) throws UnsupportedEncodingException {
+        Response response = new Response<String[]>(){};
+        response.statusCode = HttpStatus.OK.value();
+        response.body = placeService.getOpenHours(placeId);
+        return response;
     }
 }
