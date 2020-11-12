@@ -4,6 +4,10 @@ import MapView from "./MapView";
 import SearchAndAdd from "./SearchAndAdd";
 import EnterDestination from "./EnterDestination";
 import { Collapse } from "antd";
+import SavedRecords from "./SavedRecords";
+import LogIn from "./LogIn";
+import LogOut from "./LogOut";
+import Register from "./Register";
 
 
 
@@ -18,6 +22,9 @@ const Main = () => {
     
     // 2. <Collapse />
     const [recomendCityList, setRecomendCityList] = useState([]);
+
+    // 3. <SavedRecords />
+    const[planRecords, setPlanRecords] = useState(undefined);
 
     /*** -----  Lifted State Sourth of Truth  ----- ***/
 
@@ -91,7 +98,21 @@ const Main = () => {
             }
           )
     }
-    
+
+    // 3. SavedRecords
+    const findSavedRecordsOnClick=() =>{
+
+      fetch(`api/place/find-city?city=${cityText}`).then(res=>res.json()).then(
+          data=>{
+            if (data.statusCode===200)
+            {
+              // console.log(`<Main /> : ${data.body}`);
+              setcityResult(data.body);
+            }
+          //   console.log(cityResult);
+          }
+        )
+  }
 
 
 
@@ -116,6 +137,15 @@ const Main = () => {
                 cityResult={cityResult}
                 recomendCityList={recomendCityList}
             /> 
+
+          <SavedRecords
+                  findSavedRecordsOnClick={findSavedRecordsOnClick}
+                  setPlanRecords={setPlanRecords}
+          
+          />
+          <LogIn/>
+          <LogOut/>
+     
 
         </div> 
 
