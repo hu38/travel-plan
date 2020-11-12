@@ -6,6 +6,9 @@ import com.travelPlanner.travel.model.AttractionsGoogleAPIResponse.*;
 import com.travelPlanner.travel.model.CityGoogleAPIResponse.CityGoogleAPIResponse;
 import com.travelPlanner.travel.model.CityResponse;
 
+import com.travelPlanner.travel.model.FindPlaceResponse;
+import com.travelPlanner.travel.model.FindPlaceResponseBody.PlaceInfo;
+import com.travelPlanner.travel.model.PlaceDetailGoogleAPIResponse.PlaceDetailGoogleAPIResponse;
 import com.travelPlanner.travel.model.RecommendAttractionsResponse.RecommendedAttraction;
 import com.travelPlanner.travel.model.RecommendAttractionsResponse.RecommendedAttractionResponseBody;
 import com.travelPlanner.travel.model.RecommendedAttractionsResponse;
@@ -33,6 +36,9 @@ public class PlaceService {
     private static final String GET_PLACE_DETAIL_URL_TEMPLATE =
             "https://maps.googleapis.com/maps/api/place/details/json?place_id=%s&fields=business_status,opening_hours&key=%s";
 
+    private static final String GET_PLACE_INFO_TEMPLATE =
+            "https://maps.googleapis.com/maps/api/place/details/json?place_id=%s&fields=businese_status,formatted_address,geometry,name,photos,placeID,rating,user_ratings_total&key=%s";
+
 
     private final String CLOSED = "closed";
     private final String PAGE_TOKEN_QUERY = "&pagetoken=";
@@ -47,6 +53,31 @@ public class PlaceService {
             cityResponse.statusCode = HttpStatus.OK.value();
         }
         return cityResponse;
+    }
+
+    public FindPlaceResponse getPlaceInfo(String placeID) throws UnsupportedEncodingException {
+        FindPlaceResponse findPlaceResponse = new FindPlaceResponse();
+        placeID = encode(placeID);
+        String url = String.format(GET_CITY_LOCATION_URL_TEMPLATE,placeID, Constants.GOOGLE_API_KEY);
+
+        PlaceDetailGoogleAPIResponse response = requestHelper.makeRequest(PlaceDetailGoogleAPIResponse.class,url,new PlaceDetailGoogleAPIResponse());
+        if (response!=null){
+            findPlaceResponse.statusCode = HttpStatus.OK.value();
+
+            PlaceInfo placeInfo = new PlaceInfo();
+            placeInfo.business_status = response.result.business_status;
+            placeInfo.formatted_address = response.result.formattedAddress;
+            placeInfo.location = response.result.geometry.location;
+            placeInfo.name = response.result.name;
+            placeInfo.place_id = response.result.placeID;
+            placeInfo.rating = response.result.rating;
+            placeInfo.user_ratings_total = response.result.user_ratings_total;
+            if (response.result.photos!=null && response.result.photos.length > 0){
+                placeInfo.photo_reference = response.result.photos[0].photoReference;
+            }
+            findPlaceResponse.body = placeInfo;
+        }
+        return findPlaceResponse;
     }
 
     public RecommendedAttractionsResponse getRecommendedAttractions(String city,String next_page_token) throws UnsupportedEncodingException {

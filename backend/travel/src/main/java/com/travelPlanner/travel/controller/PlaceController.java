@@ -2,6 +2,7 @@ package com.travelPlanner.travel.controller;
 
 
 import com.travelPlanner.travel.model.CityResponse;
+import com.travelPlanner.travel.model.FindPlaceResponse;
 import com.travelPlanner.travel.model.RecommendedAttractionsResponse;
 import com.travelPlanner.travel.model.Response;
 import com.travelPlanner.travel.service.PlaceService;
@@ -36,5 +37,10 @@ public class PlaceController {
         response.statusCode = HttpStatus.OK.value();
         response.body = placeService.getOpenHours(placeId);
         return response;
+    }
+
+    @RequestMapping(value = "/place/find-place", method = RequestMethod.GET)
+    public FindPlaceResponse findPlace(@RequestParam(value = "placeID") String placeID) throws UnsupportedEncodingException {
+        return placeService.getPlaceInfo(placeID);
     }
 }
