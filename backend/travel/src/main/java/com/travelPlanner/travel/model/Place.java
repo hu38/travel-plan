@@ -1,5 +1,6 @@
 package com.travelPlanner.travel.model;
 
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
@@ -15,29 +16,31 @@ public class Place implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-
     private int place_id;
     private String placeName;
+
 
     //==============================================//
     @ManyToOne
     @JsonIgnore
     private Plan savedPlan;
 
-    public Plan getSavedPlans() {
+    public Plan getSavedPlan() {
         return savedPlan;
     }
 
-    public void setSavedPlans(Plan savedPlan) {
+    public void setSavedPlan(Plan savedPlan) {
         this.savedPlan = savedPlan;
     }
-    //==============================================//
+
+//==============================================//
+
 
     public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -49,7 +52,6 @@ public class Place implements Serializable {
         this.place_id = place_id;
     }
 
-
     public String getPlaceName() {
         return placeName;
     }
@@ -58,13 +60,5 @@ public class Place implements Serializable {
         this.placeName = placeName;
     }
 
-//  private String position;
-//    public String getPosition() {
-//        return position;
-//    }
-//
-//    public void setPosition(String position) {
-//        this.position = position;
-//    }
 
 }

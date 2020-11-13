@@ -29,7 +29,7 @@ public class TravelApplication {
 		SessionFactory sessionFactory = (SessionFactory) context.getBean("sessionFactory");
 		Session session = sessionFactory.openSession();
 
-//		session.beginTransaction();
+		session.beginTransaction();
 
 
 		// ----------------------------------------------------//
@@ -38,11 +38,16 @@ public class TravelApplication {
 //		administrator.setEnabled(true);
 //		administrator.setId(1);
 //		administrator.setPassword("xxx");
-
-
-//		Plan planHardCoded = new Plan();
-//		List<Place> placesHardCoded = new ArrayList<>();
-//		List<Plan> plans = new ArrayList<>();
+//
+//
+//		Plan plan1 = new Plan();
+//		plan1.setPlanName("Plan A");
+//		plan1.setSaveDate(new Date());
+//		plan1.setPlan_id(1);
+//		plan1.setCityName("Harbin");
+//		//default start from 1
+//		plan1.setId(1);
+//
 //
 //		Place p1= new Place();
 //		p1.setPlace_id(1);
@@ -50,33 +55,32 @@ public class TravelApplication {
 //		Place p2= new Place();
 //		p2.setPlace_id(2);
 //		p2.setPlaceName("yourhouse");
-//		//p1.setId(1); // maynot need
 //
-//		placesHardCoded.add(p1);
-//		placesHardCoded.add(p2);
+//		// default start from 1;
+//		p1.setId(1); // maynot need
+//		p2.setId(2);
+//		p1.setSavedPlans(plan1);
+//		p2.setSavedPlans(plan1);
 //
-//		planHardCoded.setPlanName("Primitive");
-//		Date date = new Date();
-//		planHardCoded.setSaveDate(date);  //Date:
-//		planHardCoded.setCityName("Harbin");
-//		planHardCoded.setPlan_id(1);
-//		planHardCoded.setPlacesList(placesHardCoded);
-//		planHardCoded.setUser(administrator);  // may not need
-//		planHardCoded.setId(111);  // may not need
+//		List<Place> places = new ArrayList<>();
+//		places.add(p1);
+//		places.add(p2);
 //
-//		plans.add(planHardCoded);
+//		plan1.setPlacesList(places);
+//		plan1.setId(1);
+//
+//		List<Plan> plans = new ArrayList<>();
+//		plans.add(plan1);
+//		plan1.setUser(administrator);
+//
 //		administrator.setSavedPlans(plans);
 //
-
 //		session.save(administrator);
-////		session.save(plans);
-////		session.save(placesHardCoded);
+//
 //
 //		session.getTransaction().commit();
 //
-		session.close();
-//
-
+//		session.close();
 
 	}
 

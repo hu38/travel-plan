@@ -29,14 +29,24 @@ public class SavePlanDAO {
     {
         List<Place> savedPlaces = plan.getPlacesList();
 
+
+        // setPlans
+        if(plan.getPlacesList()!=null)
+        {
+            for (int i = 0; i < plan.getPlacesList().size(); i++) {
+                Place singlePlace = plan.getPlacesList().get(i);
+                singlePlace.setSavedPlan(plan); // plan_id?
+            }
+        }
+
         Session session =null;
         try
         {
             session = sessionFactory.openSession();
             session.beginTransaction();
 
-            session.save(plan);
-            session.save(savedPlaces);
+            session.saveOrUpdate(plan); // session.save(plan);
+
 
             session.getTransaction().commit();
         }
@@ -55,16 +65,19 @@ public class SavePlanDAO {
         }
     }
 
-    public List<Plan> getPlans(User user)
+    public List<Plan> getPlans(int user_id)
     {
         List<Plan> planResults = new ArrayList<Plan>();
 
         try(Session session = sessionFactory.openSession())
         {
             CriteriaBuilder builder = session.getCriteriaBuilder();
+
+            // public Cart getCartbyID (int cartid),  cart = session.get(cart.class, cartid)
+
             CriteriaQuery<Plan> query =builder.createQuery(Plan.class);
             Root<Plan> root =  query.from(Plan.class);
-            query.select(root).where(builder.equal(root.get("user"),user));
+            query.select(root).where(builder.equal(root.get("user_id"),user_id));
 
             planResults = session.createQuery(query).getResultList();
             System.out.println(planResults);
@@ -82,6 +95,25 @@ public class SavePlanDAO {
         }
         return planResults;
 
+    }
+
+    public List<Plan> getAllPlans()
+    {
+        List<Plan> planResults = new ArrayList<Plan>();
+
+
+        try(Session session = sessionFactory.openSession())
+        {
+//            planResults = session.createCriteria(Plan.class).list();
+            planResults = session.createCriteria(Plan.class).list();
+
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+            //throw e;
+        }
+        return planResults;
     }
 
 }

@@ -40,6 +40,7 @@ public class PlaceService {
     public CityResponse getCityLocation(String city) throws UnsupportedEncodingException {
         CityResponse cityResponse = new CityResponse();
         city = encode(city);
+
         String url = String.format(GET_CITY_LOCATION_URL_TEMPLATE,city, Constants.GOOGLE_API_KEY);
         CityGoogleAPIResponse response = requestHelper.makeRequest(CityGoogleAPIResponse.class,url,new CityGoogleAPIResponse());
         if (response!=null){

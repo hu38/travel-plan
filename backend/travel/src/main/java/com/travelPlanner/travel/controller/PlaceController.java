@@ -27,4 +27,6 @@ public class PlaceController {
                                                           @RequestParam(value = "pagetoken", required = false) String pageToken) throws UnsupportedEncodingException {
         return placeService.getRecommendedAttractions(cityLocation,pageToken);
     }
+
+
 }

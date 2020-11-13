@@ -1,5 +1,6 @@
 package com.travelPlanner.travel.model;
 
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
@@ -20,13 +21,14 @@ public class Plan implements Serializable {
     private String cityName;
     private String planName;
     private Date saveDate;
-
     private int plan_id;
+    private String placesListString;
 
 
     //===================================================//
 
     @OneToMany(mappedBy = "savedPlan", cascade =CascadeType.ALL, fetch = FetchType.EAGER)
+    @JsonIgnore
     private List<Place> placesList;
 
     public List<Place> getPlacesList() {
@@ -41,9 +43,7 @@ public class Plan implements Serializable {
 
 
     //===================================================//
-    //private int user_id;
     @ManyToOne
-    @JsonIgnore
     private User user;
 
     public User getUser() {
@@ -60,7 +60,7 @@ public class Plan implements Serializable {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -96,4 +96,11 @@ public class Plan implements Serializable {
         this.plan_id = plan_id;
     }
 
+    public String getPlacesListString() {
+        return placesListString;
+    }
+
+    public void setPlacesListString(String placesListString) {
+        this.placesListString = placesListString;
+    }
 }
