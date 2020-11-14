@@ -6,9 +6,16 @@ import com.travelPlanner.travel.model.AttractionsGoogleAPIResponse.*;
 import com.travelPlanner.travel.model.CityGoogleAPIResponse.CityGoogleAPIResponse;
 import com.travelPlanner.travel.model.CityResponse;
 
+<<<<<<< Updated upstream
 import com.travelPlanner.travel.model.FindPlaceResponse;
 import com.travelPlanner.travel.model.FindPlaceResponseBody.PlaceInfo;
 import com.travelPlanner.travel.model.PlaceDetailGoogleAPIResponse.PlaceDetailGoogleAPIResponse;
+=======
+import com.travelPlanner.travel.model.FindPlaceGoogleAPIResponse.FindPlaceCandidate;
+import com.travelPlanner.travel.model.FindPlaceGoogleAPIResponse.FindPlaceGoogleAPIResponse;
+import com.travelPlanner.travel.model.FindPlaceResponse;
+import com.travelPlanner.travel.model.FindPlaceResponseBody.PlaceInfo;
+>>>>>>> Stashed changes
 import com.travelPlanner.travel.model.RecommendAttractionsResponse.RecommendedAttraction;
 import com.travelPlanner.travel.model.RecommendAttractionsResponse.RecommendedAttractionResponseBody;
 import com.travelPlanner.travel.model.RecommendedAttractionsResponse;
@@ -37,8 +44,12 @@ public class PlaceService {
             "https://maps.googleapis.com/maps/api/place/details/json?place_id=%s&fields=business_status,opening_hours&key=%s";
 
     private static final String GET_PLACE_INFO_TEMPLATE =
+<<<<<<< Updated upstream
             "https://maps.googleapis.com/maps/api/place/details/json?place_id=%s&fields=businese_status,formatted_address,geometry,name,photos,placeID,rating,user_ratings_total&key=%s";
 
+=======
+            "hhttps://maps.googleapis.com/maps/api/place/findplacefromtext/json?key=%s&input=%s&inputtype=textquery&fields=business_status,formatted_address,geometry,name,photos,place_id,rating,user_ratings_total";
+>>>>>>> Stashed changes
 
     private final String CLOSED = "closed";
     private final String PAGE_TOKEN_QUERY = "&pagetoken=";
@@ -149,4 +160,28 @@ public class PlaceService {
         return URLEncoder.encode(param,"UTF-8");
     }
 
+    public FindPlaceResponse getPlaceInfo(String address) throws UnsupportedEncodingException {
+        FindPlaceResponse findPlaceResponse = new FindPlaceResponse();
+        address = encode(address);
+        String url = String.format(GET_PLACE_INFO_TEMPLATE, Constants.GOOGLE_API_KEY, address);
+
+        FindPlaceGoogleAPIResponse response = requestHelper.makeRequest(FindPlaceGoogleAPIResponse.class,url,new FindPlaceGoogleAPIResponse());
+        FindPlaceCandidate candidate = response.candidates[0];
+        if (response!=null){
+            findPlaceResponse.statusCode = HttpStatus.OK.value();
+            PlaceInfo placeInfo = new PlaceInfo();
+            placeInfo.business_status = candidate.business_status;
+            placeInfo.formatted_address = candidate.formattedAddress;
+            placeInfo.location = candidate.geometry.location;
+            placeInfo.name = candidate.name;
+            placeInfo.place_id = candidate.placeID;
+            placeInfo.rating = candidate.rating;
+            placeInfo.user_ratings_total = candidate.user_ratings_total;
+            if (candidate.photos!=null && candidate.photos.length > 0){
+                placeInfo.photo_reference = candidate.photos[0].photoReference;
+            }
+            findPlaceResponse.body = placeInfo;
+        }
+        return findPlaceResponse;
+    }
 }
