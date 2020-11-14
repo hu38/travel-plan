@@ -40,12 +40,7 @@ public class PlaceController {
     }
 
     @RequestMapping(value = "/place/find-place", method = RequestMethod.GET)
-<<<<<<< Updated upstream
-    public FindPlaceResponse findPlace(@RequestParam(value = "placeID") String placeID) throws UnsupportedEncodingException {
-        return placeService.getPlaceInfo(placeID);
-=======
     public FindPlaceResponse findPlace(@RequestParam(value = "address") String address) throws UnsupportedEncodingException {
         return placeService.getPlaceInfo(address);
->>>>>>> Stashed changes
     }
 }
