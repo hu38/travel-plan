@@ -42,8 +42,7 @@ const OptimizeRoute = (props) => {
         }
         placeID = startID + " " + placeID + endID;
         // console.log(placeID);
-        props.setPlaceID(placeID);
-        props.findOptimizeRoutes();
+        props.findOptimizeRoutes(placeID);
         setVisible(false);
     }
     else {
@@ -95,7 +94,7 @@ const OptimizeRoute = (props) => {
 
     return (
       <>
-        <Button type="primary" onClick={showModal}>
+        <Button type="link" onClick={showModal}>
           Optimize Route
         </Button>
         <Modal
