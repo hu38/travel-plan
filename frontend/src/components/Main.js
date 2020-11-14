@@ -1,23 +1,31 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect} from "react";
 import CollapseList from "./RecommendAndSelect/Collapse";
 import MapView from "./MapView";
 import SearchAndAdd from "./SearchAndAdd";
 import EnterDestination from "./EnterDestination";
-import { Collapse } from "antd";
-
-
+import { Button, message } from "antd";
+import OptimizeRoute from "./RecommendAndSelect/OptimizeRoute"
+import SavedRecords from "./SavedRecords";
+import LogIn from "./LogIn";
+import LogOut from "./LogOut";
+import Register from "./Register";
 
 
 const Main = () => {
-
-
+  
     /***  Lifted State Sourth of Truth ***/
     // 1. <EnterDestination />
     const [cityText,   setCityText]= useState("Boston"); 
     const [cityResult, setcityResult]= useState(undefined);  
+    const [enterVisible, setEnterVisible] = useState(true);
+    const [recomendLoading,setRecomendLoading] = useState(false);
     
     // 2. <Collapse />
     const [recomendCityList, setRecomendCityList] = useState([]);
+
+    //3. Optimize Routes
+    const [placeID, setPlaceID] = useState("ChIJj2tUC2bGwoARwqdCDE37YD0 ChIJkyPnxsO_woARXQl-tdWAFi8 ChIJzzgyJU--woARcZqceSdQ3dM ChIJdZbSPDg23YAR6yR-akC2g4E");
+    const [encodedRoute, setEncodedRoute] = useState('');
 
     /*** -----  Lifted State Sourth of Truth  ----- ***/
 
@@ -29,8 +37,9 @@ const Main = () => {
     //     }
 
     // );
-        
 
+    //4. Login and Logout
+    const [isLogin, setIsLogin] = useState(false);
 
     /*** Func Declaration   ***/ 
     // 1. Enter Destination to Use
@@ -48,13 +57,23 @@ const Main = () => {
           )
     }
 
+    const changeCity=() => {    //pop out window
+      setEnterVisible(true);
+      console.log("open enter destination");
+    }
+
+    const closeCity=() => {   //close the window
+      setEnterVisible(false);
+      console.log("close enter destination")
+    }
+
 
     // 2. Collapsed List
     const findRecommendCityList=() =>{
 
         //api/place/find-tourist-attractions?city=houston   !!! &pagetoken
         // response: got 20 arrays in data.body.results
-
+        setRecomendLoading(true);
         fetch(`api/place/find-tourist-attractions?city=${cityText}`).then(res=>res.json()).then(
             data=>{
 
@@ -70,6 +89,8 @@ const Main = () => {
 
 
                 setRecomendCityList( data.body.results);
+                setRecomendLoading(false);
+                closeCity();
                 
                 // setRecomendCityList( data.body.results.map( (cityInfo)=>{
                     
@@ -91,18 +112,70 @@ const Main = () => {
             }
           )
     }
+
+    //3. Optimize Routes
+    // console.log("placeID is here" + placeID);
+    const findOptimizeRoutes=() =>{
+      fetch(`api/direction/get-route?places=${placeID}&optimize=true`).then(res=>res.json()).then(
+          data=>{
+            if (data.statusCode===0) {
+              setEncodedRoute(data.body.overviewPolyline.points);
+            }
+            // console.log("this is encoded route: " + data.statusCode);
+            // console.log("this is url: " + "api/direction/get-route?places=" + placeID + "&optimize=true");
+          })
+    }
+
+    //4. Login and Logout
+    const showLogout = () =>{
+      setIsLogin(true);
+    }
+
+    const showLogin = () =>{
+      setIsLogin(false);
+    }
     
+    const getLogin = (values) => {
+      const {username, password} = values;
+      var myHeaders = new Headers();
+      myHeaders.append("Content-Type", "application/json");
+      var raw = JSON.stringify(values);
+
+      var requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: raw,
+        redirect: 'follow'
+      };
+      console.log(values)
+      fetch(`api/user/login`,requestOptions)
+      .then(res=>res.json()).then(
+        data=>{
+          if (data.statusCode===200)
+          {
+            showLogout();
+            message.success('Login success');
+            // console.log(`<Main /> : ${data.body}`);
+          }
+          else {
+            message.error('Login error');
+          }
+        //   console.log(cityResult);
+        }
+      )
+    }
 
 
 
-    return (
-
-        
+    return (     
         <div>
             <EnterDestination 
                     findCityLocation={findCityLocation} 
                     setCityText={setCityText} 
                     findRecommendCityList={findRecommendCityList}
+                    enterVisible={enterVisible}
+                    closeCity={closeCity}
+                    recomendLoading = {recomendLoading}
             /> 
 
             {/* <SearchAndAdd/> */}
@@ -111,12 +184,30 @@ const Main = () => {
                     recomendCityList={recomendCityList}
             />
 
+            <Button type="primary" onClick={changeCity}>
+                Change City
+            </Button>
 
+            <OptimizeRoute
+                recomendCityList={recomendCityList}
+                setPlaceID={setPlaceID}
+                findOptimizeRoutes={findOptimizeRoutes}
+            />
+            {isLogin?
+                <span>
+                  <LogOut showLogin = {showLogin} />
+                  <SavedRecords/>
+                </span>
+                :
+                <span>
+                  <LogIn showLogout = {showLogout} getLogin = {getLogin}/>
+                </span>
+            }
            <MapView style={{position: "absolute"}} 
                 cityResult={cityResult}
                 recomendCityList={recomendCityList}
-            /> 
-
+                encodedRoute={encodedRoute}
+            />
         </div> 
 
         
