@@ -2,7 +2,6 @@ package com.travelPlanner.travel.service;
 
 
 import com.travelPlanner.travel.Constants;
-import com.travelPlanner.travel.dao.SavePlaceDAO;
 import com.travelPlanner.travel.dao.SavePlanDAO;
 import com.travelPlanner.travel.helper.HTTPRequest;
 import com.travelPlanner.travel.model.CityGoogleAPIResponse.CityGoogleAPIResponse;
@@ -59,6 +58,9 @@ public class SaveService {
     public List<Plan> loadAllPlansAction()
     {
         List<Plan> queriedPlans = savePlanDAO.getAllPlans();
+        System.out.print("I'm in LoadAllPlans");
+//        System.out.print(queriedPlans.size()); // 3? strange
+
         // sanity check
         if (queriedPlans ==null)
         {

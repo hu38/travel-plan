@@ -10,12 +10,14 @@ import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.orm.hibernate5.HibernateTemplate;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 @Repository
@@ -27,17 +29,6 @@ public class SavePlanDAO {
     //Save Plan and places in it Together
     public void addPlan(Plan plan)
     {
-        List<Place> savedPlaces = plan.getPlacesList();
-
-
-        // setPlans
-        if(plan.getPlacesList()!=null)
-        {
-            for (int i = 0; i < plan.getPlacesList().size(); i++) {
-                Place singlePlace = plan.getPlacesList().get(i);
-                singlePlace.setSavedPlan(plan); // plan_id?
-            }
-        }
 
         Session session =null;
         try
@@ -102,10 +93,18 @@ public class SavePlanDAO {
         List<Plan> planResults = new ArrayList<Plan>();
 
 
+
         try(Session session = sessionFactory.openSession())
         {
-//            planResults = session.createCriteria(Plan.class).list();
-            planResults = session.createCriteria(Plan.class).list();
+            System.out.println("=Session Plan class==");
+
+//            System.out.println( session.createCriteria(Plan.class).list());
+            System.out.println("========plan Results size");
+//            System.out.println(planResults.size());
+
+            Criteria criteria = session.createCriteria(Plan.class).setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);
+            planResults = criteria.list();
+            System.out.println(planResults.size());
 
         }
         catch (Exception e)
@@ -115,5 +114,24 @@ public class SavePlanDAO {
         }
         return planResults;
     }
+
+
+//    public Plan getPlanByUserId(long id)
+//    {
+//        Plan plan;
+//        try(Session session = sessionFactory.openSession()) {
+//            session.beginTransaction();
+//
+//            CriteriaBuilder builder = session.getCriteriaBuilder();
+//            CriteriaQuery<Plan> criteriaQuery = builder.createQuery(Plan.class);
+//            Root<Plan> root = criteriaQuery.from(Plan.class);
+//            criteriaQuery.select(root).where(builder.equal(root.get("userID"), id));
+//            user = session.createQuery(criteriaQuery).getSingleResult();
+//        }catch (Exception e){
+//            e.printStackTrace();
+//            throw e;
+//        }
+//        return user;
+//    }
 
 }

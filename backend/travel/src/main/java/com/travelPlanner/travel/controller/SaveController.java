@@ -26,6 +26,7 @@ public class SaveController {
     @Autowired
     SaveService saveService;
 
+    //Save Single Plan
     //@PostMapping  Need:@Request body User user
     @RequestMapping(value = "/save/savePlans", method = RequestMethod.POST,
             produces = MediaType.APPLICATION_JSON_VALUE,
@@ -34,18 +35,22 @@ public class SaveController {
     {
         Response<String> response = new Response<String>() {};
 
-//        System.out.println("I'm in!");
+        System.out.println("I'm in SavePlans!");
 //        System.out.println(plan.getPlanName());
 //        System.out.println(plan.getCityName());
 //        System.out.println(plan.getPlan_id());
 //        System.out.println(plan.getSaveDate());  // didnt support Time, default 00:00:00
 //        System.out.println(plan.getPlacesList());
 
+        for (Place place: plan.getPlacesList() )
+        {
+//            System.out.print(place.getSavedPlan());
+            place.setSavedPlan(plan);
 
+        }
 
         if(saveService.savePlansAction(plan))
         {
-
             response.body="Plans Saved !";
             response.statusCode=200;
         }
@@ -75,10 +80,8 @@ public class SaveController {
     }
 
 
-//    @RequestMapping(value = "/save/loadAllPlans", method = RequestMethod.GET)
-
-     @RequestMapping(value = "/save/loadAllPlans", method = RequestMethod.GET)
-     public Response<List<Plan>> loadAllInfo()
+    @RequestMapping(value = "/save/loadAllPlans", method = RequestMethod.GET)
+    public Response<List<Plan>> loadAllInfo()
     {
         Response<List<Plan>> response = new Response<>() {};
         response.body=saveService.loadAllPlansAction();

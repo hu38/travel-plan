@@ -20,16 +20,16 @@ public class User implements Serializable {
 
 //    @OneToMany(mappedBy = "users", cascade =CascadeType.ALL, fetch = FetchType.EAGER)
 
-    @OneToMany(mappedBy = "user", cascade =CascadeType.ALL, fetch = FetchType.EAGER)
-    private List<Plan> savedPlans;
-
-    public List<Plan> getSavedPlans() {
-        return savedPlans;
-    }
-
-    public void setSavedPlans(List<Plan> savedPlans) {
-        this.savedPlans = savedPlans;
-    }
+//    @OneToMany(mappedBy = "user", cascade =CascadeType.ALL, fetch = FetchType.EAGER)
+//    private List<Plan> savedPlans;
+//
+//    public List<Plan> getSavedPlans() {
+//        return savedPlans;
+//    }
+//
+//    public void setSavedPlans(List<Plan> savedPlans) {
+//        this.savedPlans = savedPlans;
+//    }
     // =======================================================//
 
     public long getId() {
