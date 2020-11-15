@@ -2,7 +2,7 @@ import { Button } from "antd";
 import React from "react";
 import ReactGoogleMaps from './Google JavaScript API/ReactGoogleMaps'
 
-const MapView = ({cityResult, recomendCityList}) => {
+const MapView = ({cityResult, recomendAttractionList}) => {
 
 //     const testFlowDown = ({cityResult})=>
 //   {
@@ -22,7 +22,7 @@ const MapView = ({cityResult, recomendCityList}) => {
         <>
         {/* <Button onClick={handleclick}> buttonnn </Button> */}
         <div>
-            <ReactGoogleMaps cityResult={cityResult} recomendCityList={recomendCityList}/>
+            <ReactGoogleMaps cityResult={cityResult} recomendAttractionList={recomendAttractionList}/>
         </div>
         </ >
     )

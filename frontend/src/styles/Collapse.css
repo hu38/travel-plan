@@ -1,0 +1,25 @@
+
+/* .AttractionList {
+  z-index: 1;
+
+} */
+
+.scroller {
+  margin: 0 auto;
+  /* height: 100%; */
+  height: 700px;
+  width: 100%;
+  overflow: auto;
+}
+/* 
+.satellite-list-container {
+    margin: 10px;
+    border: 1px solid #ccc;
+  } */
+  
+.recom-list {
+  margin: 10px;
+  /* height: 335px; */
+  overflow-y: auto;
+}  
+  

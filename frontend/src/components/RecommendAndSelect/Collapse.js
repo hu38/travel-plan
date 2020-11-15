@@ -1,6 +1,10 @@
 import React, { useState }  from "react";
 import { List, Typography, Drawer, Button, Collapse, Tag  } from 'antd';
 import PlaceBox from "./PlaceBox";
+import Title from "antd/lib/typography/Title";
+import {Checkbox, Avatar } from "antd";
+import InfiniteScroll from 'react-infinite-scroller';
+import "../../styles/Collapse.css"
 
 const data = [
     'Racing car sprays burning fuel into crowd.',
@@ -32,31 +36,49 @@ function callback(key) {
 
 // 1. onload More ... ?  Ant Design
 
-const Collapsible = ({recomendCityList}) => {
-
+const Collapsible = ({  
+    recomendAttractionList,
+    updateRecomendCityList,
+    loading, 
+}) => {  
+        const onSelectionChange = (checked, targetAttraction) => {
+            // To Do
+        }
+    
+     
 
     // console.log("collape list");
     // console.log(recomendCityList);
 
     return (
     <>
-    <Collapse defaultActiveKey={['1']} onChange={callback}>
+    <Collapse className = "AttractionList" defaultActiveKey={['1']} onChange={callback}>
         <Panel header="Tourists Nearby Recommendation List" key="1" className="collapse-panel">
-            <List
-                header={<div></div>}
-                // footer={<div>Footer</div>}
-                bordered
-                dataSource={recomendCityList}
-                renderItem={item => (
-                    <List.Item>
-                        {/* <span> {item.name} </span> */}
-                        <PlaceBox name={item.name}  photo_reference={item.photo_reference}/>   
-                        {/* photo_reference={item.photo_reference} */}
-                        {/* <List.Item.Meta
-                            title={<p>{item.name}</p>}/> */}
-                    </List.Item>
-                )}
-            />    
+        <div className="scroller">      
+            <Title level={5}>Nearby Attractions ({recomendAttractionList ? recomendAttractionList.length : 0})</Title>
+            <p>Select the attractions you wanna visit on the map at the right side</p>
+            <hr/>
+                <List 
+                    className="recom-list"
+                    itemLayout="horizontal"
+                    dataSource={recomendAttractionList}
+                    loading={loading} // 
+                    renderItem={ item => (
+                        <List.Item actions={[<Checkbox onChange={(e) => onSelectionChange(e.target.checked, item)} checked={item.selected} />]}>   
+                        {/* <List.Item actions={[]}>  */}
+                            <PlaceBox   photo_reference={item.photo_reference}/>             
+                            <List.Item.Meta
+                            
+                            // {/* avatar = {<Avatar src={item.photo_reference} size="large" alt="satellite"/>} */}
+                            title={<p>{item.name}</p>}
+                            description={`Description: ${item.description}`}
+                            // distance={`distance: ${item.distance}`}
+                            />
+                        </List.Item>
+                    )}
+                />     
+        </div>      
+        
         </Panel>
         <Panel header="Selected List" key="2" className="collapse-panel">
             {/* <p>
