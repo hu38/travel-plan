@@ -3,12 +3,16 @@ import CollapseList from "./RecommendAndSelect/Collapse";
 import MapView from "./MapView";
 import SearchAndAdd from "./SearchAndAdd";
 import EnterDestination from "./EnterDestination";
-import { Collapse } from "antd";
-
-
+import {Collapse, Col, Row } from "antd";
+import  "../styles/Main.css";
+import { Menu, Dropdown } from 'antd';
+import { DownOutlined } from '@ant-design/icons';
+import { Affix, Button } from 'antd';
 
 
 const Main = () => {
+  // const [loading, setLoading] = useState(false);
+  // const [recomList, setRecomList] = useState([]);
 
 
     /***  Lifted State Sourth of Truth ***/
@@ -17,25 +21,20 @@ const Main = () => {
     const [cityResult, setcityResult]= useState(undefined);  
     
     // 2. <Collapse />
-    const [recomendCityList, setRecomendCityList] = useState([]);
+    const [recomendAttractionList, setRecomendCityList] = useState([]);
 
     /*** -----  Lifted State Sourth of Truth  ----- ***/
-
-
     // useEffect(  ()=>
     //     {
     //         console.log(cityResult);  // cityResult works
     //         console.log(`City Text: ${cityText}`);  // cityText works
     //     }
-
     // );
-        
-
+   
 
     /*** Func Declaration   ***/ 
     // 1. Enter Destination to Use
     const findCityLocation=() =>{
-
         fetch(`api/place/find-city?city=${cityText}`).then(res=>res.json()).then(
             data=>{
               if (data.statusCode===200)
@@ -48,18 +47,13 @@ const Main = () => {
           )
     }
 
-
     // 2. Collapsed List
     const findRecommendCityList=() =>{
-
         //api/place/find-tourist-attractions?city=houston   !!! &pagetoken
         // response: got 20 arrays in data.body.results
-
         fetch(`api/place/find-tourist-attractions?city=${cityText}`).then(res=>res.json()).then(
-            data=>{
-
+            data => {
               // As of Now, I only need { Name & photo_reference & location & place_id} shown below.
-
               if (data.statusCode===200)
               {  
                 // setRecomendCityList( data.body.results.map( (cityInfo)=>{
@@ -67,9 +61,7 @@ const Main = () => {
                 //     let newElement = {location, name, photo_reference,place_id};  // concate the summary info
                 // }
 
-
-
-                setRecomendCityList( data.body.results);
+                setRecomendCityList(data.body.results);
                 
                 // setRecomendCityList( data.body.results.map( (cityInfo)=>{
                     
@@ -85,39 +77,75 @@ const Main = () => {
                 
                 // }));
               }
-
             //   console.log("=== here comes recommendation list ===")
             //   console.log(recomendCityList);  //empty
             }
-          )
+        )
     }
     
+  //   const menu = (
+  //     <Menu>
+  //       <Menu.Item>
+  //         <a target="_blank" rel="noopener noreferrer" href="http://www.alipay.com/">
+  //           1st menu item
+  //         </a>
+  //       </Menu.Item>
+  //       </Menu>
+  //  );
 
-
+  
 
     return (
+       <div id = "container">
+          <div>
+            <EnterDestination 
+            findCityLocation={findCityLocation} 
+            setCityText={setCityText} 
+            findRecommendCityList={findRecommendCityList}
+            />
+          </div> 
+        <div  id="collapse-list">  
+          <CollapseList  
+              style={{position:"absolute" } }
+              recomendAttractionList={recomendAttractionList}  />       
+        </div> 
+        <div id = "map">
+          <MapView style={{position: "absolute"}} 
+              cityResult={cityResult}
+              recomendAttractionList={recomendAttractionList}
+          />    
+        </div>   
+      </div> 
+    //       <Row>
+        
+    //     <Col span={24}>
+     
+          
+    //     </Col>    
+        
+    // </Row>
 
         
-        <div>
-            <EnterDestination 
-                    findCityLocation={findCityLocation} 
-                    setCityText={setCityText} 
-                    findRecommendCityList={findRecommendCityList}
-            /> 
+        // <div>
+        //     <EnterDestination 
+        //             findCityLocation={findCityLocation} 
+        //             setCityText={setCityText} 
+        //             findRecommendCityList={findRecommendCityList}
+        //     /> 
 
-            {/* <SearchAndAdd/> */}
-            <CollapseList 
-                    style={{position:"fixed" } }
-                    recomendCityList={recomendCityList}
-            />
+        //     {/* <SearchAndAdd/> */}
+        //     <CollapseList 
+        //             style={{position:"fixed" } }
+        //             recomendCityList={recomendCityList}
+        //     />
 
 
-           <MapView style={{position: "absolute"}} 
-                cityResult={cityResult}
-                recomendCityList={recomendCityList}
-            /> 
+        //    <MapView style={{position: "absolute"}} 
+        //         cityResult={cityResult}
+        //         recomendCityList={recomendCityList}
+        //     /> 
 
-        </div> 
+        // </div> 
 
         
     );

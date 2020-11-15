@@ -7,8 +7,6 @@ const EnterDestination = (props) => {
     
   const [visible, setVisible] = useState(true);
 
-
-
     // lifted State
     /* lift to <Main />
     const [cityResult, setcityResult]= useState(undefined);  // undefined
