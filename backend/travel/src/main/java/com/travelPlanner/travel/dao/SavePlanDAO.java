@@ -116,22 +116,23 @@ public class SavePlanDAO {
     }
 
 
-//    public Plan getPlanByUserId(long id)
-//    {
-//        Plan plan;
-//        try(Session session = sessionFactory.openSession()) {
-//            session.beginTransaction();
-//
-//            CriteriaBuilder builder = session.getCriteriaBuilder();
-//            CriteriaQuery<Plan> criteriaQuery = builder.createQuery(Plan.class);
-//            Root<Plan> root = criteriaQuery.from(Plan.class);
-//            criteriaQuery.select(root).where(builder.equal(root.get("userID"), id));
-//            user = session.createQuery(criteriaQuery).getSingleResult();
-//        }catch (Exception e){
-//            e.printStackTrace();
-//            throw e;
-//        }
-//        return user;
-//    }
+
+    public List<Plan> getPlanByUserId(long userID)
+    {
+        List<Plan> plans;
+        try(Session session = sessionFactory.openSession()) {
+            session.beginTransaction();
+
+            CriteriaBuilder builder = session.getCriteriaBuilder();
+            CriteriaQuery<Plan> criteriaQuery = builder.createQuery(Plan.class);
+            Root<Plan> root = criteriaQuery.from(Plan.class);
+            criteriaQuery.select(root).where(builder.equal(root.get("userID"), userID));
+            plans = session.createQuery(criteriaQuery).getResultList();
+        }catch (Exception e){
+            e.printStackTrace();
+            throw e;
+        }
+        return plans;
+    }
 
 }

@@ -62,15 +62,11 @@ public class SaveController {
         return response;
     }
 
-
-    // /save/loadPlans/{user_id}  @PathVariable
-    //public Response<List<Plan>> loadInfo(@RequestBody User user)
-
-    @RequestMapping(value = "/save/loadPlans/{user_id}", method = RequestMethod.GET)
-    public Response<List<Plan>> loadInfo(@PathVariable(value="user_id") int user_id)
+    @RequestMapping(value = "/save/loadPlansByUserID", method = RequestMethod.GET)
+    public Response<List<Plan>> loadInfo(@RequestParam(value="userID") long userID)
     {
         Response<List<Plan>> response = new Response<>() {};
-        response.body=saveService.loadPlansAction(user_id);
+        response.body=saveService.loadPlansByUserID(userID);
 
         // Front End: needs to check if is null or Empty;
         // if (response.body==null || response.body.isEmpty())

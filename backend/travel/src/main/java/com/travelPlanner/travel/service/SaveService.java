@@ -42,9 +42,24 @@ public class SaveService {
         return true;
     }
 
-    public List<Plan> loadPlansAction(int user_id)
+//    public List<Plan> loadPlansAction(int user_id)
+//    {
+//        List<Plan> queriedPlans = savePlanDAO.getPlans(user_id);
+//
+//        // sanity check
+//        if (queriedPlans ==null)
+//        {
+//            return new ArrayList<Plan>();
+//        }
+//
+//        return queriedPlans;
+//    }
+
+    public List<Plan> loadPlansByUserID(long userID)
     {
-        List<Plan> queriedPlans = savePlanDAO.getPlans(user_id);
+        List<Plan> queriedPlans = savePlanDAO.getPlanByUserId(userID);
+        System.out.print("I'm in LoadAllPlans");
+//        System.out.print(queriedPlans.size()); // 3? strange
 
         // sanity check
         if (queriedPlans ==null)
@@ -54,6 +69,8 @@ public class SaveService {
 
         return queriedPlans;
     }
+
+
 
     public List<Plan> loadAllPlansAction()
     {

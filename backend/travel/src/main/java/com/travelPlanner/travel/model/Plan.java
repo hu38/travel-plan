@@ -25,20 +25,17 @@ public class Plan implements Serializable {
     private Date saveDate;
 //    private int plan_id;
     private String placesListString;
-    private int userID;
 
+    private long userID;
 
-    public int getUserID() {
+    public long getUserID() {
         return userID;
     }
 
-    public void setUserID(int userID) {
+    public void setUserID(long userID) {
         this.userID = userID;
     }
-
-
-
-    //===================================================//
+//===================================================//
 
     @OneToMany(mappedBy = "savedPlan", cascade =CascadeType.ALL, fetch = FetchType.EAGER)
 //    @JsonIgnore
