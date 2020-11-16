@@ -42,7 +42,7 @@ public class DirectionService {
             totalDistance += leg.distance.value;
             totalDuration += leg.duration.value;
         }
-        String distanceText = imperial == "true" ? formatDistance(totalDistance, true) : formatDistance(totalDistance, false);
+        String distanceText = imperial.equals("true") ? formatDistance(totalDistance, true) : formatDistance(totalDistance, false);
         String durationText = formatDuration(totalDuration);
         responseBody.totalDistance = distanceText;
         responseBody.totalDuration = durationText;
