@@ -26,7 +26,7 @@ public class PlaceController {
     }
 
     @RequestMapping(value = "/place/find-recommended-places", method = RequestMethod.GET)
-    public RecommendedPlacesResponse getRecommendPlaces(@RequestParam(value = "type") String type, @RequestParam(value = "city") String cityLocation,
+    public RecommendedPlacesResponse getRecommendPlaces(@RequestParam(value = "type", defaultValue = "tourist attraction") String type, @RequestParam(value = "city") String cityLocation,
                                                         @RequestParam(value = "pagetoken", required = false) String pageToken) throws UnsupportedEncodingException {
         return placeService.getRecommendedPlaces(type, cityLocation, pageToken);
     }
