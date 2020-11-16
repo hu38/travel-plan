@@ -31,6 +31,12 @@ public class PlaceController {
         return placeService.getRecommendedAttractions(cityLocation,pageToken);
     }
 
+    @RequestMapping(value = "/place/find-recommended-places", method = RequestMethod.GET)
+    public RecommendedAttractionsResponse getRecommendPlaces(@RequestParam(value = "city") String cityLocation,
+                                                          @RequestParam(value = "pagetoken", required = false) String pageToken) throws UnsupportedEncodingException {
+        return placeService.getRecommendedPlaces(cityLocation,pageToken);
+    }
+
     @RequestMapping(value = "/place/detail", method = RequestMethod.GET)
     public Response<String[]> getPlaceDetail(@RequestParam(value = "placeId") String placeId) throws UnsupportedEncodingException {
         Response response = new Response<String[]>(){};

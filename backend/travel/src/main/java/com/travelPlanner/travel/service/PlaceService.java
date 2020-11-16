@@ -98,6 +98,49 @@ public class PlaceService {
         return recommendedAttractionsResponse;
     }
 
+    public RecommendedAttractionsResponse getRecommendedPlaces(String city,String next_page_token) throws UnsupportedEncodingException {
+        RecommendedAttractionsResponse recommendedAttractionsResponse = new RecommendedAttractionsResponse();
+        city = encode(city);
+        String url = String.format(GET_RECOMMENDED_ATTRACTIONS_URL_TEMPLATE, city, Constants.GOOGLE_API_KEY);
+        if (next_page_token!=null){
+            next_page_token = encode(next_page_token);
+            url += PAGE_TOKEN_QUERY+next_page_token;
+        }
+        AttractionsGoogleAPIResponse attractionsResponse = requestHelper.makeRequest(AttractionsGoogleAPIResponse.class,url,new AttractionsGoogleAPIResponse());
+        if (attractionsResponse == null){
+            recommendedAttractionsResponse.statusCode = HttpStatus.INTERNAL_SERVER_ERROR.value();
+            return recommendedAttractionsResponse;
+        }
+
+        RecommendedAttractionResponseBody body = new RecommendedAttractionResponseBody();
+        body.next_page_token = attractionsResponse.nextPageToken;
+
+        Attraction[] attractions = attractionsResponse.results;
+        RecommendedAttraction[] recommendedAttractions = new RecommendedAttraction[attractions.length];
+        for (int i = 0; i < attractions.length; i++){
+            Attraction attraction = attractions[i];
+
+            RecommendedAttraction recommendedAttraction = new RecommendedAttraction();
+            recommendedAttraction.business_status = attraction.business_status;
+            recommendedAttraction.formatted_address = attraction.formattedAddress;
+            recommendedAttraction.location = attraction.geometry.location;
+            recommendedAttraction.name = attraction.name;
+            recommendedAttraction.place_id = attraction.placeID;
+            recommendedAttraction.rating = attraction.rating;
+            recommendedAttraction.user_ratings_total = attraction.user_ratings_total;
+
+            if (attraction.photos!=null && attraction.photos.length > 0){
+                recommendedAttraction.photo_reference = attraction.photos[0].photoReference;
+            }
+
+            recommendedAttractions[i] = recommendedAttraction;
+        }
+        body.results = recommendedAttractions;
+        recommendedAttractionsResponse.body = body;
+        recommendedAttractionsResponse.statusCode = HttpStatus.OK.value();
+        return recommendedAttractionsResponse;
+    }
+
     public String[] getOpenHours(String placeID) throws UnsupportedEncodingException {
         placeID = encode(placeID);
         String url = String.format(GET_PLACE_DETAIL_URL_TEMPLATE,placeID,Constants.GOOGLE_API_KEY);
