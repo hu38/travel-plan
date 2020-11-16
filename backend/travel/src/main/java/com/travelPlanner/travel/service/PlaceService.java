@@ -6,6 +6,10 @@ import com.travelPlanner.travel.model.AttractionsGoogleAPIResponse.*;
 import com.travelPlanner.travel.model.CityGoogleAPIResponse.CityGoogleAPIResponse;
 import com.travelPlanner.travel.model.CityResponse;
 
+import com.travelPlanner.travel.model.FindPlaceGoogleAPIResponse.FindPlaceCandidate;
+import com.travelPlanner.travel.model.FindPlaceGoogleAPIResponse.FindPlaceGoogleAPIResponse;
+import com.travelPlanner.travel.model.FindPlaceResponse;
+import com.travelPlanner.travel.model.FindPlaceResponseBody.PlaceInfo;
 import com.travelPlanner.travel.model.RecommendAttractionsResponse.RecommendedAttraction;
 import com.travelPlanner.travel.model.RecommendAttractionsResponse.RecommendedAttractionResponseBody;
 import com.travelPlanner.travel.model.RecommendedAttractionsResponse;
@@ -28,11 +32,13 @@ public class PlaceService {
             "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=%s&inputtype=textquery&key=%s&fields=geometry";
 
     private static final String GET_RECOMMENDED_ATTRACTIONS_URL_TEMPLATE =
-            "https://maps.googleapis.com/maps/api/place/textsearch/json?query=%s+point+of+interest&location=%.2f,%.2f&radius=500&key=%s";
+            "https://maps.googleapis.com/maps/api/place/textsearch/json?query=tourist+attractions+in+%s&key=%s";
 
     private static final String GET_PLACE_DETAIL_URL_TEMPLATE =
             "https://maps.googleapis.com/maps/api/place/details/json?place_id=%s&fields=business_status,opening_hours&key=%s";
 
+    private static final String GET_PLACE_INFO_TEMPLATE =
+            "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?key=%s&input=%s&inputtype=textquery&fields=business_status,formatted_address,geometry,name,photos,place_id,rating,user_ratings_total";
 
     private final String CLOSED = "closed";
     private final String PAGE_TOKEN_QUERY = "&pagetoken=";
@@ -40,7 +46,7 @@ public class PlaceService {
     public CityResponse getCityLocation(String city) throws UnsupportedEncodingException {
         CityResponse cityResponse = new CityResponse();
         city = encode(city);
-        String url = String.format(GET_CITY_LOCATION_URL_TEMPLATE,city, Constants.GOOGLE_API_KEY);
+        String url = String.format(GET_CITY_LOCATION_URL_TEMPLATE, city, Constants.GOOGLE_API_KEY);
         CityGoogleAPIResponse response = requestHelper.makeRequest(CityGoogleAPIResponse.class,url,new CityGoogleAPIResponse());
         if (response!=null){
             cityResponse.body = response.candidates[0].geometry;
@@ -51,7 +57,13 @@ public class PlaceService {
 
     public RecommendedAttractionsResponse getRecommendedAttractions(String city,String next_page_token) throws UnsupportedEncodingException {
         RecommendedAttractionsResponse recommendedAttractionsResponse = new RecommendedAttractionsResponse();
-        AttractionsGoogleAPIResponse attractionsResponse = getGoogleRecommendedAttractions(city,next_page_token);
+        city = encode(city);
+        String url = String.format(GET_RECOMMENDED_ATTRACTIONS_URL_TEMPLATE, city, Constants.GOOGLE_API_KEY);
+        if (next_page_token!=null){
+            next_page_token = encode(next_page_token);
+            url += PAGE_TOKEN_QUERY+next_page_token;
+        }
+        AttractionsGoogleAPIResponse attractionsResponse = requestHelper.makeRequest(AttractionsGoogleAPIResponse.class,url,new AttractionsGoogleAPIResponse());
         if (attractionsResponse == null){
             recommendedAttractionsResponse.statusCode = HttpStatus.INTERNAL_SERVER_ERROR.value();
             return recommendedAttractionsResponse;
@@ -101,21 +113,33 @@ public class PlaceService {
         return new String[]{placeID,"Place detail request wasn't OK."};
     }
 
-    private AttractionsGoogleAPIResponse getGoogleRecommendedAttractions(String city,String next_page_token) throws UnsupportedEncodingException {
-        CityResponse cityResponse = getCityLocation(city);
-        double lat = cityResponse.body.location.lat;
-        double lng = cityResponse.body.location.lng;
-        city = encode(city);
-        String url = String.format(GET_RECOMMENDED_ATTRACTIONS_URL_TEMPLATE,city,lat,lng,Constants.GOOGLE_API_KEY);
-        if (next_page_token!=null){
-            next_page_token = encode(next_page_token);
-            url += PAGE_TOKEN_QUERY+next_page_token;
-        }
-        return requestHelper.makeRequest(AttractionsGoogleAPIResponse.class,url,new AttractionsGoogleAPIResponse());
-    }
-
     private String encode(String param) throws UnsupportedEncodingException {
         return URLEncoder.encode(param,"UTF-8");
     }
 
+    public FindPlaceResponse getPlaceInfo(String address) throws UnsupportedEncodingException {
+        FindPlaceResponse findPlaceResponse = new FindPlaceResponse();
+        address = encode(address);
+        String url = String.format(GET_PLACE_INFO_TEMPLATE, Constants.GOOGLE_API_KEY, address);
+
+        FindPlaceGoogleAPIResponse response = requestHelper.makeRequest(FindPlaceGoogleAPIResponse.class,url,new FindPlaceGoogleAPIResponse());
+        FindPlaceCandidate candidate = response.candidates[0];
+        if (response!=null){
+            findPlaceResponse.statusCode = HttpStatus.OK.value();
+            PlaceInfo placeInfo = new PlaceInfo();
+            placeInfo.business_status = candidate.business_status;
+            placeInfo.formatted_address = candidate.formattedAddress;
+            placeInfo.location = candidate.geometry.location;
+            placeInfo.name = candidate.name;
+            placeInfo.place_id = candidate.placeID;
+            placeInfo.rating = candidate.rating;
+            placeInfo.user_ratings_total = candidate.user_ratings_total;
+            if (candidate.photos!=null && candidate.photos.length > 0){
+                placeInfo.photo_reference = candidate.photos[0].photoReference;
+            }
+            findPlaceResponse.body = placeInfo;
+        }
+        return findPlaceResponse;
+    }
 }
+
