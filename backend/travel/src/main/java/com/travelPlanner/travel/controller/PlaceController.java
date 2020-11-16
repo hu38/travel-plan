@@ -3,7 +3,7 @@ package com.travelPlanner.travel.controller;
 
 import com.travelPlanner.travel.model.CityResponse;
 import com.travelPlanner.travel.model.FindPlaceResponse;
-import com.travelPlanner.travel.model.RecommendedAttractionsResponse;
+import com.travelPlanner.travel.model.RecommendedPlacesResponse;
 import com.travelPlanner.travel.model.Response;
 import com.travelPlanner.travel.service.PlaceService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,16 +25,10 @@ public class PlaceController {
         return placeService.getCityLocation(cityLocation);
     }
 
-    @RequestMapping(value = "/place/find-tourist-attractions", method = RequestMethod.GET)
-    public RecommendedAttractionsResponse recommendPlaces(@RequestParam(value = "city") String cityLocation,
-                                                          @RequestParam(value = "pagetoken", required = false) String pageToken) throws UnsupportedEncodingException {
-        return placeService.getRecommendedAttractions(cityLocation,pageToken);
-    }
-
     @RequestMapping(value = "/place/find-recommended-places", method = RequestMethod.GET)
-    public RecommendedAttractionsResponse getRecommendPlaces(@RequestParam(value = "city") String cityLocation,
-                                                          @RequestParam(value = "pagetoken", required = false) String pageToken) throws UnsupportedEncodingException {
-        return placeService.getRecommendedPlaces(cityLocation,pageToken);
+    public RecommendedPlacesResponse getRecommendPlaces(@RequestParam(value = "type") String type, @RequestParam(value = "city") String cityLocation,
+                                                        @RequestParam(value = "pagetoken", required = false) String pageToken) throws UnsupportedEncodingException {
+        return placeService.getRecommendedPlaces(type, cityLocation, pageToken);
     }
 
     @RequestMapping(value = "/place/detail", method = RequestMethod.GET)
