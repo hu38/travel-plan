@@ -1,4 +1,4 @@
-package com.travelPlanner.travel.model.AttractionsGoogleAPIResponse;
+package com.travelPlanner.travel.model.TextSearchGoogleAPIResponse;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -7,5 +7,4 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class Photo {
     @JsonProperty("photo_reference")
     public String photoReference;
-    public int width;
 }

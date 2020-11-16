@@ -2,7 +2,9 @@ package com.travelPlanner.travel.service;
 
 import com.travelPlanner.travel.Constants;
 import com.travelPlanner.travel.helper.HTTPRequest;
-import com.travelPlanner.travel.model.AttractionsGoogleAPIResponse.*;
+import com.travelPlanner.travel.model.PlaceDetailGoogleAPIResponse.OpenHours;
+import com.travelPlanner.travel.model.PlaceDetailGoogleAPIResponse.PlaceDetailResponse;
+import com.travelPlanner.travel.model.TextSearchGoogleAPIResponse.*;
 import com.travelPlanner.travel.model.CityGoogleAPIResponse.CityGoogleAPIResponse;
 import com.travelPlanner.travel.model.CityResponse;
 
@@ -10,9 +12,9 @@ import com.travelPlanner.travel.model.FindPlaceGoogleAPIResponse.FindPlaceCandid
 import com.travelPlanner.travel.model.FindPlaceGoogleAPIResponse.FindPlaceGoogleAPIResponse;
 import com.travelPlanner.travel.model.FindPlaceResponse;
 import com.travelPlanner.travel.model.FindPlaceResponseBody.PlaceInfo;
-import com.travelPlanner.travel.model.RecommendAttractionsResponse.RecommendedAttraction;
-import com.travelPlanner.travel.model.RecommendAttractionsResponse.RecommendedAttractionResponseBody;
-import com.travelPlanner.travel.model.RecommendedAttractionsResponse;
+import com.travelPlanner.travel.model.RecommendedPlacesResponseBody.RecommendedPlace;
+import com.travelPlanner.travel.model.RecommendedPlacesResponseBody.RecommendedPlacesResponseBody;
+import com.travelPlanner.travel.model.RecommendedPlacesResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -31,8 +33,8 @@ public class PlaceService {
     private static final String GET_CITY_LOCATION_URL_TEMPLATE =
             "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=%s&inputtype=textquery&key=%s&fields=geometry";
 
-    private static final String GET_RECOMMENDED_ATTRACTIONS_URL_TEMPLATE =
-            "https://maps.googleapis.com/maps/api/place/textsearch/json?query=%s+point+of+interest&location=%.2f,%.2f&radius=500&key=%s";
+    private static final String GET_RECOMMENDED_PLACES_URL_TEMPLATE =
+            "https://maps.googleapis.com/maps/api/place/textsearch/json?query=%s+in+%s&key=%s";
 
     private static final String GET_PLACE_DETAIL_URL_TEMPLATE =
             "https://maps.googleapis.com/maps/api/place/details/json?place_id=%s&fields=business_status,opening_hours&key=%s";
@@ -46,7 +48,7 @@ public class PlaceService {
     public CityResponse getCityLocation(String city) throws UnsupportedEncodingException {
         CityResponse cityResponse = new CityResponse();
         city = encode(city);
-        String url = String.format(GET_CITY_LOCATION_URL_TEMPLATE,city, Constants.GOOGLE_API_KEY);
+        String url = String.format(GET_CITY_LOCATION_URL_TEMPLATE, city, Constants.GOOGLE_API_KEY);
         CityGoogleAPIResponse response = requestHelper.makeRequest(CityGoogleAPIResponse.class,url,new CityGoogleAPIResponse());
         if (response!=null){
             cityResponse.body = response.candidates[0].geometry;
@@ -55,41 +57,48 @@ public class PlaceService {
         return cityResponse;
     }
 
-    public RecommendedAttractionsResponse getRecommendedAttractions(String city,String next_page_token) throws UnsupportedEncodingException {
-        RecommendedAttractionsResponse recommendedAttractionsResponse = new RecommendedAttractionsResponse();
-        AttractionsGoogleAPIResponse attractionsResponse = getGoogleRecommendedAttractions(city,next_page_token);
+    public RecommendedPlacesResponse getRecommendedPlaces(String type, String city, String next_page_token) throws UnsupportedEncodingException {
+        RecommendedPlacesResponse recommendedPlacesResponse = new RecommendedPlacesResponse();
+        type = encode(type);
+        city = encode(city);
+        String url = String.format(GET_RECOMMENDED_PLACES_URL_TEMPLATE, type, city, Constants.GOOGLE_API_KEY);
+        if (next_page_token!=null){
+            next_page_token = encode(next_page_token);
+            url += PAGE_TOKEN_QUERY+next_page_token;
+        }
+        TextSearchGoogleAPIResponse attractionsResponse = requestHelper.makeRequest(TextSearchGoogleAPIResponse.class,url,new TextSearchGoogleAPIResponse());
         if (attractionsResponse == null){
-            recommendedAttractionsResponse.statusCode = HttpStatus.INTERNAL_SERVER_ERROR.value();
-            return recommendedAttractionsResponse;
+            recommendedPlacesResponse.statusCode = HttpStatus.INTERNAL_SERVER_ERROR.value();
+            return recommendedPlacesResponse;
         }
 
-        RecommendedAttractionResponseBody body = new RecommendedAttractionResponseBody();
+        RecommendedPlacesResponseBody body = new RecommendedPlacesResponseBody();
         body.next_page_token = attractionsResponse.nextPageToken;
 
-        Attraction[] attractions = attractionsResponse.results;
-        RecommendedAttraction[] recommendedAttractions = new RecommendedAttraction[attractions.length];
-        for (int i = 0; i < attractions.length; i++){
-            Attraction attraction = attractions[i];
+        Result[] results = attractionsResponse.results;
+        PlaceInfo[] recommendedPlaces = new PlaceInfo[results.length];
+        for (int i = 0; i < results.length; i++){
+            Result result = results[i];
 
-            RecommendedAttraction recommendedAttraction = new RecommendedAttraction();
-            recommendedAttraction.business_status = attraction.business_status;
-            recommendedAttraction.formatted_address = attraction.formattedAddress;
-            recommendedAttraction.location = attraction.geometry.location;
-            recommendedAttraction.name = attraction.name;
-            recommendedAttraction.place_id = attraction.placeID;
-            recommendedAttraction.rating = attraction.rating;
-            recommendedAttraction.user_ratings_total = attraction.user_ratings_total;
+            PlaceInfo recommendedPlace = new PlaceInfo();
+            recommendedPlace.business_status = result.businessStatus;
+            recommendedPlace.formatted_address = result.formattedAddress;
+            recommendedPlace.location = result.geometry.location;
+            recommendedPlace.name = result.name;
+            recommendedPlace.place_id = result.placeID;
+            recommendedPlace.rating = result.rating;
+            recommendedPlace.user_ratings_total = result.userRatingsTotal;
 
-            if (attraction.photos!=null && attraction.photos.length > 0){
-                recommendedAttraction.photo_reference = attraction.photos[0].photoReference;
+            if (result.photos!=null && result.photos.length > 0){
+                recommendedPlace.photo_reference = result.photos[0].photoReference;
             }
 
-            recommendedAttractions[i] = recommendedAttraction;
+            recommendedPlaces[i] = recommendedPlace;
         }
-        body.results = recommendedAttractions;
-        recommendedAttractionsResponse.body = body;
-        recommendedAttractionsResponse.statusCode = HttpStatus.OK.value();
-        return recommendedAttractionsResponse;
+        body.results = recommendedPlaces;
+        recommendedPlacesResponse.body = body;
+        recommendedPlacesResponse.statusCode = HttpStatus.OK.value();
+        return recommendedPlacesResponse;
     }
 
     public String[] getOpenHours(String placeID) throws UnsupportedEncodingException {
@@ -107,19 +116,6 @@ public class PlaceService {
         return new String[]{placeID,"Place detail request wasn't OK."};
     }
 
-    private AttractionsGoogleAPIResponse getGoogleRecommendedAttractions(String city,String next_page_token) throws UnsupportedEncodingException {
-        CityResponse cityResponse = getCityLocation(city);
-        double lat = cityResponse.body.location.lat;
-        double lng = cityResponse.body.location.lng;
-        city = encode(city);
-        String url = String.format(GET_RECOMMENDED_ATTRACTIONS_URL_TEMPLATE,city,lat,lng,Constants.GOOGLE_API_KEY);
-        if (next_page_token!=null){
-            next_page_token = encode(next_page_token);
-            url += PAGE_TOKEN_QUERY+next_page_token;
-        }
-        return requestHelper.makeRequest(AttractionsGoogleAPIResponse.class,url,new AttractionsGoogleAPIResponse());
-    }
-
     private String encode(String param) throws UnsupportedEncodingException {
         return URLEncoder.encode(param,"UTF-8");
     }
@@ -129,23 +125,27 @@ public class PlaceService {
         address = encode(address);
         String url = String.format(GET_PLACE_INFO_TEMPLATE, Constants.GOOGLE_API_KEY, address);
 
-        FindPlaceGoogleAPIResponse response = requestHelper.makeRequest(FindPlaceGoogleAPIResponse.class,url,new FindPlaceGoogleAPIResponse());
-        FindPlaceCandidate candidate = response.candidates[0];
-        if (response!=null){
-            findPlaceResponse.statusCode = HttpStatus.OK.value();
-            PlaceInfo placeInfo = new PlaceInfo();
-            placeInfo.business_status = candidate.business_status;
-            placeInfo.formatted_address = candidate.formattedAddress;
-            placeInfo.location = candidate.geometry.location;
-            placeInfo.name = candidate.name;
-            placeInfo.place_id = candidate.placeID;
-            placeInfo.rating = candidate.rating;
-            placeInfo.user_ratings_total = candidate.user_ratings_total;
+        FindPlaceGoogleAPIResponse googleAPIResponse = requestHelper.makeRequest(FindPlaceGoogleAPIResponse.class,url,new FindPlaceGoogleAPIResponse());
+        FindPlaceCandidate candidate = googleAPIResponse.candidates[0];
+
+        if (googleAPIResponse == null) {
+            findPlaceResponse.statusCode = HttpStatus.INTERNAL_SERVER_ERROR.value();
+            return findPlaceResponse;
+        }
+
+        findPlaceResponse.statusCode = HttpStatus.OK.value();
+        PlaceInfo placeInfo = new PlaceInfo();
+        placeInfo.business_status = candidate.business_status;
+        placeInfo.formatted_address = candidate.formattedAddress;
+        placeInfo.location = candidate.geometry.location;
+        placeInfo.name = candidate.name;
+        placeInfo.place_id = candidate.placeID;
+        placeInfo.rating = candidate.rating;
+        placeInfo.user_ratings_total = candidate.user_ratings_total;
             if (candidate.photos!=null && candidate.photos.length > 0){
                 placeInfo.photo_reference = candidate.photos[0].photoReference;
             }
             findPlaceResponse.body = placeInfo;
-        }
         return findPlaceResponse;
     }
 }
