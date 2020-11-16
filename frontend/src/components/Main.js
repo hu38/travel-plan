@@ -40,6 +40,7 @@ const Main = () => {
 
     //6. Login and Logout
     const [isLogin, setIsLogin] = useState(false);
+    const [username, setUserName] = useState("000");
 
     // useEffect(  ()=>
     //     {
@@ -140,14 +141,16 @@ const Main = () => {
     let seconds = Math.floor(Date.now() / 1000);
     let planID = seconds;
     let planName = "My-" + cityText + "-plan-" + today;
-    console.log("today " + planName);
+    // console.log("today " + planName);
     const planInfo = {
+        "userID": username,
         "plan_id": planID,
         "planName": planName,
         "cityName": cityText,
-        "placesListString": encodedRoute
+        "placesListString": encodedRoute,
+        "placesList":[]
     };
-    console.log("today " + JSON.stringify(planInfo));
+    // console.log("today " + JSON.stringify(planInfo));
     const requestOptions = {
       method: 'POST',
       mode: 'cors',
@@ -163,7 +166,11 @@ const Main = () => {
     const savePlan = () => {
       fetch('api/save/savePlans', requestOptions)
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(
+          data => console.log(data),
+          // console.log("today " + JSON.stringify(planInfo)),
+          // console.log("today2"  + username)
+        )
         .catch((error) => {
           console.error('Error:', error);
         });
@@ -171,7 +178,7 @@ const Main = () => {
 
     //5. load all plans - Saved Records
     const loadAllPlans = () => {
-      fetch(`api/save/loadAllPlans`).then(res=>res.json()).then(
+      fetch(`api/save/loadPlansByUserID?userID=${username}`).then(res=>res.json()).then(
         data=>{
           if (data.statusCode===200) {
             setRecords(data.body);
@@ -190,10 +197,13 @@ const Main = () => {
     }
     
     const getLogin = (values) => {
-      const {username, password} = values;
+      console.log("username" + values)
       var myHeaders = new Headers();
       myHeaders.append("Content-Type", "application/json");
       var raw = JSON.stringify(values);
+      setUserName(values.user_id);
+      // console.log("today3"  + values.user_id)
+      // console.log("raw" + raw)
 
       var requestOptions = {
         method: 'POST',

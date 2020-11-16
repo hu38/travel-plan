@@ -77,7 +77,6 @@ public class PlaceService {
             if (attraction.photos!=null && attraction.photos.length > 0){
                 recommendedAttraction.photo_reference = attraction.photos[0].photoReference;
             }
-            recommendedAttraction.opening_hours = getOpenHours(attraction.placeID);
 
             recommendedAttractions[i] = recommendedAttraction;
         }
