@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import CollapseList from "./RecommendAndSelect/Collapse";
 import MapView from "./MapView";
 import SearchAndAdd from "./SearchAndAdd";
+import '../styles/SearchAndAdd.css';
 import EnterDestination from "./EnterDestination";
 import { Collapse } from "antd";
-
+import FilterList from "./FilterList";
 
 
 
@@ -15,7 +16,7 @@ const Main = () => {
     // 1. <EnterDestination />
     const [cityText,   setCityText]= useState("Boston"); 
     const [cityResult, setcityResult]= useState(undefined);  
-    
+    const [selected, setSelected] = useState([]);
     // 2. <Collapse />
     const [recomendCityList, setRecomendCityList] = useState([]);
 
@@ -104,8 +105,15 @@ const Main = () => {
                     setCityText={setCityText} 
                     findRecommendCityList={findRecommendCityList}
             /> 
-
-            {/* <SearchAndAdd/> */}
+            <FilterList 
+            recomendCityList = {recomendCityList}
+            updateRecomendCityList = {setRecomendCityList}
+            />
+            <SearchAndAdd
+                    selected = {selected}
+                    updateSelected = {setSelected}
+            />
+            
             <CollapseList 
                     style={{position:"fixed" } }
                     recomendCityList={recomendCityList}
