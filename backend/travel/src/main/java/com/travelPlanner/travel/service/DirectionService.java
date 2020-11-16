@@ -83,6 +83,7 @@ public class DirectionService {
         if (time[0] > 0) {
             if (time[0] == 1) {
                 durationText = time[0] + " day";
+            } else {
                 durationText = time[0] + " days";
             }
             if (time[1] == 1) {
