@@ -3,7 +3,7 @@ package com.travelPlanner.travel.controller;
 
 import com.travelPlanner.travel.model.CityResponse;
 import com.travelPlanner.travel.model.FindPlaceResponse;
-import com.travelPlanner.travel.model.RecommendedAttractionsResponse;
+import com.travelPlanner.travel.model.RecommendedPlacesResponse;
 import com.travelPlanner.travel.model.Response;
 import com.travelPlanner.travel.service.PlaceService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,14 +21,14 @@ public class PlaceController {
     PlaceService placeService;
 
     @RequestMapping(value = "/place/find-city", method = RequestMethod.GET)
-    public CityResponse findCity(@RequestParam(value = "city", defaultValue = "los+angeles") String cityLocation) throws UnsupportedEncodingException {
+    public CityResponse findCity(@RequestParam(value = "city") String cityLocation) throws UnsupportedEncodingException {
         return placeService.getCityLocation(cityLocation);
     }
 
-    @RequestMapping(value = "/place/find-tourist-attractions", method = RequestMethod.GET)
-    public RecommendedAttractionsResponse recommendPlaces(@RequestParam(value = "city", defaultValue = "minneapolis") String cityLocation,
-                                                          @RequestParam(value = "pagetoken", required = false) String pageToken) throws UnsupportedEncodingException {
-        return placeService.getRecommendedAttractions(cityLocation,pageToken);
+    @RequestMapping(value = "/place/find-recommended-places", method = RequestMethod.GET)
+    public RecommendedPlacesResponse getRecommendPlaces(@RequestParam(value = "type", defaultValue = "tourist attraction") String type, @RequestParam(value = "city") String cityLocation,
+                                                        @RequestParam(value = "pagetoken", required = false) String pageToken) throws UnsupportedEncodingException {
+        return placeService.getRecommendedPlaces(type, cityLocation, pageToken);
     }
 
     @RequestMapping(value = "/place/detail", method = RequestMethod.GET)

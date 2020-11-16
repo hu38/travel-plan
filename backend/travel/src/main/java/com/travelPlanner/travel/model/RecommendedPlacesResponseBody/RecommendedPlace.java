@@ -1,8 +1,8 @@
-package com.travelPlanner.travel.model.RecommendAttractionsResponse;
+package com.travelPlanner.travel.model.RecommendedPlacesResponseBody;
 
 import com.travelPlanner.travel.model.CityGoogleAPIResponse.Coordinate;
 
-public class RecommendedAttraction {
+public class RecommendedPlace {
     public String business_status;
     public String formatted_address;
     public Coordinate location;
