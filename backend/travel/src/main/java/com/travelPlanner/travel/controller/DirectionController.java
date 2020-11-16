@@ -17,9 +17,14 @@ public class DirectionController {
     DirectionService directionService;
 
     @RequestMapping(value = "/direction/get-route", method = RequestMethod.GET)
-    public DirectionResponse getRoute(@RequestParam(value = "places", defaultValue = "ChIJj2tUC2bGwoARwqdCDE37YD0 ChIJkyPnxsO_woARXQl-tdWAFi8 ChIJzzgyJU--woARcZqceSdQ3dM ChIJdZbSPDg23YAR6yR-akC2g4E") String placeIDList, @RequestParam(value = "optimize", defaultValue = "false") String optimizeFlag) throws UnsupportedEncodingException {
-        System.out.println(placeIDList);
-        DirectionResponse directionResponse = directionService.getRoute(placeIDList, optimizeFlag);
+    public DirectionResponse getRoute(@RequestParam(value = "places") String placeIDList, @RequestParam(value = "imperial") String imperial) throws UnsupportedEncodingException {
+        DirectionResponse directionResponse = directionService.getRoute(placeIDList, imperial);
         return directionResponse;
+    }
+
+    @RequestMapping(value = "/direction/optimize-route", method = RequestMethod.GET)
+    public int[] getOptimizedOrder(@RequestParam(value = "places") String placeIDList) throws UnsupportedEncodingException {
+        int[] order = directionService.getOptimizedOrder(placeIDList);
+        return order;
     }
 }

@@ -122,23 +122,27 @@ public class PlaceService {
         address = encode(address);
         String url = String.format(GET_PLACE_INFO_TEMPLATE, Constants.GOOGLE_API_KEY, address);
 
-        FindPlaceGoogleAPIResponse response = requestHelper.makeRequest(FindPlaceGoogleAPIResponse.class,url,new FindPlaceGoogleAPIResponse());
-        FindPlaceCandidate candidate = response.candidates[0];
-        if (response!=null){
-            findPlaceResponse.statusCode = HttpStatus.OK.value();
-            PlaceInfo placeInfo = new PlaceInfo();
-            placeInfo.business_status = candidate.business_status;
-            placeInfo.formatted_address = candidate.formattedAddress;
-            placeInfo.location = candidate.geometry.location;
-            placeInfo.name = candidate.name;
-            placeInfo.place_id = candidate.placeID;
-            placeInfo.rating = candidate.rating;
-            placeInfo.user_ratings_total = candidate.user_ratings_total;
+        FindPlaceGoogleAPIResponse googleAPIResponse = requestHelper.makeRequest(FindPlaceGoogleAPIResponse.class,url,new FindPlaceGoogleAPIResponse());
+        FindPlaceCandidate candidate = googleAPIResponse.candidates[0];
+
+        if (googleAPIResponse == null) {
+            findPlaceResponse.statusCode = HttpStatus.INTERNAL_SERVER_ERROR.value();
+            return findPlaceResponse;
+        }
+
+        findPlaceResponse.statusCode = HttpStatus.OK.value();
+        PlaceInfo placeInfo = new PlaceInfo();
+        placeInfo.business_status = candidate.business_status;
+        placeInfo.formatted_address = candidate.formattedAddress;
+        placeInfo.location = candidate.geometry.location;
+        placeInfo.name = candidate.name;
+        placeInfo.place_id = candidate.placeID;
+        placeInfo.rating = candidate.rating;
+        placeInfo.user_ratings_total = candidate.user_ratings_total;
             if (candidate.photos!=null && candidate.photos.length > 0){
                 placeInfo.photo_reference = candidate.photos[0].photoReference;
             }
             findPlaceResponse.body = placeInfo;
-        }
         return findPlaceResponse;
     }
 }
