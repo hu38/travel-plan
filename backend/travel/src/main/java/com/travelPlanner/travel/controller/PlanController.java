@@ -5,7 +5,6 @@ import com.travelPlanner.travel.model.CityResponse;
 import com.travelPlanner.travel.model.PlanResponse.PlanData;
 import com.travelPlanner.travel.model.PlanResponse.ReadPlanResponse;
 import com.travelPlanner.travel.model.PlanResponse.SavePlanResponse;
-import com.travelPlanner.travel.model.RecommendedAttractionsResponse;
 import com.travelPlanner.travel.service.PlanService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

@@ -2,7 +2,6 @@ package com.travelPlanner.travel.model.PlanResponse;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.travelPlanner.travel.model.AttractionsGoogleAPIResponse.Attraction;
 
 import java.util.ArrayList;
 import java.util.List;

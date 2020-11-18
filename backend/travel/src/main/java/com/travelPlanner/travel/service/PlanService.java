@@ -2,7 +2,6 @@ package com.travelPlanner.travel.service;
 
 import com.travelPlanner.travel.Constants;
 import com.travelPlanner.travel.Dao.PlanVirtualDatabase;
-import com.travelPlanner.travel.Dao.VirtualDatabase;
 import com.travelPlanner.travel.helper.HTTPRequest;
 import com.travelPlanner.travel.model.CityGoogleAPIResponse.CityGoogleAPIResponse;
 import com.travelPlanner.travel.model.DirectionResponse;

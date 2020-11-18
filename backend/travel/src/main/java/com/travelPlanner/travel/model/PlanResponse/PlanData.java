@@ -3,9 +3,7 @@ package com.travelPlanner.travel.model.PlanResponse;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.travelPlanner.travel.model.AttractionsGoogleAPIResponse.Attraction;
 import com.travelPlanner.travel.model.CityGoogleAPIResponse.Coordinate;
-import com.travelPlanner.travel.model.RecommendationListResponse.RecommendationList;
 import org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration;
 
 import java.io.Serializable;
