@@ -10,6 +10,7 @@ import SavedRecords from "./SavedRecords";
 import LogIn from "./LogIn";
 import LogOut from "./LogOut";
 import Register from "./Register";
+import FilterList from "./FilterList";
 
 
 
@@ -23,6 +24,7 @@ const Main = () => {
     const [cityResult, setcityResult]= useState(undefined);  
     const [enterVisible, setEnterVisible] = useState(true);
     const [recomendLoading,setRecomendLoading] = useState(false);
+    const [selected, setSelected] = useState([]);
     
     // 2. <Collapse />
     const [recomendCityList, setRecomendCityList] = useState([]);
@@ -277,7 +279,14 @@ const Main = () => {
                      recomendLoading = {recomendLoading}
             /> 
 
-            {/* <SearchAndAdd/> */}
+            <FilterList 
+            recomendCityList = {recomendCityList}
+            updateRecomendCityList = {setRecomendCityList}
+            />
+            <SearchAndAdd
+                    selected = {selected}
+                    updateSelected = {setSelected}
+            />
             <CollapseList 
                     style={{position:"fixed" } }
                     recomendCityList={recomendCityList}
