@@ -87,7 +87,7 @@ const Main = () => {
         //api/place/find-tourist-attractions?city=houston   !!! &pagetoken
         // response: got 20 arrays in data.body.results
 
-        fetch(`api/place/find-tourist-attractions?city=${cityText}`).then(res=>res.json()).then(
+        fetch(`api/place/find-recommended-places?type=tourist attractions&city=${cityText}`).then(res=>res.json()).then(
             data=>{
 
               // As of Now, I only need { Name & photo_reference & location & place_id} shown below.
@@ -284,6 +284,7 @@ const Main = () => {
             /> 
 
             <FilterList 
+            cityText = {cityText}
             recomendCityList = {recomendCityList}
             updateRecomendCityList = {setRecomendCityList}
             />
