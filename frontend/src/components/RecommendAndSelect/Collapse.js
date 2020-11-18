@@ -1,6 +1,7 @@
 import React, { useState }  from "react";
 import { List, Typography, Drawer, Button, Collapse, Tag  } from 'antd';
 import PlaceBox from "./PlaceBox";
+import OptimizeRoute from "./OptimizeRoute"
 
 const data = [
     'Racing car sprays burning fuel into crowd.',
@@ -43,7 +44,6 @@ const Collapsible = ({recomendCityList}) => {
     <Collapse defaultActiveKey={['1']} onChange={callback}>
         <Panel header="Tourists Nearby Recommendation List" key="1" className="collapse-panel">
             <List
-                header={<div></div>}
                 // footer={<div>Footer</div>}
                 bordered
                 dataSource={recomendCityList}
