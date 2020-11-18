@@ -93,7 +93,9 @@ export default class SearchAndAdd extends Component {
         
         return (
             <div className='SearchAndAdd' style={this.state.styles} onMouseDown={this._dragStart} onMouseMove={this._dragging} onMouseUp={this._dragEnd}>
-                <div className='DialogTitle'>Search And Add</div>
+                <div className='DialogTitle'> 
+                &emsp;Search And Add 
+                 </div>
                 <PlacesAutocomplete
                     value={this.state.address}
                     onChange={this.handleChange}
@@ -134,10 +136,9 @@ export default class SearchAndAdd extends Component {
                    </div>
                   )}  
                 </PlacesAutocomplete>
-                
                 <Button className='AddButton' onClick={this.findSearchAndAddResult}>
                     Add
-                </Button> 
+                </Button>
             </div>
         );
     }

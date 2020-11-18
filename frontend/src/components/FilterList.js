@@ -19,12 +19,13 @@ class FilterList extends Component {
     }
 
     handleOnClick = () => {
-        fetch(`api/place/find-recommended-places?type=${this.state.value}&city=Los Angeles`,{
+        fetch(`api/place/find-recommended-places?type=${this.state.value}&city=${this.props.cityText}`,{
             method: 'GET',
             redirect: 'follow'
           }
           ).then(response => response.json())
           .then(result => {
+              console.log(this.props.cityText);
               const length = this.props.recomendCityList.length;
               this.props.recomendCityList.splice(0,length);
               for(let i = 0; i < result.body.results.length; i++){

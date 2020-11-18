@@ -270,6 +270,10 @@ const Main = () => {
 
         
         <div>
+            <SearchAndAdd
+                    selected = {selected}
+                    updateSelected = {setSelected}
+            />
             <EnterDestination 
                      findCityLocation={findCityLocation} 
                      setCityText={setCityText} 
@@ -283,10 +287,7 @@ const Main = () => {
             recomendCityList = {recomendCityList}
             updateRecomendCityList = {setRecomendCityList}
             />
-            <SearchAndAdd
-                    selected = {selected}
-                    updateSelected = {setSelected}
-            />
+            
             <CollapseList 
                     style={{position:"fixed" } }
                     recomendCityList={recomendCityList}

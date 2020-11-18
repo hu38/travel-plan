@@ -242,7 +242,9 @@ const EnterDestination = (props) => {
    // };
 
     const handleChange = (data) => {
+      
       props.setCityText(data);
+      console.log(props.cityText);
     };
 
     //const mockVal = (str, repeat = 1) => {

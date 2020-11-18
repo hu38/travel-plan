@@ -1,6 +1,6 @@
 .SearchAndAdd {
     width: 350px;
-    height: 350px;
+    height: 120px;
     background-color: white;
     color: rgb(78, 70, 70);
     border-radius: 1px;
@@ -8,6 +8,7 @@
     position: absolute;
     cursor: move;
     top: 150px;
+    margin-left:20px;
     left: 520px;
 }
 
@@ -27,13 +28,18 @@
     border: 1px solid lightgrey;
     border-radius: 1px;
     padding: 10px;
-    margin: 10px;
-    margin-left: 14px;
+    float: left;
+    margin-left: 280px;
     cursor: pointer;
 }
 
 .location-search-input {
-    width: 200px;
+    margin-top: 10px;
+    width: 240px;
+    margin-left: 14px;
     border: 1px solid lightgrey;
     
+}
+.autocomplete-dropdown-container{
+    margin-left: 14px;
 }
