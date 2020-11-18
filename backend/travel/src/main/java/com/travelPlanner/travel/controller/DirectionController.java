@@ -17,14 +17,17 @@ public class DirectionController {
     DirectionService directionService;
 
     @RequestMapping(value = "/direction/get-route", method = RequestMethod.GET)
+
     public DirectionResponse getRoute(@RequestParam(value = "places") String placeIDList, @RequestParam(value = "imperial", defaultValue = "false") String imperial) throws UnsupportedEncodingException {
         DirectionResponse directionResponse = directionService.getRoute(placeIDList, imperial);
         return directionResponse;
     }
 
     @RequestMapping(value = "/direction/optimize-route", method = RequestMethod.GET)
+
     public OptimizedDirectionResponse getOptimizedRoute(@RequestParam(value = "places") String placeIDList, @RequestParam(value = "imperial", defaultValue = "false") String imperial) throws UnsupportedEncodingException {
         OptimizedDirectionResponse optimizedDirectionResponse = directionService.getOptimizedRoute(placeIDList, imperial);
         return optimizedDirectionResponse;
+
     }
 }

@@ -5,8 +5,10 @@ import com.travelPlanner.travel.helper.HTTPRequest;
 import com.travelPlanner.travel.model.DirectionGoogleAPIResponse.*;
 import com.travelPlanner.travel.model.DirectionResponse;
 import com.travelPlanner.travel.model.DirectionResponseBody.DirectionResponseBody;
+
 import com.travelPlanner.travel.model.DirectionResponseBody.OptimizedDirectionResponseBody;
 import com.travelPlanner.travel.model.OptimizedDirectionResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -23,6 +25,7 @@ public class DirectionService {
             "https://maps.googleapis.com/maps/api/directions/json?origin=%s&destination=%s&key=%s&waypoints=%s";
 
     public DirectionResponse getRoute(String placeIDList, String imperial) throws UnsupportedEncodingException {
+
         DirectionGoogleAPIResponse googleAPIResponse = getDirectionGoogleAPIResponse(placeIDList, "false");
 
         DirectionResponse directionResponse = imperial.equals("true") ? mapDirectionResponse(googleAPIResponse, true) : mapDirectionResponse(googleAPIResponse, false);
@@ -30,6 +33,7 @@ public class DirectionService {
     }
 
     private DirectionResponse mapDirectionResponse(DirectionGoogleAPIResponse googleAPIResponse, boolean imperial) {
+
         DirectionResponse directionResponse = new DirectionResponse();
 
         if (googleAPIResponse == null) {
@@ -48,7 +52,9 @@ public class DirectionService {
             totalDistance += leg.distance.value;
             totalDuration += leg.duration.value;
         }
+
         String distanceText = imperial == true ? formatDistance(totalDistance, true) : formatDistance(totalDistance, false);
+
         String durationText = formatDuration(totalDuration);
         responseBody.totalDistance = distanceText;
         responseBody.totalDuration = durationText;
@@ -158,6 +164,7 @@ public class DirectionService {
         responseBody.visitOrder = googleAPIResponse.routes[0].wayPointOrder;
         optimizedDirectionResponse.body = responseBody;
         return optimizedDirectionResponse;
+
     }
 
     private DirectionGoogleAPIResponse getDirectionGoogleAPIResponse(String placeIDList, String optimizeFlag) throws UnsupportedEncodingException {
