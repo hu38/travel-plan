@@ -5,6 +5,10 @@ import com.travelPlanner.travel.helper.HTTPRequest;
 import com.travelPlanner.travel.model.DirectionGoogleAPIResponse.*;
 import com.travelPlanner.travel.model.DirectionResponse;
 import com.travelPlanner.travel.model.DirectionResponseBody.DirectionResponseBody;
+
+import com.travelPlanner.travel.model.DirectionResponseBody.OptimizedDirectionResponseBody;
+import com.travelPlanner.travel.model.OptimizedDirectionResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -24,6 +28,12 @@ public class DirectionService {
 
         DirectionGoogleAPIResponse googleAPIResponse = getDirectionGoogleAPIResponse(placeIDList, "false");
 
+        DirectionResponse directionResponse = imperial.equals("true") ? mapDirectionResponse(googleAPIResponse, true) : mapDirectionResponse(googleAPIResponse, false);
+        return directionResponse;
+    }
+
+    private DirectionResponse mapDirectionResponse(DirectionGoogleAPIResponse googleAPIResponse, boolean imperial) {
+
         DirectionResponse directionResponse = new DirectionResponse();
 
         if (googleAPIResponse == null) {
@@ -42,7 +52,9 @@ public class DirectionService {
             totalDistance += leg.distance.value;
             totalDuration += leg.duration.value;
         }
-        String distanceText = imperial.equals("true") ? formatDistance(totalDistance, true) : formatDistance(totalDistance, false);
+
+        String distanceText = imperial == true ? formatDistance(totalDistance, true) : formatDistance(totalDistance, false);
+
         String durationText = formatDuration(totalDuration);
         responseBody.totalDistance = distanceText;
         responseBody.totalDuration = durationText;
@@ -123,11 +135,36 @@ public class DirectionService {
         return  durationText;
     }
 
-    public int[] getOptimizedOrder(String placeIDList) throws UnsupportedEncodingException {
-
+    public OptimizedDirectionResponse getOptimizedRoute(String placeIDList, String imperial) throws UnsupportedEncodingException {
         DirectionGoogleAPIResponse googleAPIResponse = getDirectionGoogleAPIResponse(placeIDList, "true");
 
-        return googleAPIResponse.routes[0].wayPointOrder;
+        OptimizedDirectionResponse optimizedDirectionResponse = new OptimizedDirectionResponse();
+
+        if (googleAPIResponse == null) {
+            optimizedDirectionResponse.statusCode = HttpStatus.INTERNAL_SERVER_ERROR.value();
+            return optimizedDirectionResponse;
+        }
+
+        optimizedDirectionResponse.statusCode = HttpStatus.OK.value();
+        OptimizedDirectionResponseBody responseBody = new OptimizedDirectionResponseBody();
+        responseBody.overviewPolyline = googleAPIResponse.routes[0].overviewPolyline.points;
+
+        Leg[] legs = googleAPIResponse.routes[0].legs;
+        double totalDistance = 0;
+        double totalDuration = 0;
+        for (Leg leg : legs) {
+            totalDistance += leg.distance.value;
+            totalDuration += leg.duration.value;
+        }
+        String distanceText = imperial.equals("true") ? formatDistance(totalDistance, true) : formatDistance(totalDistance, false);
+        String durationText = formatDuration(totalDuration);
+        responseBody.totalDistance = distanceText;
+        responseBody.totalDuration = durationText;
+
+        responseBody.visitOrder = googleAPIResponse.routes[0].wayPointOrder;
+        optimizedDirectionResponse.body = responseBody;
+        return optimizedDirectionResponse;
+
     }
 
     private DirectionGoogleAPIResponse getDirectionGoogleAPIResponse(String placeIDList, String optimizeFlag) throws UnsupportedEncodingException {
