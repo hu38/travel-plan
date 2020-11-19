@@ -25,13 +25,13 @@ class FilterList extends Component {
           }
           ).then(response => response.json())
           .then(result => {
-              console.log(this.props.cityText);
+            //   console.log(this.props.cityText);
               const length = this.props.recomendCityList.length;
               this.props.recomendCityList.splice(0,length);
               for(let i = 0; i < result.body.results.length; i++){
                 this.props.updateRecomendCityList(this.props.recomendCityList.concat(result.body.results[i]));
               }
-              console.log(this.props.recomendCityList);
+            //   console.log(this.props.recomendCityList);
           }
           )
           .catch(error => console.log('error', error));
