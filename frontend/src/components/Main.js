@@ -28,9 +28,9 @@ function Main() {
     const [cityText, setCityText] = useState("Boston");
     const [cityResult, setCityResult] = useState(undefined);
     const [enterVisible, setEnterVisible] = useState(true);
-    const [recomendLoading,setRecomendLoading] = useState(false);
+    const [recomendLoading, setRecomendLoading] = useState(false);
     const [selected, setSelected] = useState([]);
-    
+
     // 2. <Collapse />
     const [recomendCityList, setRecomendCityList] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -90,29 +90,29 @@ function Main() {
         //api/place/find-tourist-attractions?city=houston   !!! &pagetoken
         // response: got 20 arrays in data.body.results
 
-        fetch(`api/place/find-recommended-places?type=tourist attractions&city=${cityText}`).then(res=>res.json()).then(
-            data=>{
+        fetch(`api/place/find-recommended-places?type=tourist attractions&city=${cityText}`).then(res => res.json()).then(
+            data => {
 
 
-                    setRecomendCityList(data.body.results);
-                    setLoading(false);
-                    // setRecomendCityList( data.body.results.map( (cityInfo)=>{
+                setRecomendCityList(data.body.results);
+                setLoading(false);
+                // setRecomendCityList( data.body.results.map( (cityInfo)=>{
 
-                    //     let {location, name, photo_reference,place_id} =cityInfo;     // destructing
-                    //     let newElement = {location, name, photo_reference,place_id};  // concate the summary info
+                //     let {location, name, photo_reference,place_id} =cityInfo;     // destructing
+                //     let newElement = {location, name, photo_reference,place_id};  // concate the summary info
 
-                    //     console.log("new Element City Recommended");
-                    //     console.log(JSON.stringify(newElement));  // works
+                //     console.log("new Element City Recommended");
+                //     console.log(JSON.stringify(newElement));  // works
 
-                    //     return{
-                    //         ...cityInfo
-                    //     }
+                //     return{
+                //         ...cityInfo
+                //     }
 
-                    // }));
-                }
+                // }));
+            }
 
-                //   console.log("=== here comes recommendation list ===")
-                //   console.log(recomendCityList);  //empty
+            //   console.log("=== here comes recommendation list ===")
+            //   console.log(recomendCityList);  //empty
         )
     }
 
@@ -161,9 +161,9 @@ function Main() {
         fetch('api/save/savePlans', requestOptions)
             .then(res => res.json())
             // .then(
-                // data => console.log(data),
-                // console.log("today " + JSON.stringify(planInfo)),
-                // console.log("today2"  + username)
+            // data => console.log(data),
+            // console.log("today " + JSON.stringify(planInfo)),
+            // console.log("today2"  + username)
             // )
             .catch((error) => {
                 console.error('Error:', error);
@@ -260,80 +260,83 @@ function Main() {
 
 
         <div>
-            {isLogin?
+            {isLogin ?
                 <span>
-                  <LogOut showLogin = {showLogin} />
-                  <Button type="link" onClick={savePlan}>
-                    Save Plan
+                    <LogOut showLogin={showLogin} />
+                    <Button type="link" onClick={savePlan}>
+                        Save Plan
                   </Button>
-                  <SavedRecords
-                      loadAllPlans={loadAllPlans}
-                      records={records}
-                      findCityLocation={findCityLocation}
-                      setCityText = {setCityText}
-                  />
+                    <SavedRecords
+                        loadAllPlans={loadAllPlans}
+                        records={records}
+                        findCityLocation={findCityLocation}
+                        setCityText={setCityText}
+                    />
                 </span>
                 :
                 <span>
-                  <LogIn showLogout = {showLogout} getLogin = {getLogin} postRegister = {postRegister}/>
+                    <LogIn showLogout={showLogout} getLogin={getLogin} postRegister={postRegister} />
                 </span>
             }
 
             <Button type="link" onClick={changeCity}>
                 Change City
             </Button>
-
+            <Button type="primary" onClick={loadAllPlans}>
+              Load All Plans
+            </Button>
             <OptimizeRoute
                 recomendCityList={recomendCityList}
                 findOptimizeRoutes={findOptimizeRoutes}
-            />
-            <SearchAndAdd
-                    selected = {selected}
-                    updateSelected = {setSelected}
-            />
-            <EnterDestination 
-                     findCityLocation={findCityLocation} 
-                     setCityText={setCityText} 
-                     findRecommendCityList={findRecommendCityList}
-                     enterVisible={enterVisible}
-                     closeCity={closeCity}
-                     recomendLoading = {recomendLoading}
+                handleUpdate={setRecomendCityList}
             />
 
-            <FilterList 
-            cityText = {cityText}
-            recomendCityList = {recomendCityList}
-            updateRecomendCityList = {setRecomendCityList}
+            <EnterDestination
+                findCityLocation={findCityLocation}
+                setCityText={setCityText}
+                findRecommendCityList={findRecommendCityList}
+                enterVisible={enterVisible}
+                closeCity={closeCity}
+                recomendLoading={recomendLoading}
             />
-            
+            <SearchAndAdd
+                selected={selected}
+                updateSelected={setSelected}
+            />
+            <FilterList
+                cityText={cityText}
+                recomendCityList={recomendCityList}
+                updateRecomendCityList={setRecomendCityList}
+            />
+
+
             {/* <CollapseList 
                     style={{position:"fixed" } }
                     recomendCityList={recomendCityList}
             /> */}
-            <MapView style={{position: "relative"}}
+            {/* moved to Locations.js
+                 <MapView style={{position: "relative"}}
                     cityResult={cityResult}
-                    recomendCityList={recomendCityList}
+                    recomendCityList={recommendedData}
                     encodedRoute={encodedRoute}
-                />
-            {/* {setLoading ? <Locations  
+                /> */} 
+            {setLoading ? <Locations
                 recommended={recomendCityList}
                 handleUpdateRecommended={setRecomendCityList}
-                selected={selected} 
+                selected={selected}
                 handleUpdateSelected={setSelected}
                 cityResult={cityResult}
                 encodedRoute={encodedRoute}
-            /> : null} */}
+            /> : null}
+
             
-            {/* <Button type="primary" onClick={loadAllPlans}>
-              Load All Plans
-            </Button> */}
             {/* <Row>
                 <Col> */}
-            
+
             {/* </Col>
             </Row> */}
 
-            
+
 
 
         </div>

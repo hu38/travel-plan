@@ -49,7 +49,7 @@ const getListStyle = isDraggingOver => ({
     width: 200
 });
 
-function Locations({ recommended, handleUpdateRecommended, selected, 
+function Locations({ recommended, handleUpdateRecommended, selected,
     handleUpdateSelected, recomendLoading, cityResult, encodedRoute }) {
     const [recommendedLocations, setRecommendedLocations] = useState([]);
     const [selectedLocations, setSelectedLocations] = useState([]);
@@ -74,7 +74,7 @@ function Locations({ recommended, handleUpdateRecommended, selected,
                 destination.index
             );
             console.log('items', items);
-            if (source.droppableId === 'selectedLocations' ) {
+            if (source.droppableId === 'selectedLocations') {
                 // setSelectedLocations(items);
                 handleUpdateSelected(items);
             } else {
@@ -185,7 +185,9 @@ function Locations({ recommended, handleUpdateRecommended, selected,
                 </Col>
                 <Col>
                     <>
-                        <ReactGoogleMaps cityResult={cityResult} recomendCityList={recommended} encodedRoute={encodedRoute} />
+                        <div>
+                            <ReactGoogleMaps cityResult={cityResult} recomendCityList={selected} encodedRoute={encodedRoute} />
+                        </div>
                     </>
                 </Col>
                 <Col >
