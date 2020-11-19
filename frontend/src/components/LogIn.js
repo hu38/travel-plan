@@ -24,7 +24,7 @@ const LogIn = (props) => {
     }
       
     const handleCancel = () => {
-        console.log("cancel");
+        // console.log("cancel");
         setVisibleLogIn(false);
         setVisibleRegister(false);
     }
@@ -63,7 +63,7 @@ const LogIn = (props) => {
     const onFinishForm = (values) => {
         props.postRegister(values);
         setVisibleRegister(false);
-        console.log('Received values of form: ', values);
+        // console.log('Received values of form: ', values);
     };
   
     const [autoCompleteResult, setAutoCompleteResult] = useState([]);

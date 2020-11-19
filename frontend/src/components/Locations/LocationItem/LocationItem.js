@@ -1,22 +1,13 @@
 import React from 'react';
 import { Row, Col, Button } from 'antd';
 import { MinusOutlined } from '@ant-design/icons';
-import styled from 'styled-components';
-
-const Container = styled.div`
-  display: flex;
-  width: 100;
-  height: 50
-`;
 
 const GOOGLE_MAPS_API_KEY = 'AIzaSyDNJpRDz7c_p0kP3YzS0iRonyWoWKdU5ns';
 function LocationItem({ location, onDelete }) {
     const { name, rating, user_ratings_total, formatted_address, photo_reference, place_id } = location;
     const photoAPI = `https://maps.googleapis.com/maps/api/place/photo?maxwidth=100&photoreference=${photo_reference}&key=${GOOGLE_MAPS_API_KEY}`;
-
-    
     return (
-        <div style={{height: 100}}>
+        // <div style={{height: 100}}>
         <Col>
             <Row>
             <small><b>{name}</b></small>
@@ -38,7 +29,7 @@ function LocationItem({ location, onDelete }) {
                 
             </Row>
         </Col>
-        </div>
+        // </div>
     );
 }
 

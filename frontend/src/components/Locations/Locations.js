@@ -3,13 +3,14 @@ import { Row, Col, Button, Affix } from 'antd';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import LocationItem from './LocationItem/LocationItem';
 import { Fab } from '@material-ui/core';
+import ReactGoogleMaps from '../Google JavaScript API/ReactGoogleMaps';
 
 
 const reorder = (list, startIndex, endIndex) => {
     const result = Array.from(list);
     const [removed] = result.splice(startIndex, 1);
     result.splice(endIndex, 0, removed);
-
+    console.log(list, startIndex, endIndex);
     return result;
 };
 
@@ -48,27 +49,15 @@ const getListStyle = isDraggingOver => ({
     width: 200
 });
 
-function Locations({ recommended, selected, handleUpdateRecommended, handleUpdateSelected }) {
-    const [recommendedLocations, setRecommendedLocations] = useState(recommended);
-    const [selectedLocations, setSelectedLocations] = useState(selected);
-    const [showSelected, setShowSelected] = useState(false);
-    const [showRecommended, setShowRecommended] = useState(false);
-
-    useEffect(
-        () => {
-            handleUpdateRecommended(recommendedLocations);
-        },
-        [recommendedLocations]
-    );
-    useEffect(
-        () => {
-            handleUpdateSelected(selectedLocations);
-        },
-        [selectedLocations]
-    );
+function Locations({ recommended, handleUpdateRecommended, selected, 
+    handleUpdateSelected, recomendLoading, cityResult, encodedRoute }) {
+    const [recommendedLocations, setRecommendedLocations] = useState([]);
+    const [selectedLocations, setSelectedLocations] = useState([]);
+    const [showSelected, setShowSelected] = useState(true);
+    const [showRecommended, setShowRecommended] = useState(true);
 
     function getList(id) {
-        return id === 'recommendedLocations' ? recommendedLocations : selectedLocations;
+        return id === 'recommendedLocations' ? recommended : selected;
     }
 
     function onDragEnd(result) {
@@ -77,14 +66,21 @@ function Locations({ recommended, selected, handleUpdateRecommended, handleUpdat
         if (!destination) {
             return;
         }
-
+        console.log(result);
         if (source.droppableId === destination.droppableId) {
             const items = reorder(
                 getList(source.droppableId),
                 source.index,
                 destination.index
             );
-            source.droppableId === 'selectedLocations' ? setSelectedLocations(items) : setRecommendedLocations(items);
+            console.log('items', items);
+            if (source.droppableId === 'selectedLocations' ) {
+                // setSelectedLocations(items);
+                handleUpdateSelected(items);
+            } else {
+                // setRecommendedLocations(items);
+                handleUpdateRecommended(items);
+            };
         } else {
             const result = move(
                 getList(source.droppableId),
@@ -92,8 +88,11 @@ function Locations({ recommended, selected, handleUpdateRecommended, handleUpdat
                 source,
                 destination
             );
-            setRecommendedLocations(result.recommendedLocations);
-            setSelectedLocations(result.selectedLocations);
+            console.log('move', result);
+            // setSelectedLocations(result.selectedLocations);
+            // setRecommendedLocations(result.recommendedLocations);
+            handleUpdateSelected(result.selectedLocations);
+            handleUpdateRecommended(result.recommendedLocations);
         }
     };
 
@@ -103,6 +102,7 @@ function Locations({ recommended, selected, handleUpdateRecommended, handleUpdat
     }
 
     function renderSelected() {
+        console.log('selected', selected);
         return (
             <Droppable droppableId="selectedLocations"
             >
@@ -110,7 +110,7 @@ function Locations({ recommended, selected, handleUpdateRecommended, handleUpdat
                     <div
                         ref={provided.innerRef}
                         style={getListStyle(snapshot.isDraggingOver)}>
-                        {selectedLocations.map((item, index) => (
+                        {selected.map((item, index) => (
                             <Draggable
                                 key={item.place_id}
                                 draggableId={item.place_id}
@@ -137,14 +137,14 @@ function Locations({ recommended, selected, handleUpdateRecommended, handleUpdat
     }
 
     function renderRecommended() {
+        console.log('recommended', recommended);
         return (
-
             <Droppable droppableId="recommendedLocations" >
                 {(provided, snapshot) => (
                     <div
                         ref={provided.innerRef}
                         style={getListStyle(snapshot.isDraggingOver)}>
-                        {recommendedLocations.map((item, index) => (
+                        {recommended.map((item, index) => (
                             <Draggable
                                 key={item.place_id}
                                 draggableId={item.place_id}
@@ -158,8 +158,8 @@ function Locations({ recommended, selected, handleUpdateRecommended, handleUpdat
                                             snapshot.isDragging,
                                             provided.draggableProps.style
                                         )}>
-                                        <LocationItem location={item} 
-                                                      onDelete={() => handleOnDelete(item.place_id, recommendedLocations, 'recommendedLocations')} />
+                                        <LocationItem location={item}
+                                            onDelete={() => handleOnDelete(item.place_id, recommendedLocations, 'recommendedLocations')} />
                                     </div>
                                 )}
                             </Draggable>
@@ -175,19 +175,21 @@ function Locations({ recommended, selected, handleUpdateRecommended, handleUpdat
         type === 'selected' ? setShowSelected(!showSelected) : setShowRecommended(!showRecommended);
     }
 
-    console.log(selected);
-    console.log(recommended);
-
     return (
 
         <Row gutter={[16, 16]} style={{ clear: 'both' }}>
             <DragDropContext onDragEnd={onDragEnd}>
                 <Col>
-                    <Fab variant="extended" color="primary" onClick={() => handleShow('selected')}> Selected </Fab>
+                    <Fab variant="extended" color="error" onClick={() => handleShow('selected')}> Selected </Fab>
                     {showSelected ? renderSelected() : null}
                 </Col>
+                {/* <Col>
+                    <>
+                        <ReactGoogleMaps cityResult={cityResult} recomendCityList={recommended} encodedRoute={encodedRoute} />
+                    </>
+                </Col> */}
                 <Col >
-                    <Fab variant="extended" color="primary" onClick={() => handleShow('recommended')}> Recommended </Fab>
+                    <Fab variant="extended" color="error" onClick={() => handleShow('recommended')}> Recommended </Fab>
                     {showRecommended ? renderRecommended() : null}
                 </Col>
 

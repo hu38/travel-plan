@@ -5,9 +5,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.persistence.*;
 import java.io.Serializable;
 
-import java.util.List;
-
-
 @Entity
 @Table(name = "users")
 public class User implements Serializable {
@@ -17,22 +14,6 @@ public class User implements Serializable {
     @Id
     @Column(name = "user_id")
     private long id;
-
-    // =======================================================//
-
-//    @OneToMany(mappedBy = "users", cascade =CascadeType.ALL, fetch = FetchType.EAGER)
-
-//    @OneToMany(mappedBy = "user", cascade =CascadeType.ALL, fetch = FetchType.EAGER)
-//    private List<Plan> savedPlans;
-//
-//    public List<Plan> getSavedPlans() {
-//        return savedPlans;
-//    }
-//
-//    public void setSavedPlans(List<Plan> savedPlans) {
-//        this.savedPlans = savedPlans;
-//    }
-    // =======================================================//
 
     public long getId() {
         return id;

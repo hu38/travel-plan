@@ -34,9 +34,9 @@ const PlaceSearchBar=()=>
     //react access port :http://127.0.0.1:3000,spring sever http://127.0.0.1:8080
 
      const handlerOnclick =()=>{
-        console.log(`use input: ${userInputPlace}`)
+        // console.log(`use input: ${userInputPlace}`)
         setPlacesArray( currentArray =>[...currentArray, userInputPlace]);
-        console.log(`After: ${placesArray}`);
+        // console.log(`After: ${placesArray}`);
      }
 
 
@@ -52,7 +52,7 @@ const PlaceSearchBar=()=>
             fetch("api/place/find-city?city=boston").then(res=>res.json()).then( 
 
             data=>{
-                console.log(data.body.location);
+                // console.log(data.body.location);
 
                 }
             )

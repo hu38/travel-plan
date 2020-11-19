@@ -16,6 +16,7 @@
     "react-beautiful-dnd": "^13.0.0",
     "react-dom": "^17.0.1",
     "react-float-affixed": "^1.0.0",
+    "react-places-autocomplete": "^7.3.0",
     "react-scripts": "4.0.0",
     "react-virtualized": "^9.22.2",
     "react-window": "^1.8.6",

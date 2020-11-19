@@ -83,16 +83,16 @@ const MyComponent = ({cityResult, recomendCityList, encodedRoute}) => {
 
   const decodePolyline = require('decode-google-map-polyline');
   // var polylineCode = 'neuaEejkbUEGc@j@PXl@p@P\\a@f@GHyDtEgC`DoCfDzHbQp@rAbH`JdBtBrCjDn@p@dDbDfIvHfD~CrK~Jo@z@uCrDmJnL}^ld@mVjZmQrTgArAFJ';
-  var polylineCode = encodedRoute;
-  const polyline = decodePolyline(polylineCode);
+  // var polylineCode = encodedRoute;
+  // const polyline = decodePolyline(polylineCode);
   // console.log("POLYLINE IS HERE" + JSON.stringify(polyline));
-  let path;
-  if (polyline===undefined) {
-    path = positions;
-  }else {
-    path = polyline;
-  }
-  console.log("PATH IS HERE" + JSON.stringify(path));
+  // let path;
+  // if (polyline===undefined) {
+  //   path = positions;
+  // }else {
+  //   path = polyline;
+  // }
+  // console.log("PATH IS HERE" + JSON.stringify(path));
 
 
   let center;
@@ -189,11 +189,11 @@ const MyComponent = ({cityResult, recomendCityList, encodedRoute}) => {
           </InfoWindow> */}
 
 
-        <Polyline
+        {/* <Polyline
             onLoad={onLoad2}
             path={path}
             options={options}
-        />
+        /> */}
 
       </GoogleMap>
     </LoadScript>

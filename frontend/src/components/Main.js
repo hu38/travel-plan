@@ -11,27 +11,29 @@ import LogIn from "./LogIn";
 import LogOut from "./LogOut";
 import Register from "./Register";
 import Locations from "./Locations/Locations";
-import recommendedData from './Locations/Locations.data';
-import { Affix } from 'antd';
+import recommendedData from "./Locations/Locations.data";
+import FilterList from "./FilterList";
+import { Row, Col, Affix } from 'antd';
+
 
 
 
 
 function Main() {
-    const [selected, setSelected] = useState([]);
-    // const [recommended, setRecommended] = useState(recommendedData);
     const [container, setContainer] = useState(null);
 
 
     /***  Lifted State Sourth of Truth ***/
     // 1. <EnterDestination />
     const [cityText, setCityText] = useState("Boston");
-    const [cityResult, setcityResult] = useState(undefined);
+    const [cityResult, setCityResult] = useState(undefined);
     const [enterVisible, setEnterVisible] = useState(true);
-    const [recomendLoading, setRecomendLoading] = useState(false);
-
+    const [recomendLoading,setRecomendLoading] = useState(false);
+    const [selected, setSelected] = useState([]);
+    
     // 2. <Collapse />
     const [recomendCityList, setRecomendCityList] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     //3. Optimize Routes
     // const [placeID, setPlaceID] = useState("ChIJj2tUC2bGwoARwqdCDE37YD0 ChIJkyPnxsO_woARXQl-tdWAFi8 ChIJzzgyJU--woARcZqceSdQ3dM ChIJdZbSPDg23YAR6yR-akC2g4E");
@@ -56,8 +58,6 @@ function Main() {
 
     // );
 
-
-
     /*** Func Declaration   ***/
     // 1. Enter Destination to Use
     const findCityLocation = () => {
@@ -66,7 +66,7 @@ function Main() {
             data => {
                 if (data.statusCode === 200) {
                     // console.log(`<Main /> : ${data.body}`);
-                    setcityResult(data.body);
+                    setCityResult(data.body);
                 }
                 //   console.log(cityResult);
             }
@@ -75,12 +75,12 @@ function Main() {
 
     const changeCity = () => {    //pop out window
         setEnterVisible(true);
-        console.log("open enter destination");
+        // console.log("open enter destination");
     }
 
     const closeCity = () => {   //close the window
         setEnterVisible(false);
-        console.log("close enter destination")
+        // console.log("close enter destination")
     }
 
 
@@ -90,21 +90,12 @@ function Main() {
         //api/place/find-tourist-attractions?city=houston   !!! &pagetoken
         // response: got 20 arrays in data.body.results
 
-        fetch(`api/place/find-tourist-attractions?city=${cityText}`).then(res => res.json()).then(
-            data => {
-
-                // As of Now, I only need { Name & photo_reference & location & place_id} shown below.
-
-                if (data.statusCode === 200) {
-                    // setRecomendCityList( data.body.results.map( (cityInfo)=>{
-                    //     let {location, name, photo_reference,place_id} =cityInfo;     // destructing
-                    //     let newElement = {location, name, photo_reference,place_id};  // concate the summary info
-                    // }
-
+        fetch(`api/place/find-recommended-places?type=tourist attractions&city=${cityText}`).then(res=>res.json()).then(
+            data=>{
 
 
                     setRecomendCityList(data.body.results);
-
+                    setLoading(false);
                     // setRecomendCityList( data.body.results.map( (cityInfo)=>{
 
                     //     let {location, name, photo_reference,place_id} =cityInfo;     // destructing
@@ -122,7 +113,6 @@ function Main() {
 
                 //   console.log("=== here comes recommendation list ===")
                 //   console.log(recomendCityList);  //empty
-            }
         )
     }
 
@@ -170,11 +160,11 @@ function Main() {
     const savePlan = () => {
         fetch('api/save/savePlans', requestOptions)
             .then(res => res.json())
-            .then(
-                data => console.log(data),
+            // .then(
+                // data => console.log(data),
                 // console.log("today " + JSON.stringify(planInfo)),
                 // console.log("today2"  + username)
-            )
+            // )
             .catch((error) => {
                 console.error('Error:', error);
             });
@@ -215,7 +205,7 @@ function Main() {
             body: raw,
             redirect: 'follow'
         };
-        console.log(values)
+        // console.log(values)
         fetch(`api/user/login`, requestOptions)
             .then(res => res.json()).then(
                 data => {
@@ -270,41 +260,6 @@ function Main() {
 
 
         <div>
-            <EnterDestination
-                     findCityLocation={findCityLocation}
-                     setCityText={setCityText}
-                     findRecommendCityList={findRecommendCityList}
-                     enterVisible={enterVisible}
-                     closeCity={closeCity}
-                     recomendLoading = {recomendLoading}
-            />
-
-            {/* <SearchAndAdd/> */}
-            {/* <CollapseList
-                    style={{position:"fixed" } }
-                    recomendCityList={recomendCityList}
-            /> */}
-            <Affix target={()=>container}>
-                <Locations 
-                    recommended={recomendCityList} 
-                    selected={selected} 
-                    handleUpdateRecommended={setRecomendCityList}
-                    handleUpdateSelected={setSelected}
-                />
-            </Affix>
-            {/* <Button type="primary" onClick={loadAllPlans}>
-              Load All Plans
-            </Button> */}
-
-            <div ref={setContainer}>
-                <MapView style={{position: "absolute"}}
-                    cityResult={cityResult}
-                    recomendCityList={recomendCityList}
-                    encodedRoute={encodedRoute}
-                />
-            </div>
-            
-
             {isLogin?
                 <span>
                   <LogOut showLogin = {showLogin} />
@@ -332,6 +287,53 @@ function Main() {
                 recomendCityList={recomendCityList}
                 findOptimizeRoutes={findOptimizeRoutes}
             />
+            <SearchAndAdd
+                    selected = {selected}
+                    updateSelected = {setSelected}
+            />
+            <EnterDestination 
+                     findCityLocation={findCityLocation} 
+                     setCityText={setCityText} 
+                     findRecommendCityList={findRecommendCityList}
+                     enterVisible={enterVisible}
+                     closeCity={closeCity}
+                     recomendLoading = {recomendLoading}
+            />
+
+            <FilterList 
+            cityText = {cityText}
+            recomendCityList = {recomendCityList}
+            updateRecomendCityList = {setRecomendCityList}
+            />
+            
+            {/* <CollapseList 
+                    style={{position:"fixed" } }
+                    recomendCityList={recomendCityList}
+            /> */}
+            <MapView style={{position: "relative"}}
+                    cityResult={cityResult}
+                    recomendCityList={recomendCityList}
+                    encodedRoute={encodedRoute}
+                />
+            {/* {setLoading ? <Locations  
+                recommended={recomendCityList}
+                handleUpdateRecommended={setRecomendCityList}
+                selected={selected} 
+                handleUpdateSelected={setSelected}
+                cityResult={cityResult}
+                encodedRoute={encodedRoute}
+            /> : null} */}
+            
+            {/* <Button type="primary" onClick={loadAllPlans}>
+              Load All Plans
+            </Button> */}
+            {/* <Row>
+                <Col> */}
+            
+            {/* </Col>
+            </Row> */}
+
+            
 
 
         </div>

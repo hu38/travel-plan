@@ -1,12 +1,14 @@
-.Dialog {
-    width: 200px;
-    height: 200px;
-    background-color: lightblue;
-    border-radius: 10px;
-    border: 3px solid grey;
+.SearchAndAdd {
+    width: 350px;
+    height: 120px;
+    background-color: white;
+    color: rgb(78, 70, 70);
+    border-radius: 1px;
+    border: 1px solid lightgrey;
     position: absolute;
     cursor: move;
     top: 150px;
+    margin-left:20px;
     left: 520px;
 }
 
@@ -15,17 +17,29 @@
     font-weight: bold;
     padding-top: 10px;
     padding-bottom: 10px;
-    border-bottom: 3px solid grey;
+    border-bottom: 1px solid lightgrey;
 }
 
-.GoButton {
+
+.AddButton {
     font-size: 12px;
     width: 50px;
-    color: black;
-    border: 2px solid black;
-    border-radius: 25px;
+    color: rgba(0, 0, 0, 0.842);
+    border: 1px solid lightgrey;
+    border-radius: 1px;
     padding: 10px;
-    margin: 10px;
-    margin-left: 140px;
+    float: left;
+    margin-left: 280px;
     cursor: pointer;
+}
+
+.location-search-input {
+    margin-top: 10px;
+    width: 240px;
+    margin-left: 14px;
+    border: 1px solid lightgrey;
+    
+}
+.autocomplete-dropdown-container{
+    margin-left: 14px;
 }
