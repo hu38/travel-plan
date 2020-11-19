@@ -183,11 +183,11 @@ function Locations({ recommended, handleUpdateRecommended, selected,
                     <Fab variant="extended" color="error" onClick={() => handleShow('selected')}> Selected </Fab>
                     {showSelected ? renderSelected() : null}
                 </Col>
-                {/* <Col>
+                <Col>
                     <>
                         <ReactGoogleMaps cityResult={cityResult} recomendCityList={recommended} encodedRoute={encodedRoute} />
                     </>
-                </Col> */}
+                </Col>
                 <Col >
                     <Fab variant="extended" color="error" onClick={() => handleShow('recommended')}> Recommended </Fab>
                     {showRecommended ? renderRecommended() : null}

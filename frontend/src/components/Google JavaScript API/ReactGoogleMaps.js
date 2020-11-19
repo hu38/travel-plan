@@ -5,7 +5,8 @@ import { Button } from 'antd';
 
 
 const containerStyle = {
-  height: '85vh'
+  height: 1000,
+  width: 600
   // height: window.innerHeight - 150
 };
 
