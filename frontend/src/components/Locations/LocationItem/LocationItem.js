@@ -1,25 +1,34 @@
 import React from 'react';
 import { Row, Col, Button } from 'antd';
 import { MinusOutlined } from '@ant-design/icons';
+import styled from 'styled-components';
+
+const Container = styled.div`
+  display: flex;
+  width: 100;
+  height: 50
+`;
 
 const GOOGLE_MAPS_API_KEY = 'AIzaSyDNJpRDz7c_p0kP3YzS0iRonyWoWKdU5ns';
 function LocationItem({ location, onDelete }) {
     const { name, rating, user_ratings_total, formatted_address, photo_reference, place_id } = location;
     const photoAPI = `https://maps.googleapis.com/maps/api/place/photo?maxwidth=100&photoreference=${photo_reference}&key=${GOOGLE_MAPS_API_KEY}`;
 
+    
     return (
+        <div style={{height: 100}}>
         <Col>
             <Row>
-                <b>{name}</b>
+            <small><b>{name}</b></small>
             </Row>
             <Row>
-                Rating: {rating} ({user_ratings_total})
+            <small>Rating: {rating} ({user_ratings_total})</small>
             </Row>
+            {/* <Row>
+                <img src={photoAPI} height={50} width={50} />
+            </Row> */}
             <Row>
-                <img src={photoAPI} height={100} width={150} />
-            </Row>
-            <Row>
-                <a href={`https://www.google.com/maps/search/?api=1&query=${name}&query_place_id=${place_id}`} target="_blank">{formatted_address}</a>
+            <small>{formatted_address.slice(0, -15)} <a href={`https://www.google.com/maps/search/?api=1&query=${name}&query_place_id=${place_id}`} target="_blank">(details)</a> </small>
             </Row>
 
             <Row>
@@ -29,6 +38,7 @@ function LocationItem({ location, onDelete }) {
                 
             </Row>
         </Col>
+        </div>
     );
 }
 

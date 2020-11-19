@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { Row, Col } from 'antd';
+import { Row, Col, Button, Affix } from 'antd';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import LocationItem from './LocationItem/LocationItem';
+import { Fab } from '@material-ui/core';
 
 
 const reorder = (list, startIndex, endIndex) => {
@@ -31,7 +32,7 @@ const grid = 8;
 const getItemStyle = (isDragging, draggableStyle) => ({
     // some basic styles to make the items look a bit nicer
     userSelect: 'none',
-    padding: grid * 2,
+    // padding: grid * 2,
     margin: `0 0 ${grid}px 0`,
 
     // change background colour if dragging
@@ -44,13 +45,15 @@ const getItemStyle = (isDragging, draggableStyle) => ({
 const getListStyle = isDraggingOver => ({
     background: isDraggingOver ? 'lightblue' : 'skyblue',
     padding: grid,
-    width: 250
+    width: 200
 });
 
 function Locations({ recommended, selected, handleUpdateRecommended, handleUpdateSelected }) {
     const [recommendedLocations, setRecommendedLocations] = useState(recommended);
     const [selectedLocations, setSelectedLocations] = useState(selected);
-    
+    const [showSelected, setShowSelected] = useState(false);
+    const [showRecommended, setShowRecommended] = useState(false);
+
     useEffect(
         () => {
             handleUpdateRecommended(recommendedLocations);
@@ -99,70 +102,93 @@ function Locations({ recommended, selected, handleUpdateRecommended, handleUpdat
         listType === 'selectedLocations' ? setSelectedLocations(updatedSource) : setRecommendedLocations(updatedSource);
     }
 
+    function renderSelected() {
+        return (
+            <Droppable droppableId="selectedLocations"
+            >
+                {(provided, snapshot) => (
+                    <div
+                        ref={provided.innerRef}
+                        style={getListStyle(snapshot.isDraggingOver)}>
+                        {selectedLocations.map((item, index) => (
+                            <Draggable
+                                key={item.place_id}
+                                draggableId={item.place_id}
+                                index={index}>
+                                {(provided, snapshot) => (
+                                    <div
+                                        ref={provided.innerRef}
+                                        {...provided.draggableProps}
+                                        {...provided.dragHandleProps}
+                                        style={getItemStyle(
+                                            snapshot.isDragging,
+                                            provided.draggableProps.style
+                                        )}>
+                                        <LocationItem location={item} onDelete={() => handleOnDelete(item.place_id, selectedLocations, 'selectedLocations')} />
+                                    </div>
+                                )}
+                            </Draggable>
+                        ))}
+                        {provided.placeholder}
+                    </div>
+                )}
+            </Droppable>
+        );
+    }
+
+    function renderRecommended() {
+        return (
+
+            <Droppable droppableId="recommendedLocations" >
+                {(provided, snapshot) => (
+                    <div
+                        ref={provided.innerRef}
+                        style={getListStyle(snapshot.isDraggingOver)}>
+                        {recommendedLocations.map((item, index) => (
+                            <Draggable
+                                key={item.place_id}
+                                draggableId={item.place_id}
+                                index={index}>
+                                {(provided, snapshot) => (
+                                    <div
+                                        ref={provided.innerRef}
+                                        {...provided.draggableProps}
+                                        {...provided.dragHandleProps}
+                                        style={getItemStyle(
+                                            snapshot.isDragging,
+                                            provided.draggableProps.style
+                                        )}>
+                                        <LocationItem location={item} 
+                                                      onDelete={() => handleOnDelete(item.place_id, recommendedLocations, 'recommendedLocations')} />
+                                    </div>
+                                )}
+                            </Draggable>
+                        ))}
+                        {provided.placeholder}
+                    </div>
+                )}
+            </Droppable>
+        );
+    }
+
+    function handleShow(type) {
+        type === 'selected' ? setShowSelected(!showSelected) : setShowRecommended(!showRecommended);
+    }
+
+    console.log(selected);
+    console.log(recommended);
+
     return (
-        <Row gutter={[16, 16]} style={{clear:'both'}}>
+
+        <Row gutter={[16, 16]} style={{ clear: 'both' }}>
             <DragDropContext onDragEnd={onDragEnd}>
                 <Col>
-                    <p style={{textAlign: 'center'}}><strong>SELECTED LOCATIONS</strong></p>
-                    <Droppable droppableId="selectedLocations">
-                        {(provided, snapshot) => (
-                            <div
-                                ref={provided.innerRef}
-                                style={getListStyle(snapshot.isDraggingOver)}>
-                                {selectedLocations.map((item, index) => (
-                                    <Draggable
-                                        key={item.place_id}
-                                        draggableId={item.place_id}
-                                        index={index}>
-                                        {(provided, snapshot) => (
-                                            <div
-                                                ref={provided.innerRef}
-                                                {...provided.draggableProps}
-                                                {...provided.dragHandleProps}
-                                                style={getItemStyle(
-                                                    snapshot.isDragging,
-                                                    provided.draggableProps.style
-                                                )}>
-                                                <LocationItem location={item} onDelete={() => handleOnDelete(item.place_id, selectedLocations, 'selectedLocations')}/>
-                                            </div>
-                                        )}
-                                    </Draggable>
-                                ))}
-                                {provided.placeholder}
-                            </div>
-                        )}
-                    </Droppable>
+                    <Fab variant="extended" color="primary" onClick={() => handleShow('selected')}> Selected </Fab>
+                    {showSelected ? renderSelected() : null}
                 </Col>
-                <Col>
-                    <p style={{textAlign: 'center'}}><strong>RECOMMENDED LOCATIONS</strong></p>
-                    <Droppable droppableId="recommendedLocations">
-                        {(provided, snapshot) => (
-                            <div
-                                ref={provided.innerRef}
-                                style={getListStyle(snapshot.isDraggingOver)}>
-                                {recommendedLocations.map((item, index) => (
-                                    <Draggable
-                                        key={item.place_id}
-                                        draggableId={item.place_id}
-                                        index={index}>
-                                        {(provided, snapshot) => (
-                                            <div
-                                                ref={provided.innerRef}
-                                                {...provided.draggableProps}
-                                                {...provided.dragHandleProps}
-                                                style={getItemStyle(
-                                                    snapshot.isDragging,
-                                                    provided.draggableProps.style
-                                                )}>
-                                                <LocationItem location={item} onDelete={() => handleOnDelete(item.place_id, recommendedLocations, 'recommendedLocations')} />
-                                            </div>
-                                        )}
-                                    </Draggable>
-                                ))}
-                                {provided.placeholder}
-                            </div>
-                        )}
-                    </Droppable>
+                <Col >
+                    <Fab variant="extended" color="primary" onClick={() => handleShow('recommended')}> Recommended </Fab>
+                    {showRecommended ? renderRecommended() : null}
                 </Col>
 
             </DragDropContext>
