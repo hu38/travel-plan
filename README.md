@@ -9,6 +9,7 @@
 ### Linda Li, lindalee1661@gmail.com, kelpiepeter, full-stack
 ### Xiaohua Wang, wangxin.cyn@gmail.com, Flora-OvO, front-end
 ### Da Wang, wangda.mme@gmail.com
+### Weijing Song, gloriaswj@ucla.edu
 
 <br/>
 
@@ -36,3 +37,4 @@
 - Either wait or ask someone to review/approve your code.
   > When you have time, it's always good to review others' pull requests.
 - Done!
+

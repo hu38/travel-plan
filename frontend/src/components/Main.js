@@ -10,6 +10,7 @@ import SavedRecords from "./SavedRecords";
 import LogIn from "./LogIn";
 import LogOut from "./LogOut";
 import Register from "./Register";
+import FilterList from "./FilterList";
 
 
 
@@ -23,6 +24,7 @@ const Main = () => {
     const [cityResult, setcityResult]= useState(undefined);  
     const [enterVisible, setEnterVisible] = useState(true);
     const [recomendLoading,setRecomendLoading] = useState(false);
+    const [selected, setSelected] = useState([]);
     
     // 2. <Collapse />
     const [recomendCityList, setRecomendCityList] = useState([]);
@@ -85,7 +87,7 @@ const Main = () => {
         //api/place/find-tourist-attractions?city=houston   !!! &pagetoken
         // response: got 20 arrays in data.body.results
 
-        fetch(`api/place/find-tourist-attractions?city=${cityText}`).then(res=>res.json()).then(
+        fetch(`api/place/find-recommended-places?type=tourist attractions&city=${cityText}`).then(res=>res.json()).then(
             data=>{
 
               // As of Now, I only need { Name & photo_reference & location & place_id} shown below.
@@ -268,6 +270,10 @@ const Main = () => {
 
         
         <div>
+            <SearchAndAdd
+                    selected = {selected}
+                    updateSelected = {setSelected}
+            />
             <EnterDestination 
                      findCityLocation={findCityLocation} 
                      setCityText={setCityText} 
@@ -277,7 +283,12 @@ const Main = () => {
                      recomendLoading = {recomendLoading}
             /> 
 
-            {/* <SearchAndAdd/> */}
+            <FilterList 
+            cityText = {cityText}
+            recomendCityList = {recomendCityList}
+            updateRecomendCityList = {setRecomendCityList}
+            />
+            
             <CollapseList 
                     style={{position:"fixed" } }
                     recomendCityList={recomendCityList}
