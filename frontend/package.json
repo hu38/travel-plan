@@ -4,12 +4,12 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.11.0",
-    "@material-ui/icons": "^4.9.1",
     "@react-google-maps/api": "^1.13.0",
     "@testing-library/jest-dom": "^5.11.5",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "antd": "^4.7.3",
+    "decode-google-map-polyline": "^1.0.1",
     "google-maps-react": "^2.0.6",
     "load-google-maps-api": "^2.0.2",
     "react": "^17.0.1",
