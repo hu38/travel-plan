@@ -10,6 +10,7 @@
 ### Xiaohua Wang, wangxin.cyn@gmail.com, Flora-OvO, front-end
 ### Da Wang, wangda.mme@gmail.com
 ### Weijing Song, gloriaswj@ucla.edu
+### Zhao Tang, zhao.tang@rice.edu
 
 <br/>
 
